@@ -8,4 +8,8 @@
         <file>img/pifagor.jpg</file>
         <file>img/logo.png</file>
     </qresource>
+    <qresource prefix="/">
+        <file>stylesheets.qml</file>
+        <file>qss/style.qss</file>
+    </qresource>
 </RCC>

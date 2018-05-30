@@ -4,8 +4,6 @@
 #include <QMessageBox>
 #include <QLCDNumber>
 #include "secondwindow.h"
-#include <math.h>
-#include <cstdlib>
 #include <ctime>
 #include "sortings.h"
 
