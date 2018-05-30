@@ -1,6 +1,8 @@
 #ifndef SORTINGS_H
 #define SORTINGS_H
+#include <Math.h>
 
+///
 
 void merge(int *a, int n)
 {

@@ -234,10 +234,14 @@ void MainWindow::on_consider_clicked(/*int arg1, int arg2*/)
         ui->lcdNumber->display(QString::number(search_time_q/1000.0));
     break;
     }
+
+
+
     default:
     {
         break;
     }
+
     }
 }
 
