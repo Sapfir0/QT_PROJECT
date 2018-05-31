@@ -1,6 +1,7 @@
 #include "secondwindow.h"
 #include "ui_secondwindow.h"
 #include "time_calculate.h"
+#include "function.h"
 
 secondwindow::secondwindow(QWidget *parent) :
     QDialog(parent),
