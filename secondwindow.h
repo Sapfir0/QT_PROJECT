@@ -2,6 +2,7 @@
 #define SECONDWINDOW_H
 
 #include <QDialog>
+#include "time_calculate.h"
 
 namespace Ui {
 class secondwindow;
@@ -15,8 +16,13 @@ public:
     explicit secondwindow(QWidget *parent = 0);
     ~secondwindow();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::secondwindow *ui;
+    time_calculate *window; //привзяка расчитывания времени
+
 };
 
 #endif // SECONDWINDOW_H

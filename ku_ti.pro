@@ -28,16 +28,20 @@ CODECFORSRC     = UTF-8
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    secondwindow.cpp
+    secondwindow.cpp \
+    time_calculate.cpp
 
 HEADERS += \
         mainwindow.h \
     secondwindow.h \
-    sortings.h
+    sortings.h \
+    requests.h \
+    time_calculate.h
 
 FORMS += \
         mainwindow.ui \
-    secondwindow.ui
+    secondwindow.ui \
+    time_calculate.ui
 
 RESOURCES += \
     yahzwhatisit.qrc

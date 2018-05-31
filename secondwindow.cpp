@@ -1,5 +1,6 @@
 #include "secondwindow.h"
 #include "ui_secondwindow.h"
+#include "time_calculate.h"
 
 secondwindow::secondwindow(QWidget *parent) :
     QDialog(parent),
@@ -11,4 +12,12 @@ secondwindow::secondwindow(QWidget *parent) :
 secondwindow::~secondwindow()
 {
     delete ui;
+}
+
+void secondwindow::on_pushButton_clicked()
+{
+
+    hide();
+    window = new time_calculate(this);
+    window->show();
 }

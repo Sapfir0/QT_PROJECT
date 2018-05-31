@@ -3,7 +3,7 @@
 #include <QPixmap>
 #include <QMessageBox>
 #include <QLCDNumber>
-#include "secondwindow.h"
+//#include "secondwindow.h"
 #include <ctime>
 #include "sortings.h"
 
@@ -304,6 +304,10 @@ void MainWindow::on_lcdNumber_overflow()
 
 void MainWindow::on_pushButton_2_clicked()
 {
+    hide();
+    window = new secondwindow(this);
+    window->show();
+
 }
 
 void MainWindow::on_actionEnglish_triggered()

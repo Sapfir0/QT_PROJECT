@@ -245,7 +245,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
 }</string>
          </property>
          <property name="text">
-          <string>Просчитать</string>
+          <string>Сalculate</string>
          </property>
         </widget>
        </item>
@@ -324,7 +324,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
 }</string>
          </property>
          <property name="text">
-          <string>PushButton</string>
+          <string>new window</string>
          </property>
         </widget>
        </item>
