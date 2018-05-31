@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>function</class>
+ <widget class="QMainWindow" name="function">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>417</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>30</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Functions</string>
+    </property>
+   </widget>
+   <widget class="QSplitter" name="splitter_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>398</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <widget class="QSplitter" name="splitter_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+  color: white; 
+}
+
+</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="situation_arg1">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  color: white; 
+}
+
+
+</string>
+         </property>
+         <property name="text">
+          <string>Enter first count</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="first_count">
+         <property name="maximumSize">
+          <size>
+           <width>92</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="mouseTracking">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  color: white; 
+}
+QSpinBox {
+color: white;
+}
+
+</string>
+         </property>
+         <property name="maximum">
+          <number>999999999</number>
+         </property>
+         <property name="singleStep">
+          <number>10</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="situation_arg2">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  color: white; 
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>Enter second count</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="second_count">
+         <property name="styleSheet">
+          <string notr="true">QSpinBox {
+color: white;
+}
+</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSplitter" name="splitter_2">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  color: white; 
+}
+
+</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <widget class="QLabel" name="INFO">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+  background-color: #3B6582;
+  color: white; 
+ width:  100px;
+ height: 25px;
+  border: 1px solid gray;
+}
+
+
+QPushButton:hover {
+    background-color: #E1E8EE;
+
+}
+QPushButton:pressed {  background-color rgb(220, 116, 45) 
+}</string>
+          </property>
+          <property name="text">
+           <string>Result =</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="printf_result">
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+  background-color: #3B6582;
+  color: white; 
+ width:  100px;
+ height: 25px;
+  border: 1px solid gray;
+}
+
+
+QPushButton:hover {
+    background-color: #E1E8EE;
+
+}
+QPushButton:pressed {  background-color rgb(220, 116, 45) 
+}</string>
+          </property>
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget_2">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QPushButton" name="consider">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  background-color: #3B6582;
+  color: white; 
+ width:  100px;
+ height: 25px;
+  border: 1px solid gray;
+}
+
+
+QPushButton:hover {
+    background-color: #E1E8EE;
+color: black;
+}
+QPushButton:pressed {  background-color rgb(220, 116, 45) 
+}</string>
+         </property>
+         <property name="text">
+          <string>Сalculate</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  background-color: #3B6582;
+  color: white; 
+ width:  100px;
+ height: 25px;
+  border: 1px solid gray;
+}
+
+
+QPushButton:hover {
+    background-color: #E1E8EE;
+color: black;
+}
+QPushButton:pressed {  background-color rgb(220, 116, 45) 
+}</string>
+         </property>
+         <property name="text">
+          <string>new window</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="settings">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  background-color: #3B6582;
+  color: white; 
+ width:  100px;
+ height: 25px;
+  border: 1px solid gray;
+}
+
+
+QPushButton:hover {
+    background-color: #E1E8EE;
+color: black;
+}
+QPushButton:pressed {  background-color rgb(220, 116, 45) 
+}</string>
+         </property>
+         <property name="text">
+          <string>Settings</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="test_na_tebya">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  background-color: #3B6582;
+  color: white; 
+ width:  100px;
+ height: 25px;
+  border: 1px solid gray;
+}
+
+
+QPushButton:hover {
+    background-color: #E1E8EE;
+color: black;
+}
+QPushButton:pressed {  background-color rgb(220, 116, 45) 
+}</string>
+         </property>
+         <property name="text">
+          <string>Тест на пидора</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="quit">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  background-color: #3B6582;
+  color: white; 
+ width:  100px;
+ height: 25px;
+  border: 1px solid gray;
+}
+
+
+QPushButton:hover {
+    background-color: #E1E8EE;
+color: black;
+}
+QPushButton:pressed {  background-color rgb(220, 116, 45) 
+}</string>
+         </property>
+         <property name="text">
+          <string>Quit</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>111</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Factorial</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>417</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

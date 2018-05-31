@@ -24,7 +24,9 @@ int main(int argc, char *argv[])
 //    return ok;
 
 
-    MainWindow w;
+
+    secondwindow w;
+   // MainWindow w;
     w.show();
 
 

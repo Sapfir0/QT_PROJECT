@@ -49,7 +49,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-//    SecondWindow *window;
+    secondwindow *window;
+
 };
 
 #endif // MAINWINDOW_H
