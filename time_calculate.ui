@@ -6,17 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>591</width>
-    <height>429</height>
+    <width>619</width>
+    <height>497</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget {
- background-image: url(:/new/prefix1/img/TWhoQi.jpg); 
-}</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label_2">
@@ -48,9 +46,9 @@
    <widget class="QWidget" name="horizontalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>80</y>
-      <width>531</width>
+      <width>521</width>
       <height>151</height>
      </rect>
     </property>
@@ -252,7 +250,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>591</width>
+     <width>619</width>
      <height>20</height>
     </rect>
    </property>
