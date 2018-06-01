@@ -25,7 +25,7 @@ private slots:
 
 private:
     Ui::secondwindow *ui;
-    time_calculate *window; //привзяка расчитывания времени
+    time_calculate *window12; //привзяка расчитывания времени
     function *window2;
 
 };

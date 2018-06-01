@@ -24,6 +24,9 @@ int main(int argc, char *argv[])
 //    return ok;
 
 
+ //   qApp->setStyleSheet(file.readAll());
+
+
 
     secondwindow w;
    // MainWindow w;

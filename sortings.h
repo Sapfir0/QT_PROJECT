@@ -1,6 +1,6 @@
 #ifndef SORTINGS_H
 #define SORTINGS_H
-#include <Math.h>
+#include <cmath>
 
 ///
 

@@ -1,3 +1,6 @@
+//#pragma comment(lib, "opengl32.lib")
+//#pragma comment(lib, "glu32.lib")
+
 #include "secondwindow.h"
 #include "ui_secondwindow.h"
 #include "time_calculate.h"
@@ -17,13 +20,13 @@ secondwindow::~secondwindow()
 
 void secondwindow::on_time_calculate_clicked()
 {
-    hide();
-    window = new time_calculate(this);
-    window->show();
+//    hide();
+//    window12 = new time_calculate(this);   //////////////////////////////////////////раскомментить
+//    window12->show();
 }
 void secondwindow::on_function_clicked()
 {
-    hide();
-    window2 = new function(this);
-    window2->show();
+//    hide();
+//    window2 = new function(this);   //////////////////////////////////////////раскомментить
+//    window2->show();
 }
