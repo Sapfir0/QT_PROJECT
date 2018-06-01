@@ -19,7 +19,7 @@ public:
 
 private slots:
 
-    void on_function_clicked();
+    void on_function_button_clicked();
 
     void on_time_calculate_clicked();
 

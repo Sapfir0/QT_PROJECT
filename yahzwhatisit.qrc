@@ -10,7 +10,7 @@
         <file>img/arrow.jpg</file>
     </qresource>
     <qresource prefix="/">
-        <file>stylesheets.qml</file>
         <file>qss/style.qss</file>
+        <file>qss/function_button.qml</file>
     </qresource>
 </RCC>

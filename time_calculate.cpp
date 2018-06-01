@@ -18,6 +18,4 @@ void time_calculate::on_actionBack_triggered()
     hide();
     window_back = new secondwindow(this);   //////////////////////////////////////////раскомментить
     window_back->show();
-
-
 }
