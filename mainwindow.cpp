@@ -1,13 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QPixmap>
+#include <QPixmap> /////////////////////////все arg1 и ooo заменены на ppppp
 #include <QMessageBox>
 #include <QLCDNumber>
 //#include "secondwindow.h"
 #include <ctime>
 #include "sortings.h"
 
-int arg1=0, arg2=0; //global variables
+int ppp=0, ooo=0; //global variables
 int program=3;
 ////
 /// \brief DEVELOPER_MODE
@@ -25,8 +25,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->consider, SIGNAL(clicked()),this, SLOT(on_consider_clicked(void)));
     connect(ui->test_na_tebya, SIGNAL(clicked()),this, SLOT(test_na_pidor(void)));
-
-  //  connect(ui->pushButton_2, SIGNAL(clicked()),this, SLOT(on_lcdNumber_overflow(void)));
 
     //image
     QPixmap pix(":/new/prefix1/img/logo.png");
@@ -54,32 +52,32 @@ void MainWindow::on_pushButton_clicked()
     ui->printf_result->setText(QString::number(count));
 }
 
-void MainWindow::on_consider_clicked(/*int arg1, int arg2*/)
+void MainWindow::on_consider_clicked(/*int ppp, int ooo*/)
 {
     switch (program)
     {///////////////--------------------------------------CASE 1------------------------------------
     case 1:
     {
-        if(arg1 == 0 || arg2 == 0 && DEVELOPER_MODE!=true)
+        if(ppp == 0 || ooo == 0 && DEVELOPER_MODE!=true)
         {
               QMessageBox::information(NULL,("Error 1"),("Why you pressed this button without catets?"));
             //i dont know why this alert play 2 times
             //and its work nestabillno
         }
         else
-        ui->printf_result->setText(QString::number(pifagorianec(arg1, arg2)));
+        ui->printf_result->setText(QString::number(pifagorianec(ppp, ooo)));
 
         break;
     }///////////////--------------------------------------CASE 2-------------------------------------
 
     case 2:
     {
-        if(arg1 > 1000 && DEVELOPER_MODE!=true)
+        if(ppp > 1000 && DEVELOPER_MODE!=true)
         {
             QMessageBox msgBox;
             msgBox.setText("Alert");
             msgBox.setIcon(QMessageBox::Information);
-            msgBox.setInformativeText("It's dangerous count of variable arg1.\n Do u want to reset arg1 to 100 ?");
+            msgBox.setInformativeText("It's dangerous count of variable ppp.\n Do u want to reset ppp to 100 ?");
             msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
             msgBox.setDefaultButton(QMessageBox::Ok);
             int ret = msgBox.exec();
@@ -88,32 +86,32 @@ void MainWindow::on_consider_clicked(/*int arg1, int arg2*/)
             case QMessageBox::Save:
                  break;
               case QMessageBox::Ok:
-                arg1=100;
+                ppp=100;
                  break;
               default:
-                 arg1=100;
+                 ppp=100;
                  break;
             }
 
         }
         else
         {
-            ui->printf_result->setText(QString::number(fact(arg1)));
+            ui->printf_result->setText(QString::number(fact(ppp)));
         }
         break;
     }///////////////-------------------------------------CASE 3---------------------------------
     case 3:
     {
         unsigned int start_time =  clock(); // начальное время
-        int size_array = arg1; //первый инпут это колво элементов массива
+        int size_array = ppp; //первый инпут это колво элементов массива
         int *sorted_array = new int [size_array]; // одномерный динамический массив
 
-        if(arg1>MAX_SIZE && DEVELOPER_MODE!=true)
+        if(ppp>MAX_SIZE && DEVELOPER_MODE!=true)
         {
          QMessageBox msgBox;
          msgBox.setText("Alert");
          msgBox.setIcon(QMessageBox::Information);
-         msgBox.setInformativeText("It's dangerous count of variable arg1.\n Do u want to reset arg1 to 9999 ?");
+         msgBox.setInformativeText("It's dangerous count of variable ppp.\n Do u want to reset ppp to 9999 ?");
          msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
          msgBox.setDefaultButton(QMessageBox::Ok);
          int ret = msgBox.exec();
@@ -122,10 +120,10 @@ void MainWindow::on_consider_clicked(/*int arg1, int arg2*/)
          case QMessageBox::Save:
               break;
            case QMessageBox::Ok:
-             arg1=MAX_SIZE;
+             ppp=MAX_SIZE;
               break;
            default:
-              arg1=MAX_SIZE;
+              ppp=MAX_SIZE;
               break;
          }
 
@@ -151,15 +149,15 @@ void MainWindow::on_consider_clicked(/*int arg1, int arg2*/)
     }///////////////-------------------------------------CASE 4---------------------------------
     case 4: { //merge sort
          unsigned int start_time_m =  clock(); // начальное время
-         int size_array = arg1; //первый инпут это колво элементов массива
+         int size_array = ppp; //первый инпут это колво элементов массива
          int *a = new int [size_array]; // одномерный динамический массив
 
-    if(arg1>MAX_SIZE && DEVELOPER_MODE!=true)
+    if(ppp>MAX_SIZE && DEVELOPER_MODE!=true)
     {
         QMessageBox msgBox;
         msgBox.setText("Alert");
         msgBox.setIcon(QMessageBox::Information);
-        msgBox.setInformativeText("It's dangerous count of variable arg1.\n Do u want to reset arg1 to 9999 ?");
+        msgBox.setInformativeText("It's dangerous count of variable ppp.\n Do u want to reset ppp to 9999 ?");
         msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
         msgBox.setDefaultButton(QMessageBox::Ok);
         int ret = msgBox.exec();
@@ -167,10 +165,10 @@ void MainWindow::on_consider_clicked(/*int arg1, int arg2*/)
         case QMessageBox::Save:
              break;
           case QMessageBox::Ok:
-            arg1=MAX_SIZE;
+            ppp=MAX_SIZE;
              break;
           default:
-             arg1=MAX_SIZE;
+             ppp=MAX_SIZE;
              break;
         }
     }
@@ -190,10 +188,10 @@ void MainWindow::on_consider_clicked(/*int arg1, int arg2*/)
     {
         unsigned int start_time_q =  clock(); // начальное время
 
-        int size_array = arg1; //первый инпут это колво элементов массива
+        int size_array = ppp; //первый инпут это колво элементов массива
         int *a = new int [size_array]; // одномерный динамический массив
 
-        if(arg1>MAX_SIZE && DEVELOPER_MODE!=true)
+        if(ppp>MAX_SIZE && DEVELOPER_MODE!=true)
         {
             QMessageBox msgBox;
             // Заголовок сообщения
@@ -201,7 +199,7 @@ void MainWindow::on_consider_clicked(/*int arg1, int arg2*/)
             // Тип иконки сообщения
             msgBox.setIcon(QMessageBox::Information);
             // Основное сообщение Message Box
-            msgBox.setInformativeText("It's dangerous count of variable arg1.\n Do u want to reset arg1 to 9999 ?");
+            msgBox.setInformativeText("It's dangerous count of variable ppp.\n Do u want to reset ppp to 9999 ?");
             // Добавление реагирования на софт клавиши
             msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
             // На какой кнопке фокусироваться по умолчанию
@@ -213,10 +211,10 @@ void MainWindow::on_consider_clicked(/*int arg1, int arg2*/)
             case QMessageBox::Save:
                  break;
               case QMessageBox::Ok:
-                arg1=MAX_SIZE;
+                ppp=MAX_SIZE;
                  break;
               default:
-                 arg1=MAX_SIZE;
+                 ppp=MAX_SIZE;
                  // Сюда пишем обработку события по умолчанию
                  break;
             }
@@ -244,13 +242,13 @@ void MainWindow::on_consider_clicked(/*int arg1, int arg2*/)
 }
 
 
-void MainWindow::on_catet_a_valueChanged(int arg12)
+void MainWindow::on_catet_a_valueChanged(int ppp2)
 {
-    arg1 = arg12;
+    ppp = ppp2;
 }
-void MainWindow::on_catet_b_valueChanged(int arg22)
+void MainWindow::on_catet_b_valueChanged(int ooo2)
 {
-    arg2 = arg22;
+    ooo = ooo2;
 }
 
 void MainWindow::test_na_pidor()

@@ -15,8 +15,8 @@ function::~function()
 
 void function::on_actionBack_triggered()
 {
-    hide();
-    window_back_f = new secondwindow(this);   //////////////////////////////////////////раскомментить
-    window_back_f->show(); //error here
+//    hide();
+//    window_back_f = new secondwindow(this);   //////////////////////////////////////////раскомментить
+//    window_back_f->show(); //error here
 
 }

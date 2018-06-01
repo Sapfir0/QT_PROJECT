@@ -8,9 +8,13 @@
         <file>img/pifagor.jpg</file>
         <file>img/logo.png</file>
         <file>img/arrow.jpg</file>
+        <file>img/TWhoQi.jpg</file>
     </qresource>
     <qresource prefix="/">
         <file>qss/style.qss</file>
         <file>qss/function_button.qml</file>
+        <file>qss/time_calculate.qml</file>
+        <file>qss/Time.qml</file>
+        <file>qss/TimeForm.ui.qml</file>
     </qresource>
 </RCC>
