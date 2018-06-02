@@ -14,14 +14,14 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background-color: #2E2F30;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>10</y>
+      <x>200</x>
+      <y>20</y>
       <width>211</width>
       <height>41</height>
      </rect>
@@ -60,6 +60,9 @@
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
         <widget class="QComboBox" name="comboBox">
+         <property name="styleSheet">
+          <string notr="true">color: white;</string>
+         </property>
          <item>
           <property name="text">
            <string>Bubble sorting</string>
@@ -100,12 +103,7 @@
        <item>
         <widget class="QLabel" name="situation_arg1">
          <property name="styleSheet">
-          <string notr="true">QLabel {
-  color: white; 
-}
-
-
-</string>
+          <string notr="true">color: white;</string>
          </property>
          <property name="text">
           <string>Enter count elements</string>
@@ -124,14 +122,7 @@
           <bool>true</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">QLabel {
-  color: white; 
-}
-QSpinBox {
-color: white;
-}
-
-</string>
+          <string notr="true"/>
          </property>
          <property name="maximum">
           <number>999999999</number>
@@ -191,8 +182,7 @@ color: white;
               <string/>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: white;
-</string>
+              <string notr="true"/>
              </property>
              <property name="segmentStyle">
               <enum>QLCDNumber::Filled</enum>
@@ -237,8 +227,8 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
    <widget class="QComboBox" name="comboBox_2">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>20</y>
+      <x>540</x>
+      <y>390</y>
       <width>72</width>
       <height>22</height>
      </rect>

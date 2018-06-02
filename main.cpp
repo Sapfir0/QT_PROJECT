@@ -3,9 +3,12 @@
 #include <QApplication>
 
 #include <QFile>
-
+#include <QQmlContext>
+ #include <QQmlApplicationEngine>
 #include <QTranslator>
 #include <QLibraryInfo>
+
+#include "appcore.h"
 
 
 
@@ -24,14 +27,27 @@ int main(int argc, char *argv[])
 //    bool ok = a.exec();
 //    return ok;
 
+    QQmlApplicationEngine engine; // Создаём движок qml
+
+    AppCore appCore;    // Создаём ядро приложения
+    QQmlContext *context = engine.rootContext();    // Создаём корневой контекст
+    /* Загружаем объект в контекст для установки соединения,
+     * а также определяем имя, по которому будет происходить соединение
+     * */
+    context->setContextProperty("appCore", &appCore);
+
+    // И загружаем в него исходники qml
+    engine.load(QUrl(QStringLiteral("qrc:/consider.qml")));
+
+
 
  //   qApp->setStyleSheet(file.readAll());
 
 
 
-  // secondwindow w;
+   secondwindow w;
    // MainWindow w;
-    time_calculate w;
+  //  time_calculate w;
     w.show();
 
 

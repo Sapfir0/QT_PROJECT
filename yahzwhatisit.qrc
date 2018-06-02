@@ -11,9 +11,9 @@
         <file>img/TWhoQi.jpg</file>
     </qresource>
     <qresource prefix="/">
-        <file>qss/function_button.qml</file>
-        <file>qss/time_calculate.qml</file>
         <file>qss/Time.qml</file>
         <file>qss/TimeForm.ui.qml</file>
+        <file>qss/Consider.qml</file>
+        <file>qss/main.qml</file>
     </qresource>
 </RCC>

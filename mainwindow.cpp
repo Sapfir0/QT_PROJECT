@@ -5,7 +5,7 @@
 #include <QLCDNumber>
 //#include "secondwindow.h"
 #include <ctime>
-#include "sortings.h"
+//#include "sortings.h"
 
 int ppp=0, ooo=0; //global variables
 int program=3;
@@ -65,7 +65,7 @@ void MainWindow::on_consider_clicked(/*int ppp, int ooo*/)
             //and its work nestabillno
         }
         else
-        ui->printf_result->setText(QString::number(pifagorianec(ppp, ooo)));
+        //ui->printf_result->setText(QString::number(pifagorianec(ppp, ooo)));
 
         break;
     }///////////////--------------------------------------CASE 2-------------------------------------
@@ -96,7 +96,7 @@ void MainWindow::on_consider_clicked(/*int ppp, int ooo*/)
         }
         else
         {
-            ui->printf_result->setText(QString::number(fact(ppp)));
+            //ui->printf_result->setText(QString::number(fact(ppp)));
         }
         break;
     }///////////////-------------------------------------CASE 3---------------------------------
@@ -135,7 +135,7 @@ void MainWindow::on_consider_clicked(/*int ppp, int ooo*/)
                 sorted_array[counter] = rand() % 100; // заполняем массив случайными числами
         }
 
-        bubbleSort(sorted_array, size_array);
+        //bubbleSort(sorted_array, size_array);
 
         unsigned int end_time = clock(); // конечное время
         unsigned int search_time = end_time - start_time; // искомое время
@@ -177,7 +177,7 @@ void MainWindow::on_consider_clicked(/*int ppp, int ooo*/)
      {
              a[counter] = rand() % 100; // заполняем массив случайными числами
      }
-       merge(a, 8); // вызов функции сортировки
+       //merge(a, 8); // вызов функции сортировки
        unsigned int end_time_m = clock(); // конечное время
        unsigned int search_time_m = end_time_m - start_time_m; // искомое время
        ui->lcdNumber->display(QString::number(search_time_m/1000.0));
@@ -224,7 +224,7 @@ void MainWindow::on_consider_clicked(/*int ppp, int ooo*/)
                 a[counter] = rand() % 100; // заполняем массив случайными числами
         }
         int puk=0;
-        Qsort( a, 0, size_array, puk);
+        //Qsort( a, 0, size_array, puk);
         unsigned int end_time_q = clock(); // конечное время
         unsigned int search_time_q = end_time_q - start_time_q; // искомое время
         ui->lcdNumber->display(QString::number(search_time_q/1000.0));

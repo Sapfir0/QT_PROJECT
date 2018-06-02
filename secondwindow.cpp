@@ -21,13 +21,13 @@ secondwindow::~secondwindow()
 
 void secondwindow::on_time_calculate_clicked()
 {
-//    hide();
-//    window12 = new time_calculate(this);   //////////////////////////////////////////раскомментить
-//    window12->show();
+    hide();
+    window12 = new time_calculate(this);   //////////////////////////////////////////раскомментить
+    window12->show();
 }
 void secondwindow::on_function_button_clicked()
 {
-//    hide();
-//    window2 = new function(this);   //////////////////////////////////////////раскомментить
-//    window2->show();
+    hide();
+    window2 = new function(this);   //////////////////////////////////////////раскомментить
+    window2->show();
 }

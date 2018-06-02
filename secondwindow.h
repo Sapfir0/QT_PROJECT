@@ -5,7 +5,6 @@
 #include "time_calculate.h"
 #include "function.h"
 
-
 namespace Ui {
 class secondwindow;
 }
@@ -26,8 +25,8 @@ private slots:
 
 private:
     Ui::secondwindow *ui;
-//    time_calculate *window12; //привзяка расчитывания времени
-//    function *window2;
+    time_calculate *window12; //привзяка расчитывания времени
+    function *window2;
 
 };
 

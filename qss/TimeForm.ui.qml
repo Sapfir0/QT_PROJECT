@@ -1,7 +1,6 @@
 import QtQuick 2.4
 import QtQuick.Controls 2.3
-import QtQuick.Controls.Styles.Desktop 1.0
-import QtGraphicalEffects 1.0
+import QtTest 1.2
 
 Item {
     id: item1

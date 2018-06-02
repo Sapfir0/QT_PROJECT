@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+ QT += qml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -30,7 +31,8 @@ SOURCES += \
         mainwindow.cpp \
     secondwindow.cpp \
     time_calculate.cpp \
-    function.cpp
+    function.cpp \
+    appcore.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -38,7 +40,8 @@ HEADERS += \
     sortings.h \
     requests.h \
     time_calculate.h \
-    function.h
+    function.h \
+    appcore.h
 
 FORMS += \
         mainwindow.ui \

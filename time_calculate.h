@@ -27,9 +27,11 @@ private slots:
 
     void on_elements_count_valueChanged(int arg1);
 
+    void on_consider_clicked();
+
 private:
     Ui::time_calculate *ui;
-//    secondwindow *window_back;  //////////////////////////////////////////раскомментить
+    secondwindow *window_back;  //////////////////////////////////////////раскомментить
     QTranslator qtLanguageTranslator;   // Выделяем перевод в отдельном поле, иначе ничего работать не будет
 };
 
