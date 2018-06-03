@@ -1,3 +1,7 @@
+///
+///
+/// appcore нужен для qml вроде как
+
 #include "appcore.h"
 
 AppCore::AppCore(QObject *parent) : QObject(parent)

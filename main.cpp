@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     context->setContextProperty("appCore", &appCore);
 
     // И загружаем в него исходники qml
-    engine.load(QUrl(QStringLiteral("qrc:/consider.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/qss/Secondwindow.qml")));
 
 
 
@@ -45,9 +45,9 @@ int main(int argc, char *argv[])
 
 
 
-   secondwindow w;
-   // MainWindow w;
-  //  time_calculate w;
+  // secondwindow w;
+  //  MainWindow w;
+    time_calculate w;
     w.show();
 
 

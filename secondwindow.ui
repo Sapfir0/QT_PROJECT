@@ -13,32 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="function_button">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>120</y>
-     <width>141</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Function</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="time_calculate">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>120</y>
-     <width>141</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Time calculate</string>
-   </property>
-  </widget>
+  <property name="styleSheet">
+   <string notr="true">background-color: #2E2F30;</string>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -48,9 +25,98 @@
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: grey;</string>
+   </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#aaff7f;&quot;&gt;S. Production&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>361</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="function_button">
+      <property name="minimumSize">
+       <size>
+        <width>92</width>
+        <height>21</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>472</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton { 
+background-color: grey;
+border: 2px double black;
+border-radius: 5px;
+color: white;
+ max-width: 36em;
+
+ max-height: 2em;
+}
+QPushButton:hover {
+background-color: white;;
+color: black;
+}
+
+
+</string>
+      </property>
+      <property name="text">
+       <string>Function</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="time_calculate">
+      <property name="minimumSize">
+       <size>
+        <width>91</width>
+        <height>21</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>472</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton { 
+background-color: grey;
+border: 2px double black;
+border-radius: 5px;
+color: white;
+ max-width: 36em;
+
+ max-height: 2em;
+}
+QPushButton:hover {
+background-color: white;;
+color: black;
+}
+
+
+</string>
+      </property>
+      <property name="text">
+       <string>Time calculate</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

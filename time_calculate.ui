@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>619</width>
-    <height>497</height>
+    <height>496</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,14 +27,14 @@
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#00ff00;&quot;&gt;Time is great treasure&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#aaff7f;&quot;&gt;Time is great treasure&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="quote">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>250</y>
+      <x>360</x>
+      <y>260</y>
       <width>191</width>
       <height>41</height>
      </rect>
@@ -61,11 +61,34 @@
        <item>
         <widget class="QComboBox" name="comboBox">
          <property name="styleSheet">
-          <string notr="true">color: white;</string>
+          <string notr="true">color: #aaff7f;
+width: 50px;</string>
          </property>
          <item>
           <property name="text">
            <string>Bubble sorting</string>
+          </property>
+          <property name="icon">
+           <iconset resource="yahzwhatisit.qrc">
+            <normaloff>:/new/prefix1/img/B.png</normaloff>:/new/prefix1/img/B.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Merge sorting</string>
+          </property>
+          <property name="icon">
+           <iconset resource="yahzwhatisit.qrc">
+            <normaloff>:/new/prefix1/img/M.jpg</normaloff>:/new/prefix1/img/M.jpg</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Quick sorting</string>
+          </property>
+          <property name="icon">
+           <iconset resource="yahzwhatisit.qrc">
+            <normaloff>:/new/prefix1/img/Q.png</normaloff>:/new/prefix1/img/Q.png</iconset>
           </property>
          </item>
         </widget>
@@ -103,7 +126,7 @@
        <item>
         <widget class="QLabel" name="situation_arg1">
          <property name="styleSheet">
-          <string notr="true">color: white;</string>
+          <string notr="true">color: #aaff7f;</string>
          </property>
          <property name="text">
           <string>Enter count elements</string>
@@ -122,7 +145,7 @@
           <bool>true</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true"/>
+          <string notr="true">color: white;</string>
          </property>
          <property name="maximum">
           <number>999999999</number>
@@ -171,8 +194,11 @@
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
             <widget class="QLabel" name="label">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#ffffff;&quot;&gt;RUN TIME&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#aaff7f;&quot;&gt;RUN TIME&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
             </widget>
            </item>
@@ -182,7 +208,8 @@
               <string/>
              </property>
              <property name="styleSheet">
-              <string notr="true"/>
+              <string notr="true">color: #aaff7f;
+</string>
              </property>
              <property name="segmentStyle">
               <enum>QLCDNumber::Filled</enum>
@@ -227,8 +254,8 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
    <widget class="QComboBox" name="comboBox_2">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>390</y>
+      <x>530</x>
+      <y>330</y>
       <width>72</width>
       <height>22</height>
      </rect>
@@ -272,6 +299,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
     <bool>false</bool>
    </attribute>
    <addaction name="actionBack"/>
+   <addaction name="actionRefresh"/>
   </widget>
   <action name="actionEnglish">
    <property name="icon">
@@ -299,13 +327,22 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
   <action name="actionBack">
    <property name="icon">
     <iconset resource="yahzwhatisit.qrc">
-     <normaloff>:/new/prefix1/img/arrow.jpg</normaloff>:/new/prefix1/img/arrow.jpg</iconset>
+     <normaloff>:/new/prefix1/img/Arrow_left.png</normaloff>:/new/prefix1/img/Arrow_left.png</iconset>
    </property>
    <property name="text">
     <string>Back</string>
    </property>
    <property name="toolTip">
     <string>Back</string>
+   </property>
+  </action>
+  <action name="actionRefresh">
+   <property name="icon">
+    <iconset resource="yahzwhatisit.qrc">
+     <normaloff>:/new/prefix1/img/2183585b41e7.png</normaloff>:/new/prefix1/img/2183585b41e7.png</iconset>
+   </property>
+   <property name="text">
+    <string>Refresh</string>
    </property>
   </action>
  </widget>

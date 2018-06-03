@@ -410,7 +410,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
   <action name="actionBack">
    <property name="icon">
     <iconset resource="yahzwhatisit.qrc">
-     <normaloff>:/new/prefix1/img/arrow.jpg</normaloff>:/new/prefix1/img/arrow.jpg</iconset>
+     <normaloff>:/new/prefix1/img/Arrow_left.png</normaloff>:/new/prefix1/img/Arrow_left.png</iconset>
    </property>
    <property name="text">
     <string>Back</string>

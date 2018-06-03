@@ -2,7 +2,8 @@
 #define SECONDWINDOW_H
 
 #include <QDialog>
-#include "time_calculate.h"
+#include <QMainWindow>
+#include <time_calculate.h>
 #include "function.h"
 
 namespace Ui {
@@ -25,8 +26,8 @@ private slots:
 
 private:
     Ui::secondwindow *ui;
-    time_calculate *window12; //привзяка расчитывания времени
-    function *window2;
+//    time_calculate *time_window; //привзяка расчитывания времени
+//    function *window2;
 
 };
 

@@ -5,7 +5,7 @@ import QtQuick.Dialogs 1.2
 
 ApplicationWindow {
     visible: true
-    width: 640
+    width: 1640
     height: 480
     title: qsTr("Hello World") // Ну как же без Приветствия Миру
     color: "white"
@@ -25,7 +25,7 @@ ApplicationWindow {
         }
     }
 
-    MainForm {
+    Item {
         // Растягиваем объект главного окна по всему родительскому элементу
         anchors.fill: parent
 
@@ -44,18 +44,18 @@ ApplicationWindow {
         }
 
         // Стилизуем первую кнопку
-        button1.style: ButtonStyle {
+        function_button.style: ButtonStyle {
             // Программный код из предыдущего урока
         }
 
         // Стилизуем вторую кнопку
-        button2.style: ButtonStyle {
+        time_calculate.style: ButtonStyle {
             // Программный код из предыдущего урока
         }
 
         // Запускаем диалог по нажатию любой из кнопок в главном окне
-        button1.onClicked: dialogAndroid.open();
-        button2.onClicked: dialogAndroid.open();
+        function_button.onClicked: dialogAndroid.open();
+        time_calculate.onClicked: dialogAndroid.open();
 
         // Создаём объект диалогового окна
         Dialog {

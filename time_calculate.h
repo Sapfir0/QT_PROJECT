@@ -29,10 +29,13 @@ private slots:
 
     void on_consider_clicked();
 
+    void on_actionRefresh_triggered();
+
 private:
     Ui::time_calculate *ui;
-    secondwindow *window_back;  //////////////////////////////////////////раскомментить
     QTranslator qtLanguageTranslator;   // Выделяем перевод в отдельном поле, иначе ничего работать не будет
+    //secondwindow *window_back;  //////////////////////////////////////////раскомментить
+
 };
 
 #endif // TIME_CALCULATE_H

@@ -45,9 +45,9 @@ time_calculate::~time_calculate()
 
 void time_calculate::on_actionBack_triggered()
 {
-    hide();
-    window_back = new secondwindow(this);   //////////////////////////////////////////раскомментить
-    window_back->show();
+//    hide();
+//    window_back = new secondwindow(this);   //////////////////////////////////////////раскомментить
+//    window_back->show();
 }
 void time_calculate::changeEvent(QEvent *event)
 {
@@ -116,6 +116,28 @@ void time_calculate::on_consider_clicked()
 
     default:
         break;
+    }
+
+
+}
+
+void time_calculate::on_actionRefresh_triggered()
+{
+    setlocale (LC_ALL,""); // установить используемую системой локаль
+    int trollface=0;
+    QMessageBox::critical(NULL,QObject::tr("Error #0"),tr("Страницу обновить вздумал, мразь? Только попробуй нажать еще раз."));
+
+    trollface++;
+    if(trollface==1)
+    {
+        QMessageBox::critical(NULL,QObject::tr("Error #1"),tr("Ты шо нажал еще раз? Нажмешь еще раз, я тебя накажу."));
+        trollface++;
+
+    }
+    if(trollface==2)
+    {
+        QMessageBox::critical(NULL,QObject::tr("Error #2"),tr("Пшел вон, непокорный."));
+        QApplication::quit();
     }
 
 

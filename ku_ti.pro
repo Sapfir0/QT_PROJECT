@@ -5,7 +5,8 @@
 #-------------------------------------------------
 
 QT       += core gui
- QT += qml
+QT += qml
+QT += qml quick widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
