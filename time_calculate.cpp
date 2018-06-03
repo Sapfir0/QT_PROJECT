@@ -19,6 +19,8 @@ time_calculate::time_calculate(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->label->setStyleSheet("QLabel{background-color: rgba(135, 206, 235, 80);}");
+
     connect(ui->consider, SIGNAL(clicked()),this, SLOT(on_consider_clicked(void)));
 
         ui->comboBox_2->addItems(QStringList() << "ru_RU" << "en_US");

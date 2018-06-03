@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>745</width>
-    <height>505</height>
+    <width>644</width>
+    <height>486</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,76 +17,197 @@
    <string notr="true">background-color: #2E2F30;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QColumnView" name="columnView">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>30</y>
-      <width>681</width>
-      <height>351</height>
+      <x>-30</x>
+      <y>-60</y>
+      <width>761</width>
+      <height>501</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_4">
-     <item>
-      <spacer name="verticalSpacer_5">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_2">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#aaff7f;&quot;&gt;Time is great treasure&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="verticalSpacer_6">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <spacer name="verticalSpacer_4">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3"/>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
-         <item>
-          <widget class="QComboBox" name="comboBox">
-           <property name="styleSheet">
-            <string notr="true">QComboBox {
+    <property name="styleSheet">
+     <string notr="true">
+background-image: url(:/new/prefix1/img/blue-bubbles-9789.jpg);
+background-repeat: no-repeat </string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>0</number>
+    </property>
+    <property name="midLineWidth">
+     <number>0</number>
+    </property>
+    <property name="tabKeyNavigation">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_2">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>350</y>
+      <width>51</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumber">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>80</y>
+      <width>101</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string/>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: skyblue;
+background-image: url(:/new/prefix1/img/run.png);
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <property name="lineWidth">
+     <number>0</number>
+    </property>
+    <property name="segmentStyle">
+     <enum>QLCDNumber::Filled</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="quote">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>370</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/new/prefix1/img/quote.png);
+</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#87ceeb;&quot;&gt;Lost time is never found again.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>201</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid #C2C7CB;
+color: white;
+}
+
+QTabWidget::tab-bar {
+    left: 15px; /* move to the right by 5px */
+}
+
+/* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+QTabBar::tab {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 2px solid #C4C4C3;
+    border-bottom-color: #C2C7CB; /* same as the pane color */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-width: 8ex;
+    padding: 2px;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+}
+
+QTabBar::tab:selected {
+    border-color: #9B9B9B;
+    border-bottom-color: #C2C7CB; /* same as pane color */
+}
+
+QTabBar::tab:!selected {
+    margin-top: 2px; /* make non-selected tabs look smaller */
+}
+
+/* make use of negative margins for overlapping tabs */
+QTabBar::tab:selected {
+    /* expand/overlap to the left and right by 4px */
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+QTabBar::tab:first:selected {
+    margin-left: 0; /* the first selected tab has nothing to overlap with on the left */
+}
+
+QTabBar::tab:last:selected {
+    margin-right: 0; /* the last selected tab has nothing to overlap with on the right */
+}
+
+QTabBar::tab:only-one {
+    margin: 0; /* if there is only one tab, we don't want overlapping margins */
+}</string>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Tab 1</string>
+     </attribute>
+     <widget class="QListView" name="listView">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>1</y>
+        <width>211</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/new/prefix1/img/tab.png);</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>128</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox {
     border: 1px solid gray;
     border-radius: 3px;
     padding: 1px 18px 1px 3px;
@@ -139,170 +260,120 @@ QComboBox QAbstractItemView {
     border: 2px solid darkgray;
     selection-background-color: lightgray;
 }</string>
-           </property>
-           <item>
-            <property name="text">
-             <string>Bubble sorting</string>
-            </property>
-            <property name="icon">
-             <iconset resource="yahzwhatisit.qrc">
-              <normaloff>:/new/prefix1/img/B.png</normaloff>:/new/prefix1/img/B.png</iconset>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Merge sorting</string>
-            </property>
-            <property name="icon">
-             <iconset resource="yahzwhatisit.qrc">
-              <normaloff>:/new/prefix1/img/M.jpg</normaloff>:/new/prefix1/img/M.jpg</iconset>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Quick sorting</string>
-            </property>
-            <property name="icon">
-             <iconset resource="yahzwhatisit.qrc">
-              <normaloff>:/new/prefix1/img/Q.png</normaloff>:/new/prefix1/img/Q.png</iconset>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item>
-          <spacer name="verticalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QLabel" name="situation_arg1">
-           <property name="styleSheet">
-            <string notr="true">color: #aaff7f;</string>
-           </property>
-           <property name="text">
-            <string>Enter count elements</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="elements_count">
-           <property name="maximumSize">
-            <size>
-             <width>92</width>
-             <height>22</height>
-            </size>
-           </property>
-           <property name="mouseTracking">
-            <bool>true</bool>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: white;</string>
-           </property>
-           <property name="maximum">
-            <number>999999999</number>
-           </property>
-           <property name="singleStep">
-            <number>10</number>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <widget class="QSplitter" name="splitter_3">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <widget class="QWidget" name="horizontalLayoutWidget">
-            <layout class="QHBoxLayout" name="horizontalLayout">
-             <item>
-              <widget class="QLabel" name="label">
-               <property name="styleSheet">
-                <string notr="true">width: 150px;</string>
-               </property>
-               <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#aaff7f;&quot;&gt;RUN TIME&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLCDNumber" name="lcdNumber">
-               <property name="statusTip">
-                <string/>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">color: #aaff7f;
+      </property>
+      <item>
+       <property name="text">
+        <string>Bubble sorting</string>
+       </property>
+       <property name="icon">
+        <iconset resource="yahzwhatisit.qrc">
+         <normaloff>:/new/prefix1/img/B.png</normaloff>:/new/prefix1/img/B.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Merge sorting</string>
+       </property>
+       <property name="icon">
+        <iconset resource="yahzwhatisit.qrc">
+         <normaloff>:/new/prefix1/img/M.jpg</normaloff>:/new/prefix1/img/M.jpg</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Quick sorting</string>
+       </property>
+       <property name="icon">
+        <iconset resource="yahzwhatisit.qrc">
+         <normaloff>:/new/prefix1/img/Q.png</normaloff>:/new/prefix1/img/Q.png</iconset>
+       </property>
+      </item>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Tab 2</string>
+     </attribute>
+     <widget class="QListView" name="listView_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>211</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/new/prefix1/img/tab.png);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="situation_arg1">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>102</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:  skyblue;
+background-image: url(:/new/prefix1/img/blue-bubbles-9789.jpg);</string>
+      </property>
+      <property name="text">
+       <string>Enter count elements</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="elements_count">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>92</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>92</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    padding-right: 15px; /* make room for the arrows */
+    border-image: url(:/images/frame.png) 4;
+    border-width: 3;
+  background-color: #3B6582;
+}
+
+
 </string>
-               </property>
-               <property name="segmentStyle">
-                <enum>QLCDNumber::Filled</enum>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="consider">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
+      </property>
+      <property name="maximum">
+       <number>999999999</number>
+      </property>
+      <property name="singleStep">
+       <number>10</number>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="consider">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>151</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
   background-color: #3B6582;
   color: white; 
  width:  100px;
@@ -317,75 +388,58 @@ color: black;
 }
 QPushButton:pressed {  background-color rgb(220, 116, 45) 
 }</string>
-           </property>
-           <property name="text">
-            <string>Сalculate</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <spacer name="verticalSpacer_3">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="quote">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#ffff7f;&quot;&gt;Lost time is never found again.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+      </property>
+      <property name="text">
+       <string>Сalculate</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
-   <widget class="QColumnView" name="columnView">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>-10</x>
-      <y>0</y>
-      <width>761</width>
-      <height>441</height>
+      <x>530</x>
+      <y>130</y>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">
-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.971591, stop:0 rgba(143, 188, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
+color:  skyblue;
+font-size: 18px;
+background-image: url(:/new/prefix1/img/run.png);</string>
+    </property>
+    <property name="text">
+     <string>Run Time</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox_2">
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>680</x>
-      <y>400</y>
-      <width>51</width>
-      <height>22</height>
+      <x>230</x>
+      <y>20</y>
+      <width>201</width>
+      <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">
+color:  skyblue;
+font-size: 18px;
+background-image: url(:/new/prefix1/img/logo.png);   </string>
+    </property>
+    <property name="text">
+     <string>Time is a great treasure</string>
+    </property>
    </widget>
-   <zorder>columnView</zorder>
-   <zorder>verticalLayoutWidget</zorder>
-   <zorder>comboBox_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>745</width>
+     <width>644</width>
      <height>20</height>
     </rect>
    </property>
