@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>644</width>
-    <height>486</height>
+    <width>640</width>
+    <height>497</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -114,7 +114,7 @@ background-image: url(:/new/prefix1/img/run.png);
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>10</y>
       <width>201</width>
       <height>211</height>
      </rect>
@@ -126,7 +126,7 @@ color: white;
 }
 
 QTabWidget::tab-bar {
-    left: 15px; /* move to the right by 5px */
+    left: 25px; /* move to the right by 5px */
 }
 
 /* Style the tab using the tab sub-control. Note that
@@ -139,7 +139,7 @@ QTabBar::tab {
     border-bottom-color: #C2C7CB; /* same as the pane color */
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    min-width: 8ex;
+    min-width: 18ex;
     padding: 2px;
 }
 
@@ -200,7 +200,7 @@ QTabBar::tab:only-one {
      <widget class="QComboBox" name="comboBox">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>20</x>
         <y>30</y>
         <width>128</width>
         <height>22</height>
@@ -398,7 +398,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>530</x>
+      <x>550</x>
       <y>130</y>
       <width>81</width>
       <height>31</height>
@@ -408,7 +408,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
      <string notr="true">
 color:  skyblue;
 font-size: 18px;
-background-image: url(:/new/prefix1/img/run.png);</string>
+background-image: url(:/new/prefix1/img/runtime.png);</string>
     </property>
     <property name="text">
      <string>Run Time</string>
@@ -439,9 +439,46 @@ background-image: url(:/new/prefix1/img/logo.png);   </string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>644</width>
-     <height>20</height>
+     <width>640</width>
+     <height>17</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QMenu {
+    background-color: #ABABAB; /* sets background of the menu */
+
+    border: 1px solid black;
+}
+
+QMenu::item {
+    /* sets background of menu item. set this to something non-transparent
+        if you want menu color and menu item color to be different */
+    background-color: transparent;
+}
+
+QMenu::item:selected { /* when user selects item using mouse or keyboard */
+    background-color: steelblue;
+}
+QMenuBar {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 lightgray, stop:1 darkgray);
+color: steelblue;
+}
+
+QMenuBar::item {
+    spacing: 3px; /* spacing between menu bar items */
+    padding: 1px 4px;
+    background: transparent;
+    border-radius: 4px;
+}
+
+QMenuBar::item:selected { /* when selected using mouse or keyboard */
+    background: #a8a8a8;
+}
+
+QMenuBar::item:pressed {
+    background: #888888;
+}</string>
    </property>
    <widget class="QMenu" name="menuSettings">
     <property name="title">
@@ -463,6 +500,23 @@ background-image: url(:/new/prefix1/img/logo.png);   </string>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
     <string>toolBar</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: #ABABAB;
+    spacing: 3px; /* spacing between items in the tool bar */
+    spacing: 3px; /* spacing between items in the tool bar */
+
+
+QToolBar::item {
+    background: red;
+}
+QToolBar::item:selected { /* when user selects item using mouse or keyboard */
+    background-color: #ABABAB;
+}
+</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
