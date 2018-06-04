@@ -19,6 +19,8 @@ public:
 private slots:
     void on_actionBack_triggered();
 
+    void on_actionFactorial_triggered();
+
 private:
     Ui::function *ui;
 //    secondwindow *window_back_f(); //////////////////////////////////////////раскомментить

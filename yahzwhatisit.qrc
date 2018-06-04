@@ -14,6 +14,12 @@
         <file>img/Q.png</file>
         <file>img/B.png</file>
         <file>img/M.jpg</file>
+        <file>img/blue-bubbles-9789.jpg</file>
+        <file>img/quote.png</file>
+        <file>img/tab.png</file>
+        <file>img/run.png</file>
+        <file>img/img_7418.png</file>
+        <file>img/runtime.png</file>
     </qresource>
     <qresource prefix="/">
         <file>qss/Time.qml</file>

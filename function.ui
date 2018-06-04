@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>417</width>
-    <height>470</height>
+    <width>611</width>
+    <height>473</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,110 +17,188 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>10</y>
+      <x>190</x>
+      <y>0</y>
       <width>47</width>
-      <height>13</height>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
      <string>Functions</string>
     </property>
    </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
+   <widget class="QPushButton" name="consider">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>40</y>
-      <width>391</width>
-      <height>231</height>
+      <x>300</x>
+      <y>200</y>
+      <width>158</width>
+      <height>27</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  background-color: #3B6582;
+  color: white; 
+ width:  100px;
+ height: 25px;
+  border: 1px solid gray;
+}
+
+
+QPushButton:hover {
+    background-color: #E1E8EE;
+color: black;
+}
+QPushButton:pressed {  background-color rgb(220, 116, 45) 
+}</string>
+    </property>
+    <property name="text">
+     <string>Сalculate</string>
+    </property>
+   </widget>
+   <widget class="QSplitter" name="splitter_2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>320</y>
+      <width>191</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QLabel" name="INFO">
+     <property name="styleSheet">
+      <string notr="true">color: MidnightBlue;</string>
+     </property>
+     <property name="text">
+      <string>Result =</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="printf_result">
+     <property name="maximumSize">
+      <size>
+       <width>100</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: MidnightBlue;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>150</y>
+      <width>201</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QComboBox" name="change_func">
-         <property name="styleSheet">
-          <string notr="true">color: white;</string>
-         </property>
-         <item>
-          <property name="text">
-           <string>Factorial</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
+      <widget class="QLabel" name="image">
+       <property name="text">
+        <string>icon</string>
+       </property>
+      </widget>
      </item>
      <item>
-      <widget class="QSplitter" name="splitter_5">
+      <widget class="Line" name="line">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <widget class="QSplitter" name="splitter_4">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <widget class="QSplitter" name="splitter_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="description">
+       <property name="styleSheet">
+        <string notr="true">color: MidnightBlue;</string>
+       </property>
+       <property name="text">
+        <string>Описание</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="desc_refinement">
+       <property name="styleSheet">
+        <string notr="true">color: MidnightBlue;</string>
+       </property>
+       <property name="text">
+        <string>уточнение</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Временная сложность</string>
          </property>
         </widget>
-        <widget class="QSplitter" name="splitter">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>о методе</string>
          </property>
-         <widget class="QWidget" name="verticalLayoutWidget">
-          <property name="styleSheet">
-           <string notr="true">QLabel {
-  color: white; 
-}
-
-</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_3">
-           <item>
-            <widget class="QLabel" name="first_count_2">
-             <property name="styleSheet">
-              <string notr="true">QLabel {
-  color: white; 
-}
-
-
-</string>
-             </property>
-             <property name="text">
-              <string>Enter first count</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QSpinBox" name="first_count">
-             <property name="maximumSize">
-              <size>
-               <width>92</width>
-               <height>22</height>
-              </size>
-             </property>
-             <property name="mouseTracking">
-              <bool>true</bool>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLabel {
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>70</y>
+      <width>160</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLabel" name="first_count_2">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Enter first count</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="first_count">
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
   color: white; 
 }
 QSpinBox {
@@ -128,230 +206,63 @@ color: white;
 }
 
 </string>
-             </property>
-             <property name="maximum">
-              <number>999999999</number>
-             </property>
-             <property name="singleStep">
-              <number>10</number>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="second_count_2">
-             <property name="styleSheet">
-              <string notr="true">QLabel {
-  color: white; 
-}
-
-</string>
-             </property>
-             <property name="text">
-              <string>Enter second count</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QSpinBox" name="second_count">
-             <property name="styleSheet">
-              <string notr="true">QSpinBox {
+       </property>
+       <property name="maximum">
+        <number>999999999</number>
+       </property>
+       <property name="singleStep">
+        <number>10</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="second_count_2">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Enter second count</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="second_count">
+       <property name="styleSheet">
+        <string notr="true">QSpinBox {
 color: white;
 }
 </string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QSplitter" name="splitter_2">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLabel {
-  color: white; 
-}
-
-</string>
-             </property>
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <widget class="QLabel" name="INFO">
-              <property name="styleSheet">
-               <string notr="true">QPushButton {
-  background-color: #3B6582;
-  color: white; 
- width:  100px;
- height: 25px;
-  border: 1px solid gray;
-}
-
-
-QPushButton:hover {
-    background-color: #E1E8EE;
-
-}
-QPushButton:pressed {  background-color rgb(220, 116, 45) 
-}</string>
-              </property>
-              <property name="text">
-               <string>Result =</string>
-              </property>
-             </widget>
-             <widget class="QLabel" name="printf_result">
-              <property name="maximumSize">
-               <size>
-                <width>100</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton {
-  background-color: #3B6582;
-  color: white; 
- width:  100px;
- height: 25px;
-  border: 1px solid gray;
-}
-
-
-QPushButton:hover {
-    background-color: #E1E8EE;
-
-}
-QPushButton:pressed {  background-color rgb(220, 116, 45) 
-}</string>
-              </property>
-              <property name="text">
-               <string>TextLabel</string>
-              </property>
-             </widget>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="verticalLayoutWidget_2">
-          <layout class="QVBoxLayout" name="verticalLayout_2">
-           <item>
-            <widget class="QPushButton" name="consider">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-  background-color: #3B6582;
-  color: white; 
- width:  100px;
- height: 25px;
-  border: 1px solid gray;
-}
-
-
-QPushButton:hover {
-    background-color: #E1E8EE;
-color: black;
-}
-QPushButton:pressed {  background-color rgb(220, 116, 45) 
-}</string>
-             </property>
-             <property name="text">
-              <string>Сalculate</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_2">
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-  background-color: #3B6582;
-  color: white; 
- width:  100px;
- height: 25px;
-  border: 1px solid gray;
-}
-
-
-QPushButton:hover {
-    background-color: #E1E8EE;
-color: black;
-}
-QPushButton:pressed {  background-color rgb(220, 116, 45) 
-}</string>
-             </property>
-             <property name="text">
-              <string>new window</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="test_na_tebya">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-  background-color: #3B6582;
-  color: white; 
- width:  100px;
- height: 25px;
-  border: 1px solid gray;
-}
-
-
-QPushButton:hover {
-    background-color: #E1E8EE;
-color: black;
-}
-QPushButton:pressed {  background-color rgb(220, 116, 45) 
-}</string>
-             </property>
-             <property name="text">
-              <string>Тест на пидора</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="quit">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-  background-color: #3B6582;
-  color: white; 
- width:  100px;
- height: 25px;
-  border: 1px solid gray;
-}
-
-
-QPushButton:hover {
-    background-color: #E1E8EE;
-color: black;
-}
-QPushButton:pressed {  background-color rgb(220, 116, 45) 
-}</string>
-             </property>
-             <property name="text">
-              <string>Quit</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </widget>
-       </widget>
+       </property>
       </widget>
      </item>
     </layout>
    </widget>
+   <widget class="QColumnView" name="columnView">
+    <property name="geometry">
+     <rect>
+      <x>-20</x>
+      <y>0</y>
+      <width>541</width>
+      <height>491</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.820225, y2:0.795, stop:0 rgba(64, 154, 184, 255), stop:1 rgba(255, 255, 255, 255));</string>
+    </property>
+   </widget>
+   <zorder>columnView</zorder>
+   <zorder>label</zorder>
+   <zorder>consider</zorder>
+   <zorder>splitter_2</zorder>
+   <zorder>verticalLayoutWidget</zorder>
+   <zorder>verticalLayoutWidget_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>417</width>
+     <width>611</width>
      <height>20</height>
     </rect>
    </property>
@@ -376,13 +287,18 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
    <property name="windowTitle">
     <string>toolBar</string>
    </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
+   </property>
    <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
+    <enum>LeftToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>false</bool>
+    <bool>true</bool>
    </attribute>
-   <addaction name="actionBack"/>
+   <addaction name="actionFactorial"/>
+   <addaction name="separator"/>
+   <addaction name="actionDerivative"/>
   </widget>
   <action name="actionEnglish">
    <property name="icon">
@@ -407,16 +323,18 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
     <string>Others</string>
    </property>
   </action>
-  <action name="actionBack">
+  <action name="actionFactorial">
    <property name="icon">
     <iconset resource="yahzwhatisit.qrc">
-     <normaloff>:/new/prefix1/img/Arrow_left.png</normaloff>:/new/prefix1/img/Arrow_left.png</iconset>
+     <normaloff>:/new/prefix1/img/fact.png</normaloff>:/new/prefix1/img/fact.png</iconset>
    </property>
    <property name="text">
-    <string>Back</string>
+    <string>Factorial</string>
    </property>
-   <property name="toolTip">
-    <string>back</string>
+  </action>
+  <action name="actionDerivative">
+   <property name="text">
+    <string>Derivative</string>
    </property>
   </action>
  </widget>
