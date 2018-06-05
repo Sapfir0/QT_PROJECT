@@ -17,8 +17,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>0</y>
+      <x>210</x>
+      <y>10</y>
       <width>47</width>
       <height>20</height>
      </rect>
@@ -106,7 +106,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
      <rect>
       <x>40</x>
       <y>150</y>
-      <width>201</width>
+      <width>202</width>
       <height>151</height>
      </rect>
     </property>
@@ -114,7 +114,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
      <item>
       <widget class="QLabel" name="image">
        <property name="text">
-        <string>icon</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;icon&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -128,10 +128,11 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
      <item>
       <widget class="QLabel" name="description">
        <property name="styleSheet">
-        <string notr="true">color: MidnightBlue;</string>
+        <string notr="true">color: MidnightBlue;
+    text-align: center;</string>
        </property>
        <property name="text">
-        <string>Описание</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Описание&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -148,7 +149,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
         <string notr="true">color: MidnightBlue;</string>
        </property>
        <property name="text">
-        <string>уточнение</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;уточнение&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -156,8 +157,11 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QLabel" name="label_6">
+         <property name="styleSheet">
+          <string notr="true">color: MidnightBlue;</string>
+         </property>
          <property name="text">
-          <string>Временная сложность</string>
+          <string>Примерная сложность</string>
          </property>
         </widget>
        </item>
@@ -198,11 +202,9 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
         <bool>true</bool>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-  color: white; 
-}
-QSpinBox {
-color: white;
+        <string notr="true">QSpinBox {
+color: MidnightBlue;
+background-color: skyblue;
 }
 
 </string>
@@ -229,8 +231,10 @@ color: white;
       <widget class="QSpinBox" name="second_count">
        <property name="styleSheet">
         <string notr="true">QSpinBox {
-color: white;
+color: MidnightBlue;
+background-color: skyblue;
 }
+
 </string>
        </property>
       </widget>
@@ -294,7 +298,7 @@ color: white;
     <enum>LeftToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>true</bool>
+    <bool>false</bool>
    </attribute>
    <addaction name="actionFactorial"/>
    <addaction name="separator"/>

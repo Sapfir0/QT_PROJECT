@@ -5,11 +5,13 @@
 #include <QMessageBox>
 #include <QLibraryInfo>
 #include <QDebug>
+#include <QProgressBar>
 #include "sortings.h"
+//#include "coloredprogressbar.h" //удалить к чертям этот класс
 
 
 int arg1=0; //global variable
-int program2 = 0;
+int program2 = 1;
 bool DEV_MODE=false;
 int MAX_ACCEPTABLY=9999;
 
@@ -128,7 +130,7 @@ void time_calculate::on_actionRefresh_triggered()
     setlocale (LC_ALL,""); // установить используемую системой локаль
     int trollface=0;
     QMessageBox::critical(NULL,QObject::tr("Error #0"),tr("Страницу обновить вздумал, мразь? Только попробуй нажать еще раз."));
-
+    return;
     trollface++;
     if(trollface==1)
     {
@@ -142,5 +144,74 @@ void time_calculate::on_actionRefresh_triggered()
         QApplication::quit();
     }
 
+
+}
+
+void time_calculate::on_progressBar_valueChanged(int value)
+{
+value=20;
+
+QString style_p = "QProgressBar {border: 2px solid grey;background-color: #02315F;border-radius: 5px;text-align: center;}";
+
+QString red_style = "QProgressBar::chunk {background: red;}";
+QString orange_style= "QProgressBar::chunk {background: orange;}";
+QString yellow_style= "QProgressBar::chunk {background: yellow;}";
+QString green_style= "QProgressBar::chunk {background: green;}";
+//    1. C – константа
+//    2. log(log(N))
+//    3. log(N)
+//    5. N
+//    6. N*log(N)
+//    9. N!
+//QProgressBar {
+//    border: 2px solid grey;
+//    background-color: #02315F;
+//    border-radius: 5px;
+//    text-align: center;
+//    color: red;
+//}
+//QProgressBar::chunk {
+//    background-color: #05B8CC;  /*  */
+//    width: 20px;
+
+ui->progressBar->setStyleSheet(style_p);
+
+    if (ui->progressBar->value()<30)
+    {
+
+        ui->progressBar->setStyleSheet(green_style);
+
+
+    }
+
+
+    //цвет green
+    //длина полосы = 30%
+    //надпись log(n)
+
+    else if (ui->progressBar->value()>=30 &&ui->progressBar->value()<50)
+    {
+        ui->progressBar->setStyleSheet(yellow_style);
+
+    //цвет yellow
+    //длина полосы = 50%
+    //надпись n
+    }
+    else if (ui->progressBar->value()>=50 && ui->progressBar->value() < 70)
+    {
+        ui->progressBar->setStyleSheet(orange_style);
+
+    //цвет orange
+    //длина полосы = 70%
+    //надпись n^2
+    }
+    else if (ui->progressBar->value()>=70 && ui->progressBar->value() <= 100)
+    {
+        ui->progressBar->setStyleSheet(red_style);
+
+    //цвет red
+    //длина полосы = 90%
+    //надпись 2^n
+    }
 
 }

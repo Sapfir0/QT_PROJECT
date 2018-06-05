@@ -20,6 +20,7 @@
         <file>img/run.png</file>
         <file>img/img_7418.png</file>
         <file>img/runtime.png</file>
+        <file>img/laptop.png</file>
     </qresource>
     <qresource prefix="/">
         <file>qss/Time.qml</file>

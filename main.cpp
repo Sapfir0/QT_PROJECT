@@ -46,9 +46,9 @@ int main(int argc, char *argv[])
 
 
   // secondwindow w;
-   // MainWindow w;
-  //  time_calculate w;
-    function w;
+   //MainWindow w;
+    time_calculate w;
+  //  function w;
     w.show();
 
 

@@ -16,6 +16,8 @@ class time_calculate : public QMainWindow
 public:
     explicit time_calculate(QWidget *parent = 0);
     ~time_calculate();
+    bool DEV_MODE=false;
+
 
 protected:
     // ћетод получени€ событий в главном окне приложени€
@@ -30,6 +32,8 @@ private slots:
     void on_consider_clicked();
 
     void on_actionRefresh_triggered();
+
+    void on_progressBar_valueChanged(int value);
 
 private:
     Ui::time_calculate *ui;

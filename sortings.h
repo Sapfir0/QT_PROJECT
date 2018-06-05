@@ -102,11 +102,6 @@ void Qsort(type mas, int left, int right, type2 puk)
 
 
 
-unsigned long long int fact(int arg1)
-{
-        return arg1<=1 ? 1 : arg1 * fact(arg1 - 1); // делаем рекурсию.
-}
-
 int pifagorianec(int arg1, int arg2)
 {
     return (sqrt(arg1*arg1 + arg2*arg2)); //пифагор

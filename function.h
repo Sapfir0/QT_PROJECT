@@ -21,6 +21,12 @@ private slots:
 
     void on_actionFactorial_triggered();
 
+    void on_consider_clicked();
+
+    void on_first_count_valueChanged(int arg1);
+
+    void on_actionDerivative_triggered();
+
 private:
     Ui::function *ui;
 //    secondwindow *window_back_f(); //////////////////////////////////////////раскомментить
