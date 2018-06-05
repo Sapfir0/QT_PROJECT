@@ -69,7 +69,8 @@ void time_calculate::on_elements_count_valueChanged(int arg12)
 
 void time_calculate::on_consider_clicked()
 {
-    switch (program2) {
+    switch (program2)
+    {
     case 1:
     {
         unsigned int start_time =  clock(); // начальное врем€
@@ -116,6 +117,44 @@ void time_calculate::on_consider_clicked()
         delete[] sorted_array;
      break;
     }
+        //////////////////////////////
+    case 2:
+    { //merge sort
+         unsigned int start_time_m =  clock(); // начальное врем€
+         int size_array = arg1; //первый инпут это колво элементов массива
+         int *a = new int [size_array]; // одномерный динамический массив
+
+    if(arg1>MAX_ACCEPTABLY && DEV_MODE!=true)
+    {
+        QMessageBox msgBox;
+        msgBox.setText("Alert");
+        msgBox.setIcon(QMessageBox::Information);
+        msgBox.setInformativeText("It's dangerous count of variable ppp.\n Do u want to reset ppp to 9999 ?");
+        msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+        msgBox.setDefaultButton(QMessageBox::Ok);
+        int ret = msgBox.exec();
+        switch (ret) {
+        case QMessageBox::Save:
+             break;
+          case QMessageBox::Ok:
+            arg1=MAX_ACCEPTABLY;
+             break;
+          default:
+             arg1=MAX_ACCEPTABLY;
+             break;
+        }
+    }
+
+     for (int counter = 0; counter < size_array; counter++)
+     {
+             a[counter] = rand() % 100; // заполн€ем массив случайными числами
+     }
+       merge(a, 8); // вызов функции сортировки
+       unsigned int end_time_m = clock(); // конечное врем€
+       unsigned int search_time_m = end_time_m - start_time_m; // искомое врем€
+       ui->lcdNumber->display(QString::number(search_time_m/1000.0));
+    break;
+    }
 
 
     default:
@@ -149,50 +188,30 @@ void time_calculate::on_actionRefresh_triggered()
 
 void time_calculate::on_progressBar_valueChanged(int value)
 {
-value=20;
 
-QString style_p = "QProgressBar {border: 2px solid grey;background-color: #02315F;border-radius: 5px;text-align: center;}";
 
-QString red_style = "QProgressBar::chunk {background: red;}";
-QString orange_style= "QProgressBar::chunk {background: orange;}";
-QString yellow_style= "QProgressBar::chunk {background: yellow;}";
-QString green_style= "QProgressBar::chunk {background: green;}";
+QString red_style = "QProgressBar {border: 2px solid grey;background-color: #02315F;border-radius: 5px;text-align: center;} QProgressBar::chunk {background: red;}";
+QString orange_style= "QProgressBar {border: 2px solid grey;background-color: #02315F;border-radius: 5px;text-align: center;} QProgressBar::chunk {background: orange;}";
+QString yellow_style= "QProgressBar {border: 2px solid grey;background-color: #02315F;border-radius: 5px;text-align: center;} QProgressBar::chunk {background: yellow;}";
+QString green_style= "QProgressBar {border: 2px solid grey;background-color: #02315F;border-radius: 5px;text-align: center;} QProgressBar::chunk {background: green;}";
 //    1. C Ц константа
 //    2. log(log(N))
 //    3. log(N)
 //    5. N
 //    6. N*log(N)
 //    9. N!
-//QProgressBar {
-//    border: 2px solid grey;
-//    background-color: #02315F;
-//    border-radius: 5px;
-//    text-align: center;
-//    color: red;
-//}
-//QProgressBar::chunk {
-//    background-color: #05B8CC;  /*  */
-//    width: 20px;
 
-ui->progressBar->setStyleSheet(style_p);
 
     if (ui->progressBar->value()<30)
     {
-
         ui->progressBar->setStyleSheet(green_style);
-
-
+        //цвет green
+        //длина полосы = 30%
+        //надпись log(n)
     }
-
-
-    //цвет green
-    //длина полосы = 30%
-    //надпись log(n)
-
     else if (ui->progressBar->value()>=30 &&ui->progressBar->value()<50)
     {
         ui->progressBar->setStyleSheet(yellow_style);
-
     //цвет yellow
     //длина полосы = 50%
     //надпись n
@@ -200,7 +219,6 @@ ui->progressBar->setStyleSheet(style_p);
     else if (ui->progressBar->value()>=50 && ui->progressBar->value() < 70)
     {
         ui->progressBar->setStyleSheet(orange_style);
-
     //цвет orange
     //длина полосы = 70%
     //надпись n^2
@@ -208,7 +226,6 @@ ui->progressBar->setStyleSheet(style_p);
     else if (ui->progressBar->value()>=70 && ui->progressBar->value() <= 100)
     {
         ui->progressBar->setStyleSheet(red_style);
-
     //цвет red
     //длина полосы = 90%
     //надпись 2^n
