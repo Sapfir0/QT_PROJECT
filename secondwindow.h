@@ -3,8 +3,9 @@
 
 #include <QDialog>
 #include <QMainWindow>
-#include <time_calculate.h>
+#include "time_calculate.h"
 #include "function.h"
+
 
 namespace Ui {
 class secondwindow;
@@ -26,8 +27,6 @@ private slots:
 
 private:
     Ui::secondwindow *ui;
-//    time_calculate *time_window; //привзяка расчитывания времени
-//    function *window2;
 
 };
 

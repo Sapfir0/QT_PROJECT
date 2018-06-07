@@ -4,6 +4,7 @@
 #include <QPixmap>
 #include "requests.h"
 //#include "sortings.h"
+#include "secondwindow.h"
 
 int func = 0;
 int arg=0, arg2=0;
@@ -29,9 +30,9 @@ function::~function()
 
 void function::on_actionBack_triggered()
 {
-//    hide();
-//    window_back_f = new secondwindow(this);   //////////////////////////////////////////раскомментить
-//    window_back_f->show(); //error here
+    function *back = new function;
+    back->setParent(this);
+    back->show();
 
 }
 

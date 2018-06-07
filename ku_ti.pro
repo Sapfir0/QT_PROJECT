@@ -29,14 +29,12 @@ CODECFORSRC     = UTF-8
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
     secondwindow.cpp \
     time_calculate.cpp \
     function.cpp \
     appcore.cpp
 
 HEADERS += \
-        mainwindow.h \
     secondwindow.h \
     sortings.h \
     requests.h \

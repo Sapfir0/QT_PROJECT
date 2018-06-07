@@ -1,6 +1,9 @@
-#include "mainwindow.h"
+//#include "mainwindow.h"
+#include "time_calculate.h"
+#include "function.h"
 #include "secondwindow.h"
 #include <QApplication>
+
 
 #include <QFile>
 #include <QQmlContext>
@@ -9,7 +12,6 @@
 #include <QLibraryInfo>
 
 #include "appcore.h"
-
 
 
 int main(int argc, char *argv[])
@@ -45,9 +47,14 @@ int main(int argc, char *argv[])
 
 
 
-  // secondwindow w;
-   //MainWindow w;
-    time_calculate w;
+   secondwindow w;
+
+   w.setMinimumHeight(480);
+   w.setMaximumHeight(480);
+   w.setMinimumWidth(650);
+   w.setMaximumWidth(650);
+ //  MainWindow w;
+   // time_calculate w;
   //  function w;
     w.show();
 

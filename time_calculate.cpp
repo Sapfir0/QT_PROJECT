@@ -61,9 +61,9 @@ time_calculate::~time_calculate()
 
 void time_calculate::on_actionBack_triggered()
 {
-//    hide();
-//    window_back = new secondwindow(this);   //////////////////////////////////////////раскомментить
-//    window_back->show();
+    secondwindow *back_to_main = new secondwindow(this);
+    back_to_main->setParent(this);
+    back_to_main->show();
 }
 void time_calculate::changeEvent(QEvent *event)
 {

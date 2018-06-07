@@ -40,7 +40,6 @@ private slots:
 private:
     Ui::time_calculate *ui;
     QTranslator qtLanguageTranslator;   // Выделяем перевод в отдельном поле, иначе ничего работать не будет
-    //secondwindow *window_back;  //////////////////////////////////////////раскомментить
 
 };
 
