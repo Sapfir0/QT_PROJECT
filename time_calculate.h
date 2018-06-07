@@ -1,6 +1,6 @@
 #ifndef TIME_CALCULATE_H
 #define TIME_CALCULATE_H
-
+#pragma once
 #include <QMainWindow>
 #include "secondwindow.h"
 #include <QTranslator>
@@ -17,7 +17,6 @@ class time_calculate : public QMainWindow
 public:
     explicit time_calculate(QWidget *parent = 0);
     ~time_calculate();
-    bool DEV_MODE=false;
 
 
 protected:
@@ -37,6 +36,7 @@ private slots:
     void on_progressBar_valueChanged(int value);
 
     void on_comboBox_currentIndexChanged(int index);
+
 
 private:
     Ui::time_calculate *ui;

@@ -37,7 +37,7 @@ private slots:
 
 private:
     Ui::function *ui;
-//    secondwindow *window_back_f(); //////////////////////////////////////////раскомментить
+
 };
 
 #endif // FUNCTION_H

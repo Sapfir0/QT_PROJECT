@@ -38,9 +38,10 @@ function::~function()
 
 void function::on_actionBack_triggered()
 {
+    hide();
     secondwindow *back = new secondwindow;
     back->setParent(this);
-    back->show();
+    back->exec();
 
 }
 

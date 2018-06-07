@@ -9,11 +9,12 @@
 #include "sortings.h"
  #include <QGraphicsWidget>
 
-////            такая система ветвления:   time_calculate.cpp->sortings.h->calculating_time_sort.h
+////            такая система ветвления:   time_calculate.cpp->calculating_time_sort.h->sortings.h
 int arg1=0; //global variable
-int program2 = 1;
+int program2 = 0;
 bool DEV_MODE=true;
 int MAX_ACCEPTABLY=9999;
+
 
 time_calculate::time_calculate(QWidget *parent) :
     QMainWindow(parent),
@@ -30,9 +31,8 @@ time_calculate::time_calculate(QWidget *parent) :
 
     ui->label->setAutoFillBackground(true);
     ui->label->setPalette(sample_palette);
-   // ui->label->setText("123");
 
-///настроить хуйню выше
+///настроить хуйню выше //это для прозрачных лейблов
 
     connect(ui->consider, SIGNAL(clicked()),this, SLOT(on_consider_clicked(void)));
 
@@ -58,9 +58,11 @@ time_calculate::~time_calculate()
     delete ui;
 }
 
+
 void time_calculate::on_actionBack_triggered()
 {
-    secondwindow *back_to_main = new secondwindow(this);
+    hide();
+    secondwindow *back_to_main = new secondwindow;
     back_to_main->setParent(this);
     back_to_main->show();
 }
@@ -84,28 +86,23 @@ void time_calculate::on_consider_clicked()
     {
     case 0:
     {
-        unsigned int result = bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE);
-        ui->lcdNumber->display(QString::number(result));
+        ui->lcdNumber->display(QString::number(bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE)));
         break;
     }
         //////////////////////////////
     case 1:
     { //merge sort
-        unsigned int M_result = bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE);
-        ui->lcdNumber->display(QString::number(M_result));
+        ui->lcdNumber->display(QString::number(merge_sort_time(arg1)));
         break;
     }
     case 2:
     {
-        unsigned int Q_result = bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE);
-        ui->lcdNumber->display(QString::number(Q_result));
+        ui->lcdNumber->display(QString::number(quick_sort_time(arg1)));
         break;
     }
     default:
         break;
     }
-
-
 }
 
 void time_calculate::on_actionRefresh_triggered()
@@ -127,8 +124,6 @@ void time_calculate::on_actionRefresh_triggered()
         QMessageBox::critical(NULL,QObject::tr("Error #2"),tr("Пшел вон, непокорный."));
         QApplication::quit();
     }
-
-
 }
 
 void time_calculate::on_progressBar_valueChanged(int value)
@@ -138,7 +133,7 @@ void time_calculate::on_progressBar_valueChanged(int value)
 //с мерцанием QString green_style= "QProgressBar {border: 2px solid grey;background-color: #02315F;border-radius: 5px;text-align: center;} QProgressBar::chunk {}";
 
 QString red_style = "QProgressBar {border: 2px solid grey;background-color: #02315F;border-radius: 5px;text-align: center;} "
-                    "QProgressBar::chunk {background: red;};}";
+                    "QProgressBar::chunk {background: red;}";
 QString orange_style= "QProgressBar {border: 2px solid grey;background-color: #02315F;border-radius: 5px;text-align: center;} "
                       "QProgressBar::chunk {background: orange;}";
 QString yellow_style= "QProgressBar {border: 2px solid grey;background-color: #02315F;border-radius: 5px;text-align: center;} "

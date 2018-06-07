@@ -2,26 +2,27 @@
 #define CALCULATING_TIME_SORT_H
 
 
-//#include "time_calculate.h"
+#include "time_calculate.h"
 #include "sortings.h"
 #include <QMessageBox>
 
 extern int MAX_ACCEPTABLY;
 extern bool DEV_MODE;
-extern int arg1;
+//extern int arg1;
 
-inline unsigned int bubble_sort_time(int arg1, int MAX_ACCEPTABLY, bool DEV_MODE)
+inline double bubble_sort_time(int arg1, int MAX_ACCEPTABLY, bool DEV_MODE)
 {
 unsigned int start_time =  clock(); // начальное время
 int size_array = arg1; //первый инпут это колво элементов массива
 int *sorted_array = new int [size_array]; // одномерный динамический массив
+
 
 if(arg1>MAX_ACCEPTABLY && DEV_MODE!=true)
 {
  QMessageBox msgBox;
  msgBox.setText("Alert");
  msgBox.setIcon(QMessageBox::Information);
- msgBox.setInformativeText("It's dangerous count of variable ppp.\n Do u want to reset ppp to 9999 ?");
+ msgBox.setInformativeText("It's dangerous count of variable ppp.\n Do u want safe mod?");
  msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
  msgBox.setDefaultButton(QMessageBox::Ok);
  int ret = msgBox.exec();
@@ -47,10 +48,14 @@ unsigned int end_time = clock(); // конечное время
 unsigned int search_time = end_time - start_time; // искомое время
 
 delete[] sorted_array;
+//unsigned int result = (search_time/1000.0);
+
 return (search_time/1000.0);
 }
 
-inline  unsigned int merge_sort_time(int arg1)
+
+
+inline  double merge_sort_time(int arg1)
 {
 unsigned int start_time_m =  clock(); // начальное время
 int size_array = arg1; //первый инпут это колво элементов массива
@@ -84,5 +89,6 @@ unsigned int search_time_q = end_time_q - start_time_q; // искомое время
 
 return (search_time_q/1000.0);
 }
+
 
 #endif // CALCULATING_TIME_SORT_H
