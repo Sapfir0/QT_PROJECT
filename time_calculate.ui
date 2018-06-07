@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>497</height>
+    <width>885</width>
+    <height>558</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -178,7 +178,7 @@ QTabBar::tab:only-one {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -269,7 +269,7 @@ color: white;
         <string>Bubble sorting</string>
        </property>
        <property name="icon">
-        <iconset resource="yahzwhatisit.qrc">
+        <iconset>
          <normaloff>:/new/prefix1/img/B.png</normaloff>:/new/prefix1/img/B.png</iconset>
        </property>
       </item>
@@ -278,7 +278,7 @@ color: white;
         <string>Merge sorting</string>
        </property>
        <property name="icon">
-        <iconset resource="yahzwhatisit.qrc">
+        <iconset>
          <normaloff>:/new/prefix1/img/M.jpg</normaloff>:/new/prefix1/img/M.jpg</iconset>
        </property>
       </item>
@@ -287,7 +287,7 @@ color: white;
         <string>Quick sorting</string>
        </property>
        <property name="icon">
-        <iconset resource="yahzwhatisit.qrc">
+        <iconset>
          <normaloff>:/new/prefix1/img/Q.png</normaloff>:/new/prefix1/img/Q.png</iconset>
        </property>
       </item>
@@ -392,7 +392,7 @@ background-image: url(:/new/prefix1/img/blue-bubbles-9789.jpg);</string>
       <property name="styleSheet">
        <string notr="true">QSpinBox {
     padding-right: 15px; /* make room for the arrows */
-    border-image: url(:/images/frame.png) 4;
+/*    border-image: url(:/images/frame.png); */
     border-width: 3;
  selection-background-color: orange;
   background-color: #3B6582;
@@ -481,26 +481,13 @@ background-image: url(:/new/prefix1/img/logo.png);   </string>
      <string>Time is a great treasure</string>
     </property>
    </widget>
-   <widget class="QSlider" name="horizontalSlider">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>240</y>
-      <width>160</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>640</width>
+     <width>885</width>
      <height>17</height>
     </rect>
    </property>
@@ -557,7 +544,11 @@ QMenuBar::item:pressed {
    </widget>
    <addaction name="menuSettings"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
+  </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
     <string>toolBar</string>
@@ -590,7 +581,7 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
   </widget>
   <action name="actionEnglish">
    <property name="icon">
-    <iconset resource="yahzwhatisit.qrc">
+    <iconset>
      <normaloff>:/new/prefix1/img/usa.jpg</normaloff>:/new/prefix1/img/usa.jpg</iconset>
    </property>
    <property name="text">
@@ -599,7 +590,7 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
   </action>
   <action name="actionRussian">
    <property name="icon">
-    <iconset resource="yahzwhatisit.qrc">
+    <iconset>
      <normaloff>:/new/prefix1/img/rus.png</normaloff>:/new/prefix1/img/rus.png</iconset>
    </property>
    <property name="text">
@@ -613,7 +604,7 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
   </action>
   <action name="actionBack">
    <property name="icon">
-    <iconset resource="yahzwhatisit.qrc">
+    <iconset>
      <normaloff>:/new/prefix1/img/Arrow_left.png</normaloff>:/new/prefix1/img/Arrow_left.png</iconset>
    </property>
    <property name="text">
@@ -625,7 +616,7 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
   </action>
   <action name="actionRefresh">
    <property name="icon">
-    <iconset resource="yahzwhatisit.qrc">
+    <iconset>
      <normaloff>:/new/prefix1/img/2183585b41e7.png</normaloff>:/new/prefix1/img/2183585b41e7.png</iconset>
    </property>
    <property name="text">
@@ -633,25 +624,6 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
    </property>
   </action>
  </widget>
- <resources>
-  <include location="yahzwhatisit.qrc"/>
- </resources>
- <connections>
-  <connection>
-   <sender>horizontalSlider</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>progressBar</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>243</x>
-     <y>294</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>81</x>
-     <y>222</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <resources/>
+ <connections/>
 </ui>

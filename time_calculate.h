@@ -35,6 +35,8 @@ private slots:
 
     void on_progressBar_valueChanged(int value);
 
+    void on_comboBox_currentIndexChanged(int index);
+
 private:
     Ui::time_calculate *ui;
     QTranslator qtLanguageTranslator;   // Выделяем перевод в отдельном поле, иначе ничего работать не будет
