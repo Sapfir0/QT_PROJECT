@@ -12,10 +12,6 @@ secondwindow::secondwindow(QWidget *parent) :
     ui(new Ui::secondwindow)
 {
     ui->setupUi(this);
-
-    //time_window = new time_calculate();
-    //connect(time_window, &time_calculate::firstWindow, this, &secondwindow::show);
-
 }
 
 secondwindow::~secondwindow()

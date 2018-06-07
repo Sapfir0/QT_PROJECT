@@ -269,7 +269,7 @@ color: white;
         <string>Bubble sorting</string>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="yahzwhatisit.qrc">
          <normaloff>:/new/prefix1/img/B.png</normaloff>:/new/prefix1/img/B.png</iconset>
        </property>
       </item>
@@ -278,7 +278,7 @@ color: white;
         <string>Merge sorting</string>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="yahzwhatisit.qrc">
          <normaloff>:/new/prefix1/img/M.jpg</normaloff>:/new/prefix1/img/M.jpg</iconset>
        </property>
       </item>
@@ -287,7 +287,7 @@ color: white;
         <string>Quick sorting</string>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="yahzwhatisit.qrc">
          <normaloff>:/new/prefix1/img/Q.png</normaloff>:/new/prefix1/img/Q.png</iconset>
        </property>
       </item>
@@ -398,14 +398,68 @@ background-image: url(:/new/prefix1/img/blue-bubbles-9789.jpg);</string>
   background-color: #3B6582;
 }
 
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* position at the top right corner */
 
+    width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
+    border-image: url(:/images/spinup.png) 1;
+    border-width: 1px;
+}
+
+QSpinBox::up-button:hover {
+    border-image: url(:/images/spinup_hover.png) 1;
+}
+
+QSpinBox::up-button:pressed {
+    border-image: url(:/images/spinup_pressed.png) 1;
+}
+
+QSpinBox::up-arrow {
+    image: url(:/images/up_arrow.png);
+    width: 7px;
+    height: 7px;
+}
+
+QSpinBox::up-arrow:disabled, QSpinBox::up-arrow:off { /* off state when value is max */
+   image: url(:/images/up_arrow_disabled.png);
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* position at bottom right corner */
+
+    width: 16px;
+    border-image: url(:/images/spindown.png) 1;
+    border-width: 1px;
+    border-top-width: 0;
+}
+
+QSpinBox::down-button:hover {
+    border-image: url(:/images/spindown_hover.png) 1;
+}
+
+QSpinBox::down-button:pressed {
+    border-image: url(:/images/spindown_pressed.png) 1;
+}
+
+QSpinBox::down-arrow {
+    image: url(:/images/down_arrow.png);
+    width: 7px;
+    height: 7px;
+}
+
+QSpinBox::down-arrow:disabled,
+QSpinBox::down-arrow:off { /* off state when value in min */
+   image: url(:/images/down_arrow_disabled.png);
+}
 </string>
       </property>
       <property name="maximum">
        <number>999999999</number>
       </property>
       <property name="singleStep">
-       <number>10</number>
+       <number>100</number>
       </property>
      </widget>
      <widget class="QPushButton" name="consider">
@@ -555,8 +609,7 @@ QMenuBar::item:pressed {
    </property>
    <property name="styleSheet">
     <string notr="true">    background-color: #ABABAB;
-    spacing: 3px; /* spacing between items in the tool bar */
-    spacing: 3px; /* spacing between items in the tool bar */
+
 
 
 QToolBar::item {
@@ -581,7 +634,7 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
   </widget>
   <action name="actionEnglish">
    <property name="icon">
-    <iconset>
+    <iconset resource="yahzwhatisit.qrc">
      <normaloff>:/new/prefix1/img/usa.jpg</normaloff>:/new/prefix1/img/usa.jpg</iconset>
    </property>
    <property name="text">
@@ -590,7 +643,7 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
   </action>
   <action name="actionRussian">
    <property name="icon">
-    <iconset>
+    <iconset resource="yahzwhatisit.qrc">
      <normaloff>:/new/prefix1/img/rus.png</normaloff>:/new/prefix1/img/rus.png</iconset>
    </property>
    <property name="text">
@@ -604,7 +657,7 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
   </action>
   <action name="actionBack">
    <property name="icon">
-    <iconset>
+    <iconset resource="yahzwhatisit.qrc">
      <normaloff>:/new/prefix1/img/Arrow_left.png</normaloff>:/new/prefix1/img/Arrow_left.png</iconset>
    </property>
    <property name="text">
@@ -616,7 +669,7 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
   </action>
   <action name="actionRefresh">
    <property name="icon">
-    <iconset>
+    <iconset resource="yahzwhatisit.qrc">
      <normaloff>:/new/prefix1/img/2183585b41e7.png</normaloff>:/new/prefix1/img/2183585b41e7.png</iconset>
    </property>
    <property name="text">
@@ -624,6 +677,8 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="yahzwhatisit.qrc"/>
+ </resources>
  <connections/>
 </ui>

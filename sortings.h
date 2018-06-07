@@ -1,10 +1,10 @@
 #ifndef SORTINGS_H
 #define SORTINGS_H
 #include <cmath>
-
+#include "calculating_time_sort.h"
 ///
 
-void merge(int *a, int n)
+inline void merge(int *a, int n)
 {
   int mid = n / 2; // находим середину сортируемой последовательности
   if (n % 2 == 1)
@@ -59,7 +59,7 @@ void merge(int *a, int n)
 
 
 template <class type, class type2>
-void Qsort(type mas, int left, int right, type2 puk)
+inline void Qsort(type mas, int left, int right, type2 puk)
 {
     //Указатели в начало и в конец массива
     int i = left;
@@ -102,12 +102,12 @@ void Qsort(type mas, int left, int right, type2 puk)
 
 
 
-int pifagorianec(int arg1, int arg2)
+inline int pifagorianec(int arg1, int arg2)
 {
     return (sqrt(arg1*arg1 + arg2*arg2)); //пифагор
 }
 
-void bubbleSort(int* arrayPtr, int length_array) // сортировка пузырьком
+inline void bubbleSort(int* arrayPtr, int length_array) // сортировка пузырьком
 {
  int temp = 0; // временная переменная для хранения элемента массива
  bool exit = false; // болевая переменная для выхода из цикла, если массив отсортирован

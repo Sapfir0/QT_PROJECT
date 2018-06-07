@@ -23,6 +23,9 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #FFEBD0;</string>
+    </property>
     <property name="text">
      <string>Functions</string>
     </property>
@@ -34,7 +37,7 @@
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>200</y>
+      <y>220</y>
       <width>158</width>
       <height>27</height>
      </rect>
@@ -113,8 +116,11 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QLabel" name="image">
+       <property name="styleSheet">
+        <string notr="true">background-color: #F6E9D6;</string>
+       </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;icon&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>TextLabel</string>
        </property>
       </widget>
      </item>
@@ -126,13 +132,12 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="description">
+      <widget class="QLabel" name="descripton">
        <property name="styleSheet">
-        <string notr="true">color: MidnightBlue;
-    text-align: center;</string>
+        <string notr="true">background-color: #E9DCCC;</string>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Описание&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>TextLabel</string>
        </property>
       </widget>
      </item>
@@ -146,10 +151,10 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
      <item>
       <widget class="QLabel" name="desc_refinement">
        <property name="styleSheet">
-        <string notr="true">color: MidnightBlue;</string>
+        <string notr="true">background-color: #E9DCCC;</string>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;уточнение&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>desc_refinement</string>
        </property>
       </widget>
      </item>
@@ -181,15 +186,15 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
      <rect>
       <x>300</x>
       <y>70</y>
-      <width>160</width>
-      <height>90</height>
+      <width>163</width>
+      <height>146</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
       <widget class="QLabel" name="first_count_2">
        <property name="styleSheet">
-        <string notr="true"/>
+        <string notr="true">background-color: #B4D7E3;</string>
        </property>
        <property name="text">
         <string>Enter first count</string>
@@ -220,7 +225,7 @@ background-color: skyblue;
      <item>
       <widget class="QLabel" name="second_count_2">
        <property name="styleSheet">
-        <string notr="true"/>
+        <string notr="true">background-color: #B4D7E3;</string>
        </property>
        <property name="text">
         <string>Enter second count</string>
@@ -239,6 +244,41 @@ background-color: skyblue;
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QLabel" name="str_2">
+       <property name="styleSheet">
+        <string notr="true">background-color: #B4D7E3;</string>
+       </property>
+       <property name="text">
+        <string>Enter str</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPlainTextEdit" name="str">
+       <property name="minimumSize">
+        <size>
+         <width>161</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>161</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPlainTextEdit{
+
+    border-width: 3;
+ selection-background-color: orange;
+  background-color: #3B6582;
+}
+</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QColumnView" name="columnView">
@@ -251,7 +291,9 @@ background-color: skyblue;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.820225, y2:0.795, stop:0 rgba(64, 154, 184, 255), stop:1 rgba(255, 255, 255, 255));</string>
+     <string notr="true">background-image: url(:/new/prefix1/img/Elegant_Background-3.jpg);
+background-repeat: no-repeat;
+</string>
     </property>
    </widget>
    <zorder>columnView</zorder>
@@ -320,6 +362,7 @@ QMenuBar::item:pressed {
      <addaction name="actionOthers"/>
     </widget>
     <addaction name="menuLanguage"/>
+    <addaction name="actionSettings"/>
    </widget>
    <addaction name="menuSettings"/>
   </widget>
@@ -347,6 +390,7 @@ QMenuBar::item:pressed {
    <addaction name="actionFactorial"/>
    <addaction name="separator"/>
    <addaction name="actionDerivative"/>
+   <addaction name="actionApproximate_calculation"/>
   </widget>
   <widget class="QToolBar" name="toolBar_2">
    <property name="windowTitle">
@@ -408,6 +452,10 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
    </property>
   </action>
   <action name="actionDerivative">
+   <property name="icon">
+    <iconset resource="yahzwhatisit.qrc">
+     <normaloff>:/new/prefix1/img/unnamed.png</normaloff>:/new/prefix1/img/unnamed.png</iconset>
+   </property>
    <property name="text">
     <string>Derivative</string>
    </property>
@@ -428,6 +476,16 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
    </property>
    <property name="text">
     <string>Refresh</string>
+   </property>
+  </action>
+  <action name="actionApproximate_calculation">
+   <property name="text">
+    <string>Approximate calc</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
    </property>
   </action>
  </widget>

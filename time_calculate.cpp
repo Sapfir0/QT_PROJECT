@@ -8,9 +8,8 @@
 #include <QProgressBar>
 #include "sortings.h"
  #include <QGraphicsWidget>
-//#include "coloredprogressbar.h" //удалить к чертям этот класс
 
-
+////            такая система ветвления:   time_calculate.cpp->sortings.h->calculating_time_sort.h
 int arg1=0; //global variable
 int program2 = 1;
 bool DEV_MODE=true;
@@ -85,83 +84,22 @@ void time_calculate::on_consider_clicked()
     {
     case 0:
     {
-        unsigned int start_time =  clock(); // начальное время
-        int size_array = arg1; //первый инпут это колво элементов массива
-        int *sorted_array = new int [size_array]; // одномерный динамический массив
-
-        if(arg1>MAX_ACCEPTABLY && DEV_MODE!=true)
-        {
-         QMessageBox msgBox;
-         msgBox.setText("Alert");
-         msgBox.setIcon(QMessageBox::Information);
-         msgBox.setInformativeText("It's dangerous count of variable ppp.\n Do u want to reset ppp to 9999 ?");
-         msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-         msgBox.setDefaultButton(QMessageBox::Ok);
-         int ret = msgBox.exec();
-         switch (ret)
-         {
-         case QMessageBox::Save:
-              break;
-           case QMessageBox::Ok:
-             arg1=MAX_ACCEPTABLY;
-              break;
-           default:
-              arg1=MAX_ACCEPTABLY;
-              break;
-         }
-
-        }
-
-        for (int counter = 0; counter < size_array; counter++)
-        {
-                sorted_array[counter] = rand() % 100; // заполняем массив случайными числами
-        }
-
-        bubbleSort(sorted_array, size_array);
-
-        unsigned int end_time = clock(); // конечное время
-        unsigned int search_time = end_time - start_time; // искомое время
-
-        //ui->printf_result->setText(QString::number(search_time));
-
-        ui->lcdNumber->display(QString::number(search_time/1000.0));
-
-        delete[] sorted_array;
-     break;
+        unsigned int result = bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE);
+        ui->lcdNumber->display(QString::number(result));
+        break;
     }
         //////////////////////////////
     case 1:
     { //merge sort
-         unsigned int start_time_m =  clock(); // начальное время
-         int size_array = arg1; //первый инпут это колво элементов массива
-         int *a = new int [size_array]; // одномерный динамический массив
-
-     for (int counter = 0; counter < size_array; counter++)
-     {
-             a[counter] = rand() % 100; // заполняем массив случайными числами
-     }
-       merge(a, 8); // вызов функции сортировки
-       unsigned int end_time_m = clock(); // конечное время
-       unsigned int search_time_m = end_time_m - start_time_m; // искомое время
-       ui->lcdNumber->display(QString::number(search_time_m/1000.0));
-    break;
+        unsigned int M_result = bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE);
+        ui->lcdNumber->display(QString::number(M_result));
+        break;
     }
     case 2:
     {
-        unsigned int start_time_q =  clock(); // начальное время
-        int size_array = arg1; //первый инпут это колво элементов массива
-        int *a = new int [size_array]; // одномерный динамический массив
-
-        for (int counter = 0; counter < size_array; counter++)
-        {
-                a[counter] = rand() % 100; // заполняем массив случайными числами
-        }
-        int puk=0;
-        Qsort( a, 0, size_array, puk);
-        unsigned int end_time_q = clock(); // конечное время
-        unsigned int search_time_q = end_time_q - start_time_q; // искомое время
-        ui->lcdNumber->display(QString::number(search_time_q/1000.0));
-    break;
+        unsigned int Q_result = bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE);
+        ui->lcdNumber->display(QString::number(Q_result));
+        break;
     }
     default:
         break;
@@ -174,13 +112,15 @@ void time_calculate::on_actionRefresh_triggered()
 {
     setlocale (LC_ALL,""); // установить используемую системой локаль
     int trollface=0;
-    QMessageBox::critical(NULL,QObject::tr("Error #0"),tr("Страницу обновить вздумал, мразь? Только попробуй нажать еще раз."));
-    trollface++;
+    if( trollface==0)
+    {
+        QMessageBox::critical(NULL,QObject::tr("Error #0"),tr("Страницу обновить вздумал, мразь? Только попробуй нажать еще раз."));
+        trollface++;
+    }
     if(trollface==1)
     {
         QMessageBox::critical(NULL,QObject::tr("Error #1"),tr("Ты шо нажал еще раз? Нажмешь еще раз, я тебя накажу."));
         trollface++;
-
     }
     if(trollface==2)
     {

@@ -3,7 +3,7 @@
 #include "function.h"
 #include "secondwindow.h"
 #include <QApplication>
-
+#include "method.h"
 
 #include <QFile>
 #include <QQmlContext>
@@ -12,7 +12,12 @@
 #include <QLibraryInfo>
 
 #include "appcore.h"
-
+///
+/// \brief main         такая система ветвления:   time_calculate.cpp->sortings.h->calculating_time_sort.h
+/// \param argc
+/// \param argv
+/// \return
+///
 
 int main(int argc, char *argv[])
 {
@@ -48,14 +53,13 @@ int main(int argc, char *argv[])
 
 
    secondwindow w;
-
+   // method w;
    w.setMinimumHeight(480);
    w.setMaximumHeight(480);
    w.setMinimumWidth(650);
    w.setMaximumWidth(650);
- //  MainWindow w;
-   // time_calculate w;
-  //  function w;
+
+
     w.show();
 
 

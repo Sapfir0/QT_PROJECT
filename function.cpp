@@ -5,6 +5,7 @@
 #include "requests.h"
 //#include "sortings.h"
 #include "secondwindow.h"
+#include "method.h"
 
 int func = 0;
 int arg=0, arg2=0;
@@ -13,6 +14,13 @@ function::function(QWidget *parent) :
     ui(new Ui::function)
 {
     ui->setupUi(this);
+
+    ui->second_count->hide();
+    ui->second_count_2->hide();
+    ui->first_count->hide();
+    ui->first_count_2->hide();
+    ui->str->hide();
+    ui->str_2->hide();
 
     QPixmap pix(":/new/prefix1/img/laptop.png");
 
@@ -30,7 +38,7 @@ function::~function()
 
 void function::on_actionBack_triggered()
 {
-    function *back = new function;
+    secondwindow *back = new secondwindow;
     back->setParent(this);
     back->show();
 
@@ -38,21 +46,47 @@ void function::on_actionBack_triggered()
 
 void function::on_actionFactorial_triggered()
 {
+    QString center_style= "QLabel {text-align: center;}";
+
     func = 1;
-    ui->description->setText(tr("Factorial"));
+    ui->descripton->setText(tr("Factorial"));
+    ui->descripton->setStyleSheet(center_style);
     ui->desc_refinement->setText(tr("Multing elements"));
+    ui->desc_refinement->setStyleSheet(center_style);
     QPixmap pix(":/new/prefix1/img/fact.png");
     int w = ui->image->width();
     int h = ui->image->height();
     ui->image->setPixmap(pix.scaled(w,h, Qt::KeepAspectRatio));
+
     ui->second_count->hide();
     ui->second_count_2->hide();
+    ui->str->hide();
+    ui->str_2->hide();
+
+    ui->first_count->show();
+    ui->first_count_2->show();
 }
 void function::on_actionDerivative_triggered()
 {
+    QString center_style= "QLabel {text-align: center;}";
+    ui->descripton->setStyleSheet(center_style);
+    ui->desc_refinement->setStyleSheet(center_style);
+
     func = 2;
-    ui->description->setText(tr("Derivative"));
+    ui->descripton->setText(tr("Derivative"));
     ui->desc_refinement->setText(tr("Deratives elements"));
+    QPixmap pix(":/new/prefix1/img/unnamed.png");
+    int w = ui->image->width();
+    int h = ui->image->height();
+    ui->image->setPixmap(pix.scaled(w,h, Qt::KeepAspectRatio));
+
+    ui->second_count->hide();
+    ui->second_count_2->hide();
+    ui->first_count->hide();
+    ui->first_count_2->hide();
+
+    ui->str->show();
+    ui->str_2->show();
 }
 
 
@@ -83,3 +117,38 @@ void function::on_first_count_valueChanged(int arg1)
 }
 
 
+
+void function::on_actionRefresh_triggered()
+{
+
+}
+
+void function::on_actionSettings_triggered()
+{
+
+}
+
+void function::on_pushButton_clicked()
+{
+//    method *back2 = new method;
+//    back2->setParent(this);
+//    back2->show();
+}
+
+void function::on_actionApproximate_calculation_triggered()
+{    setlocale (LC_ALL,""); // установить используемую системой локаль
+
+    func = 3;
+    ui->descripton->setText(tr("Приближенные вычисления"));
+    ui->desc_refinement->setText(tr("С помощью рядов."));
+
+    ui->second_count->hide();
+    ui->second_count_2->hide();
+
+    ui->first_count->show();
+    ui->first_count_2->show();
+    ui->str->show();
+    ui->str_2->show();
+    ui->str_2->setText(tr("Введите уравнение"));
+    ui->first_count_2->setText(tr("Введите точность для вычислений"));
+}

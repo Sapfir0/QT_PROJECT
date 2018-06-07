@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "secondwindow.h"
 #include <QTranslator>
+#include "calculating_time_sort.h"
 
 namespace Ui {
 class time_calculate;

@@ -32,7 +32,8 @@ SOURCES += \
     secondwindow.cpp \
     time_calculate.cpp \
     function.cpp \
-    appcore.cpp
+    appcore.cpp \
+    method.cpp
 
 HEADERS += \
     secondwindow.h \
@@ -40,13 +41,16 @@ HEADERS += \
     requests.h \
     time_calculate.h \
     function.h \
-    appcore.h
+    appcore.h \
+    method.h \
+    calculating_time_sort.h
 
 FORMS += \
         mainwindow.ui \
     secondwindow.ui \
     time_calculate.ui \
-    function.ui
+    function.ui \
+    method.ui
 
 RESOURCES += \
     yahzwhatisit.qrc
