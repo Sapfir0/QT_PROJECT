@@ -5,6 +5,9 @@
 #include "secondwindow.h"
 #include <QTranslator>
 #include "calculating_time_sort.h"
+#include <QTimer>
+#include <QTime>
+#include <QShortcut>
 
 namespace Ui {
 class time_calculate;
@@ -37,11 +40,16 @@ private slots:
 
     void on_comboBox_currentIndexChanged(int index);
 
+        void slotShortcutEnter();
+
+        void slotTimerAlarm();
+
 
 private:
     Ui::time_calculate *ui;
     QTranslator qtLanguageTranslator;   // Выделяем перевод в отдельном поле, иначе ничего работать не будет
-
+    QTimer *timer;
+    QShortcut       *keyEnter;
 };
 
 #endif // TIME_CALCULATE_H

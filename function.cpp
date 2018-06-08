@@ -5,7 +5,7 @@
 #include "requests.h"
 //#include "sortings.h"
 #include "secondwindow.h"
-#include "method.h"
+#include "about_method.h"
 
 int func = 0;
 int arg=0, arg2=0;
@@ -14,6 +14,7 @@ function::function(QWidget *parent) :
     ui(new Ui::function)
 {
     ui->setupUi(this);
+    setWindowTitle(tr("Function. S.Prod."));
 
     ui->second_count->hide();
     ui->second_count_2->hide();
@@ -131,9 +132,9 @@ void function::on_actionSettings_triggered()
 
 void function::on_pushButton_clicked()
 {
-//    method *back2 = new method;
-//    back2->setParent(this);
-//    back2->show();
+   // hide();
+    about_method *ITISMETHOD = new  about_method;
+    ITISMETHOD->exec();
 }
 
 void function::on_actionApproximate_calculation_triggered()

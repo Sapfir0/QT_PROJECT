@@ -6,12 +6,14 @@
 #include "sortings.h"
 #include <QMessageBox>
 
+
 extern int MAX_ACCEPTABLY;
 extern bool DEV_MODE;
 //extern int arg1;
 
 inline double bubble_sort_time(int arg1, int MAX_ACCEPTABLY, bool DEV_MODE)
 {
+
 unsigned int start_time =  clock(); // начальное время
 int size_array = arg1; //первый инпут это колво элементов массива
 int *sorted_array = new int [size_array]; // одномерный динамический массив

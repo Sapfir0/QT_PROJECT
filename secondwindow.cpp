@@ -12,6 +12,8 @@ secondwindow::secondwindow(QWidget *parent) :
     ui(new Ui::secondwindow)
 {
     ui->setupUi(this);
+    setWindowTitle(tr("MFC program"));
+
 }
 
 secondwindow::~secondwindow()

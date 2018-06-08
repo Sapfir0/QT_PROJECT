@@ -1,15 +1,14 @@
-//#include "mainwindow.h"
 #include "time_calculate.h"
 #include "function.h"
 #include "secondwindow.h"
 #include <QApplication>
-#include "method.h"
 
 #include <QFile>
 #include <QQmlContext>
  #include <QQmlApplicationEngine>
 #include <QTranslator>
 #include <QLibraryInfo>
+#include "about_method.h"
 
 #include "appcore.h"
 ///
@@ -52,14 +51,14 @@ int main(int argc, char *argv[])
 
 
 
-   secondwindow w;
+  secondwindow w;
 
-
+  // about_method w;
    w.setMinimumHeight(480);
    w.setMaximumHeight(480);
    w.setMinimumWidth(650);
    w.setMaximumWidth(650);
-
+   // QTimer::singleShot(5000, &w, SLOT(close())); эта фунцкия закроет окно через 5секунд
 
     w.show();
 

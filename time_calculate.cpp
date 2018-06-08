@@ -22,6 +22,7 @@ time_calculate::time_calculate(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->progressBar->setValue(85);
+    setWindowTitle(tr("Time calculate. S.Prod."));
 
 
 ////-----------------------------------
@@ -52,13 +53,32 @@ time_calculate::time_calculate(QWidget *parent) :
             // Сделаем первоначальную инициализацию перевода для окна прилоежния
             qtLanguageTranslator.load(QString("QtLanguage_") + QString("ru_RU"));
             qApp->installTranslator(&qtLanguageTranslator);
+
+
+    keyEnter = new QShortcut(this);
+    keyEnter->setKey(Qt::Key_Enter);
+    connect(keyEnter, SIGNAL(activated()), this, SLOT(slotShortcutEnter()) );
+
+
+
+
+
+            timer = new QTimer();
+
 }
 
 time_calculate::~time_calculate()
 {
     delete ui;
 }
+void time_calculate::slotTimerAlarm()
+{
+    /* Ежесекундно обновляем данные по текущему времени/*/
 
+//    for (int i=0; i< 5; i+=1)
+
+      //  ui->lcdNumber->display(QString::number);
+}
 
 void time_calculate::on_actionBack_triggered()
 {
@@ -80,13 +100,21 @@ void time_calculate::on_elements_count_valueChanged(int arg12)
 {
      arg1 = arg12;
 }
+void time_calculate::slotShortcutEnter()
+{
+    QMessageBox::information(this,
+                             "Горячая клавиша",
+                             "Мои поздравления!!! Горячая клавиша работает",
+                             QMessageBox::Ok);
+}
 
 void time_calculate::on_consider_clicked()
 {
     switch (program2)
     {
     case 0:
-    {
+    {     //   timer->start(1); // И запустим таймер 1млс
+
         ui->lcdNumber->display(QString::number(bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE)));
         break;
     }

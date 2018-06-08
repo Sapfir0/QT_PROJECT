@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>about_method</class>
+ <widget class="QDialog" name="about_method">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,14 +16,14 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>20</y>
-     <width>81</width>
-     <height>241</height>
+     <x>30</x>
+     <y>240</y>
+     <width>341</width>
+     <height>32</height>
     </rect>
    </property>
    <property name="orientation">
-    <enum>Qt::Vertical</enum>
+    <enum>Qt::Horizontal</enum>
    </property>
    <property name="standardButtons">
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
@@ -32,24 +32,56 @@
   <widget class="QLCDNumber" name="lcdNumber">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>30</y>
-     <width>191</width>
-     <height>91</height>
+     <x>100</x>
+     <y>140</y>
+     <width>141</width>
+     <height>81</height>
     </rect>
+   </property>
+   <property name="intValue" stdset="0">
+    <number>10</number>
    </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>170</y>
-     <width>261</width>
-     <height>81</height>
+     <y>20</y>
+     <width>341</width>
+     <height>71</height>
     </rect>
    </property>
    <property name="text">
-    <string>Все ярлыки будут стерты, извините</string>
+    <string>Гайд как заставить дурака потратить 10 секунд жизни впустую</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>90</y>
+     <width>141</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Кнопочка пососи мой болт</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>110</y>
+     <width>71</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="whatsThis">
+    <string/>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
    </property>
   </widget>
  </widget>
@@ -58,7 +90,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>about_method</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -74,7 +106,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>about_method</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
