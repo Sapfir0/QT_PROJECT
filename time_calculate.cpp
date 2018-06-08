@@ -36,7 +36,8 @@ time_calculate::time_calculate(QWidget *parent) :
 
     connect(ui->consider, SIGNAL(clicked()),this, SLOT(on_consider_clicked(void)));
 
-        ui->comboBox_2->addItems(QStringList() << "ru_RU" << "en_US");
+
+    ui->comboBox_2->addItems(QStringList() << "ru_RU" << "en_US");
         // подключаем к сигналу изменения пункта комбобокса лямбда функцию,
             // в которой будет изменяться перевод приложения
             // Здесь имеется интересный момент. Поскольку QComboBox имеет перегрузку сигнатуры сигнала,

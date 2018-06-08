@@ -53,7 +53,8 @@ int main(int argc, char *argv[])
 
 
    secondwindow w;
-   // method w;
+
+
    w.setMinimumHeight(480);
    w.setMaximumHeight(480);
    w.setMinimumWidth(650);
