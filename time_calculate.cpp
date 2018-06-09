@@ -11,7 +11,7 @@
 
 ////            такая система ветвления:   time_calculate.cpp->calculating_time_sort.h->sortings.h
 int arg1=0; //global variable
-int program2 = 0;
+int program2 = 9;
 bool DEV_MODE=true;
 int MAX_ACCEPTABLY=9999;
 
@@ -24,16 +24,10 @@ time_calculate::time_calculate(QWidget *parent) :
     ui->progressBar->setValue(85);
     setWindowTitle(tr("Time calculate. S.Prod."));
 
+    resize(650,500); //w/h
 
-////-----------------------------------
-    QPalette sample_palette;
-    sample_palette.setColor(QPalette::Window, Qt::black);
-    sample_palette.setColor(QPalette::WindowText, Qt::blue);
+    this->setStyleSheet("QWidget{background-image: url(img/blue-bubbles-9789.jpg);}");  //////////////////////не робит
 
-    ui->label->setAutoFillBackground(true);
-    ui->label->setPalette(sample_palette);
-
-///настроить хуйню выше //это для прозрачных лейблов
 
     connect(ui->consider, SIGNAL(clicked()),this, SLOT(on_consider_clicked(void)));
 
@@ -65,6 +59,8 @@ time_calculate::time_calculate(QWidget *parent) :
 
             timer = new QTimer();
 
+
+
 }
 
 time_calculate::~time_calculate()
@@ -82,9 +78,10 @@ void time_calculate::slotTimerAlarm()
 
 void time_calculate::on_actionBack_triggered()
 {
-    hide();
+
     secondwindow *back_to_main = new secondwindow;
-    back_to_main->setParent(this);
+      hide();
+   // back_to_main->setParent(this);
     back_to_main->show();
 }
 void time_calculate::changeEvent(QEvent *event)
@@ -108,13 +105,14 @@ void time_calculate::slotShortcutEnter()
                              QMessageBox::Ok);
 }
 
+
+
 void time_calculate::on_consider_clicked()
 {
     switch (program2)
     {
     case 0:
-    {     //   timer->start(1); // И запустим таймер 1млс
-
+    {     //   timer->start(1); // 1мс
         ui->lcdNumber->display(QString::number(bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE)));
         break;
     }
@@ -129,7 +127,14 @@ void time_calculate::on_consider_clicked()
         ui->lcdNumber->display(QString::number(quick_sort_time(arg1)));
         break;
     }
+    case 3:
+    {
+        ui->lcdNumber->display(QString::number(tree_sort_time(arg1)));
+        break;
+    }
     default:
+        ui->lcdNumber->display("666");
+
         break;
     }
 }
@@ -237,6 +242,13 @@ void time_calculate::on_comboBox_currentIndexChanged(int index)
         program2 = index;
         ui->progressBar->setValue(50);
     }
+    else if(index==3) //tree
+    {
+        ui->statusbar->showMessage(tr("Tree sort"));
+        program2 = index;
+        ui->progressBar->setValue(40);
+    }
+
 
 }
 

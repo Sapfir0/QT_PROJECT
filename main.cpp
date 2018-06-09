@@ -1,8 +1,9 @@
 #include "time_calculate.h"
 #include "function.h"
 #include "secondwindow.h"
+#include "settings.h"
 #include <QApplication>
-
+#include <QCoreApplication>
 #include <QFile>
 #include <QQmlContext>
  #include <QQmlApplicationEngine>
@@ -48,6 +49,10 @@ int main(int argc, char *argv[])
 
 
  //   qApp->setStyleSheet(file.readAll());
+
+
+
+
 
 
 

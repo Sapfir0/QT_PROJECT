@@ -55,9 +55,6 @@ inline void merge(int *a, int n)
 }
 
 
-
-
-
 template <class type, class type2>
 inline void Qsort(type mas, int left, int right, type2 puk)
 {
@@ -101,12 +98,6 @@ inline void Qsort(type mas, int left, int right, type2 puk)
 }
 
 
-
-inline int pifagorianec(int arg1, int arg2)
-{
-    return (sqrt(arg1*arg1 + arg2*arg2)); //пифагор
-}
-
 inline void bubbleSort(int* arrayPtr, int length_array) // сортировка пузырьком
 {
  int temp = 0; // временная переменная для хранения элемента массива
@@ -131,6 +122,70 @@ inline void bubbleSort(int* arrayPtr, int length_array) // сортировка пузырьком
 
 
 
+///-------------------------tree sort----------------
+
+struct Node
+{
+    int key;
+    struct Node *left, *right;
+};
+
+// A utility function to create a new BST Node
+inline struct Node *newNode(int item)
+{
+    struct Node *temp = new Node;
+    temp->key = item;
+    temp->left = temp->right = NULL;
+    return temp;
+}
+
+// Stores inoder traversal of the BST
+// in arr[]
+inline void storeSorted(Node *root, int a[], int &i)
+{
+    if (root != NULL)
+    {
+        storeSorted(root->left, a, i);
+        a[i++] = root->key;
+        storeSorted(root->right, a, i);
+    }
+}
+
+/* A utility function to insert a new
+   Node with given key in BST */
+inline Node* insert(Node* node, int key)
+{
+    /* If the tree is empty, return a new Node */
+    if (node == NULL) return newNode(key);
+
+    /* Otherwise, recur down the tree */
+    if (key < node->key)
+        node->left  = insert(node->left, key);
+    else if (key > node->key)
+        node->right = insert(node->right, key);
+
+    /* return the (unchanged) Node pointer */
+    return node;
+}
+
+// This function sorts arr[0..n-1] using Tree Sort
+inline void treeSort(int a[], int size_array)
+{
+    struct Node *root = NULL;
+
+    // Construct the BST
+    root = insert(root, a[0]);
+    for (int i=1; i<size_array; i++)
+        insert(root, a[i]);
+
+    // Store inoder traversal of the BST
+    // in arr[]
+    int i = 0;
+    storeSorted(root, a, i);
+}
+
+
+///-------------------------tree sort----------------
 
 
 #endif // SORTINGS_H

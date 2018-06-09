@@ -24,15 +24,16 @@ secondwindow::~secondwindow()
 void secondwindow::on_time_calculate_clicked()
 {
     time_calculate *ad = new time_calculate;
-    ad->setParent(this);
+   hide();// ad->setParent(this);
     ad->show();
 //    time_calculate *add = new time_calculate; //хороший код, но нет
 //    add->show();
 }
 void secondwindow::on_function_button_clicked()
 {
+
     function *ad = new function; // или можно new AddDialog( this ); тогда не надо ad->setParent( this ) вызывать. //нет не будет ты пидр
-    ad->setParent(this);
+ hide();  //  ad->setParent(this);
     ad->show();
 
 }

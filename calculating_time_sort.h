@@ -5,6 +5,7 @@
 #include "time_calculate.h"
 #include "sortings.h"
 #include <QMessageBox>
+#include <QDebug>
 
 
 extern int MAX_ACCEPTABLY;
@@ -88,9 +89,31 @@ int puk=0;
 Qsort( a, 0, size_array, puk);
 unsigned int end_time_q = clock(); // конечное время
 unsigned int search_time_q = end_time_q - start_time_q; // искомое время
-
+qDebug() << search_time_q/1000.0 << " ";
 return (search_time_q/1000.0);
 }
+
+
+inline unsigned int tree_sort_time(int arg1)
+{
+unsigned int start_time_t =  clock(); // начальное время
+int size_array = arg1; //первый инпут это колво элементов массива
+int *a = new int [size_array]; // одномерный динамический массив
+
+for (int counter = 0; counter < size_array; counter++)
+{
+        a[counter] = rand() % 100; // заполняем массив случайными числами
+}
+   // int n = sizeof(a)/sizeof(a[0]);
+treeSort(a, size_array);
+
+unsigned int end_time_t = clock(); // конечное время
+unsigned int search_time_t = end_time_t - start_time_t; // искомое время
+qDebug() << search_time_t/1000.0 << " ";
+
+return (search_time_t/1000.0);
+}
+
 
 
 #endif // CALCULATING_TIME_SORT_H

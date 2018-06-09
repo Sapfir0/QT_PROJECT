@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include "secondwindow.h"
+#include <QCloseEvent>
+#include <QSystemTrayIcon>
+#include <QAction>
 
 namespace Ui {
 class function;
@@ -34,6 +37,8 @@ private slots:
     void on_pushButton_clicked();
 
     void on_actionApproximate_calculation_triggered();
+
+    void on_str_blockCountChanged(int newBlockCount);
 
 private:
     Ui::function *ui;

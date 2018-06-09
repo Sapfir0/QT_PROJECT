@@ -5,7 +5,9 @@
 #include "requests.h"
 //#include "sortings.h"
 #include "secondwindow.h"
+#include <QBoxLayout>
 #include "about_method.h"
+#include "settings.h"
 
 int func = 0;
 int arg=0, arg2=0;
@@ -14,6 +16,9 @@ function::function(QWidget *parent) :
     ui(new Ui::function)
 {
     ui->setupUi(this);
+
+   // resize(600,500);
+
     setWindowTitle(tr("Function. S.Prod."));
 
     ui->second_count->hide();
@@ -30,6 +35,10 @@ function::function(QWidget *parent) :
 
     ui->image->setPixmap(pix.scaled(w,h, Qt::KeepAspectRatio));
 
+
+//    ui->verticalLayout_2->setContentsMargin(10,10,0,0);
+
+
 }
 
 function::~function()
@@ -39,9 +48,10 @@ function::~function()
 
 void function::on_actionBack_triggered()
 {
-    hide();
+
     secondwindow *back = new secondwindow;
-    back->setParent(this);
+    hide();
+   // back->setParent(this);
     back->exec();
 
 }
@@ -127,7 +137,8 @@ void function::on_actionRefresh_triggered()
 
 void function::on_actionSettings_triggered()
 {
-
+    settings *back1 = new settings;
+    back1->exec();
 }
 
 void function::on_pushButton_clicked()
@@ -141,8 +152,8 @@ void function::on_actionApproximate_calculation_triggered()
 {    setlocale (LC_ALL,""); // установить используемую системой локаль
 
     func = 3;
-    ui->descripton->setText(tr("ѕриближенные вычислени€"));
-    ui->desc_refinement->setText(tr("— помощью р€дов."));
+    ui->descripton->setText(tr("Approximate"));
+    ui->desc_refinement->setText(tr("Rows."));
 
     ui->second_count->hide();
     ui->second_count_2->hide();
@@ -151,6 +162,39 @@ void function::on_actionApproximate_calculation_triggered()
     ui->first_count_2->show();
     ui->str->show();
     ui->str_2->show();
-    ui->str_2->setText(tr("¬ведите уравнение"));
-    ui->first_count_2->setText(tr("¬ведите точность дл€ вычислений"));
+    ui->str_2->setText(tr("Enter str"));
+    ui->first_count_2->setText(tr("Enter count"));
+}
+
+void function::on_str_blockCountChanged(int newBlockCount)
+{
+    //дл€ поиска производной
+    //разделим строку на слова
+    QString diff_sin = "sinx";
+    QString diff_arcsin = "arcsinx";
+    QString diff_cos = "cosx";
+    QString diff_arccos = "arccosx";
+    QString diff_tg = "tgx";
+    QString diff_arctg = "arctgx";
+    QString diff_ctg = "ctgx";
+    QString diff_arcctg = "arcctgx";
+
+
+QString dif_result;
+    if(newBlockCount==diff_sin)
+    {
+        dif_result = "cosx";
+    }
+    if(newBlockCount==diff_cos)
+    {
+        dif_result = "-sinx";
+    }
+    if(newBlockCount==diff_tg)
+    {
+        dif_result = "1/(cos^2 x)";
+    }
+    if(newBlockCount==diff_ctg)
+    {
+        dif_result = "-1/(sin^2 x)";
+    }
 }

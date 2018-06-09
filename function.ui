@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #FFEBD0;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Functions</string>
@@ -117,7 +117,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
      <item>
       <widget class="QLabel" name="image">
        <property name="styleSheet">
-        <string notr="true">background-color: #F6E9D6;</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>TextLabel</string>
@@ -134,7 +134,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
      <item>
       <widget class="QLabel" name="descripton">
        <property name="styleSheet">
-        <string notr="true">background-color: #E9DCCC;</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>TextLabel</string>
@@ -151,7 +151,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
      <item>
       <widget class="QLabel" name="desc_refinement">
        <property name="styleSheet">
-        <string notr="true">background-color: #E9DCCC;</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>desc_refinement</string>
@@ -163,7 +163,8 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
        <item>
         <widget class="QLabel" name="label_6">
          <property name="styleSheet">
-          <string notr="true">color: MidnightBlue;</string>
+          <string notr="true">color: MidnightBlue;
+background-color: none;</string>
          </property>
          <property name="text">
           <string>Примерная сложность</string>
@@ -194,7 +195,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
      <item>
       <widget class="QLabel" name="first_count_2">
        <property name="styleSheet">
-        <string notr="true">background-color: #B4D7E3;</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>Enter first count</string>
@@ -209,7 +210,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
        <property name="styleSheet">
         <string notr="true">QSpinBox {
 color: MidnightBlue;
-background-color: skyblue;
+background-color:#FFEFD5;
 }
 
 </string>
@@ -225,7 +226,7 @@ background-color: skyblue;
      <item>
       <widget class="QLabel" name="second_count_2">
        <property name="styleSheet">
-        <string notr="true">background-color: #B4D7E3;</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>Enter second count</string>
@@ -237,7 +238,7 @@ background-color: skyblue;
        <property name="styleSheet">
         <string notr="true">QSpinBox {
 color: MidnightBlue;
-background-color: skyblue;
+background-color:#FFEFD5;
 }
 
 </string>
@@ -247,7 +248,7 @@ background-color: skyblue;
      <item>
       <widget class="QLabel" name="str_2">
        <property name="styleSheet">
-        <string notr="true">background-color: #B4D7E3;</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>Enter str</string>
@@ -273,7 +274,8 @@ background-color: skyblue;
 
     border-width: 3;
  selection-background-color: orange;
-  background-color: #3B6582;
+background-color:#FFEFD5;
+
 }
 </string>
        </property>
@@ -484,6 +486,10 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
    </property>
   </action>
   <action name="actionSettings">
+   <property name="icon">
+    <iconset resource="yahzwhatisit.qrc">
+     <normaloff>:/new/prefix1/img/cog-wheel-clipart-6.jpg</normaloff>:/new/prefix1/img/cog-wheel-clipart-6.jpg</iconset>
+   </property>
    <property name="text">
     <string>Settings</string>
    </property>

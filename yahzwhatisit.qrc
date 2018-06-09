@@ -23,6 +23,9 @@
         <file>img/laptop.png</file>
         <file>img/unnamed.png</file>
         <file>img/Elegant_Background-3.jpg</file>
+        <file>img/cog-wheel-clipart-6.jpg</file>
+        <file>img/refresh.png</file>
+        <file>img/Creative-Tail-Halloween-tree.svg.png</file>
     </qresource>
     <qresource prefix="/">
         <file>qss/Consider.qml</file>

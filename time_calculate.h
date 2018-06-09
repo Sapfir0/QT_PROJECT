@@ -8,6 +8,7 @@
 #include <QTimer>
 #include <QTime>
 #include <QShortcut>
+#include <QThread>
 
 namespace Ui {
 class time_calculate;
@@ -50,6 +51,8 @@ private:
     QTranslator qtLanguageTranslator;   // Выделяем перевод в отдельном поле, иначе ничего работать не будет
     QTimer *timer;
     QShortcut       *keyEnter;
+
+
 };
 
 #endif // TIME_CALCULATE_H

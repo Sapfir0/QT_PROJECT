@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>885</width>
-    <height>558</height>
+    <width>1160</width>
+    <height>718</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,8 +22,8 @@
      <rect>
       <x>-30</x>
       <y>-60</y>
-      <width>761</width>
-      <height>501</height>
+      <width>1241</width>
+      <height>731</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -77,7 +77,7 @@ background-repeat: no-repeat </string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: skyblue;
-background-image: url(:/new/prefix1/img/run.png);
+margin-right: 10%;
 </string>
     </property>
     <property name="frameShape">
@@ -289,6 +289,15 @@ color: white;
        <property name="icon">
         <iconset resource="yahzwhatisit.qrc">
          <normaloff>:/new/prefix1/img/Q.png</normaloff>:/new/prefix1/img/Q.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tree sorting</string>
+       </property>
+       <property name="icon">
+        <iconset resource="yahzwhatisit.qrc">
+         <normaloff>:/new/prefix1/img/Creative-Tail-Halloween-tree.svg.png</normaloff>:/new/prefix1/img/Creative-Tail-Halloween-tree.svg.png</iconset>
        </property>
       </item>
      </widget>
@@ -510,7 +519,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
      <string notr="true">
 color:  skyblue;
 font-size: 18px;
-background-image: url(:/new/prefix1/img/runtime.png);</string>
+</string>
     </property>
     <property name="text">
      <string>Run Time</string>
@@ -529,7 +538,7 @@ background-image: url(:/new/prefix1/img/runtime.png);</string>
      <string notr="true">
 color:  skyblue;
 font-size: 18px;
-background-image: url(:/new/prefix1/img/logo.png);   </string>
+</string>
     </property>
     <property name="text">
      <string>Time is a great treasure</string>
@@ -541,7 +550,7 @@ background-image: url(:/new/prefix1/img/logo.png);   </string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>885</width>
+     <width>1160</width>
      <height>17</height>
     </rect>
    </property>
@@ -600,7 +609,7 @@ QMenuBar::item:pressed {
   </widget>
   <widget class="QStatusBar" name="statusbar">
    <property name="styleSheet">
-    <string notr="true">color: white;</string>
+    <string notr="true">background-color: steelblue;</string>
    </property>
   </widget>
   <widget class="QToolBar" name="toolBar">
