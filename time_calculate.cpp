@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QProgressBar>
 #include "sortings.h"
+#include "QRoundProgressBar.h"
  #include <QGraphicsWidget>
 
 ////            такая система ветвления:   time_calculate.cpp->calculating_time_sort.h->sortings.h
@@ -56,10 +57,9 @@ time_calculate::time_calculate(QWidget *parent) :
 
 
 
-
             timer = new QTimer();
 
-
+    ui->progressBar_2->setBarStyle();
 
 }
 
