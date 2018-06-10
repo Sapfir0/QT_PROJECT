@@ -35,7 +35,8 @@ SOURCES += \
     appcore.cpp \
     about_method.cpp \
     settings.cpp \
-    QRoundProgressBar.cpp
+    QRoundProgressBar.cpp \
+    mythread.cpp
 
 HEADERS += \
     secondwindow.h \
@@ -47,7 +48,8 @@ HEADERS += \
     calculating_time_sort.h \
     about_method.h \
     settings.h \
-    QRoundProgressBar.h
+    QRoundProgressBar.h \
+    mythread.h
 
 FORMS += \
         mainwindow.ui \

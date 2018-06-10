@@ -18,7 +18,7 @@
 
 
 #include "QRoundProgressBar.h"
-
+#include "time_calculate.h"
 #include <QtGui/QPainter>
 
 

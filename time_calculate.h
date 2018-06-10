@@ -20,8 +20,10 @@ class time_calculate : public QMainWindow
 
 public:
     explicit time_calculate(QWidget *parent = 0);
-    ~time_calculate();
 
+
+
+    ~time_calculate();
 
 protected:
     // ћетод получени€ событий в главном окне приложени€
@@ -44,6 +46,8 @@ private slots:
         void slotShortcutEnter();
 
         void slotTimerAlarm();
+      //  void updateCaption();
+         void myslot();
 
 
 private:

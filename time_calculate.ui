@@ -178,7 +178,7 @@ QTabBar::tab:only-one {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -298,6 +298,15 @@ color: white;
        <property name="icon">
         <iconset resource="yahzwhatisit.qrc">
          <normaloff>:/new/prefix1/img/Creative-Tail-Halloween-tree.svg.png</normaloff>:/new/prefix1/img/Creative-Tail-Halloween-tree.svg.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Radix sorting</string>
+       </property>
+       <property name="icon">
+        <iconset resource="yahzwhatisit.qrc">
+         <normaloff>:/new/prefix1/img/depositphotos_9101833-stock-photo-grass-letter-r.jpg</normaloff>:/new/prefix1/img/depositphotos_9101833-stock-photo-grass-letter-r.jpg</iconset>
        </property>
       </item>
      </widget>
@@ -553,8 +562,23 @@ font-size: 18px;
       <height>23</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::CustomContextMenu</enum>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
     <property name="value">
      <number>24</number>
+    </property>
+    <property name="textDirection">
+     <enum>QProgressBar::BottomToTop</enum>
     </property>
    </widget>
   </widget>
@@ -612,11 +636,16 @@ QMenuBar::item:pressed {
      <property name="title">
       <string>Language</string>
      </property>
+     <property name="icon">
+      <iconset resource="yahzwhatisit.qrc">
+       <normaloff>:/new/prefix1/img/Hammer_and_sickle_red_on_transparent.svg_-1024x1024.png</normaloff>:/new/prefix1/img/Hammer_and_sickle_red_on_transparent.svg_-1024x1024.png</iconset>
+     </property>
      <addaction name="actionEnglish"/>
      <addaction name="actionRussian"/>
      <addaction name="actionOthers"/>
     </widget>
     <addaction name="menuLanguage"/>
+    <addaction name="actionSettings"/>
    </widget>
    <addaction name="menuSettings"/>
   </widget>
@@ -696,6 +725,15 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
    </property>
    <property name="text">
     <string>Refresh</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="icon">
+    <iconset resource="yahzwhatisit.qrc">
+     <normaloff>:/new/prefix1/img/Manager_Icon_thumb.png</normaloff>:/new/prefix1/img/Manager_Icon_thumb.png</iconset>
+   </property>
+   <property name="text">
+    <string>Settings</string>
    </property>
   </action>
  </widget>

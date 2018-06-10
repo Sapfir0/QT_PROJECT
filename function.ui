@@ -63,47 +63,6 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
      <string>Сalculate</string>
     </property>
    </widget>
-   <widget class="QSplitter" name="splitter_2">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>320</y>
-      <width>191</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-    <widget class="QLabel" name="INFO">
-     <property name="styleSheet">
-      <string notr="true">color: MidnightBlue;</string>
-     </property>
-     <property name="text">
-      <string>Result =</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="printf_result">
-     <property name="maximumSize">
-      <size>
-       <width>100</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: MidnightBlue;</string>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-    </widget>
-   </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
@@ -298,12 +257,59 @@ background-repeat: no-repeat;
 </string>
     </property>
    </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>320</y>
+      <width>191</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QSplitter" name="splitter_2">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <widget class="QLabel" name="INFO">
+        <property name="styleSheet">
+         <string notr="true">color: MidnightBlue;</string>
+        </property>
+        <property name="text">
+         <string>Result =</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="printf_result">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: MidnightBlue;</string>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
    <zorder>columnView</zorder>
    <zorder>label</zorder>
    <zorder>consider</zorder>
-   <zorder>splitter_2</zorder>
    <zorder>verticalLayoutWidget</zorder>
    <zorder>verticalLayoutWidget_2</zorder>
+   <zorder>horizontalLayoutWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -359,6 +365,10 @@ QMenuBar::item:pressed {
      <property name="title">
       <string>Language</string>
      </property>
+     <property name="icon">
+      <iconset resource="yahzwhatisit.qrc">
+       <normaloff>:/new/prefix1/img/Hammer_and_sickle_red_on_transparent.svg_-1024x1024.png</normaloff>:/new/prefix1/img/Hammer_and_sickle_red_on_transparent.svg_-1024x1024.png</iconset>
+     </property>
      <addaction name="actionEnglish"/>
      <addaction name="actionRussian"/>
      <addaction name="actionOthers"/>
@@ -381,7 +391,7 @@ QMenuBar::item:pressed {
     <string notr="true">  background: #888888;</string>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextBesideIcon</enum>
+    <enum>Qt::ToolButtonIconOnly</enum>
    </property>
    <attribute name="toolBarArea">
     <enum>LeftToolBarArea</enum>
@@ -393,6 +403,7 @@ QMenuBar::item:pressed {
    <addaction name="separator"/>
    <addaction name="actionDerivative"/>
    <addaction name="actionApproximate_calculation"/>
+   <addaction name="actionconversion_from_decimal_to_binary"/>
   </widget>
   <widget class="QToolBar" name="toolBar_2">
    <property name="windowTitle">
@@ -481,6 +492,10 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
    </property>
   </action>
   <action name="actionApproximate_calculation">
+   <property name="icon">
+    <iconset resource="yahzwhatisit.qrc">
+     <normaloff>:/new/prefix1/img/----945x945.gif</normaloff>:/new/prefix1/img/----945x945.gif</iconset>
+   </property>
    <property name="text">
     <string>Approximate calc</string>
    </property>
@@ -488,10 +503,15 @@ QToolBar::item:selected { /* when user selects item using mouse or keyboard */
   <action name="actionSettings">
    <property name="icon">
     <iconset resource="yahzwhatisit.qrc">
-     <normaloff>:/new/prefix1/img/cog-wheel-clipart-6.jpg</normaloff>:/new/prefix1/img/cog-wheel-clipart-6.jpg</iconset>
+     <normaloff>:/new/prefix1/img/Manager_Icon_thumb.png</normaloff>:/new/prefix1/img/Manager_Icon_thumb.png</iconset>
    </property>
    <property name="text">
     <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionconversion_from_decimal_to_binary">
+   <property name="text">
+    <string>conv from 10 to 2</string>
    </property>
   </action>
  </widget>

@@ -111,9 +111,14 @@ void function::on_consider_clicked()
        break;
     case 1:
     {
+       // qDebug() << arg << " " <<  fact(arg);
         ui->printf_result->setText(QString::number(fact(arg)));
     }
     case 2:
+    {
+
+    }
+    case 3:
     {
 
     }
@@ -125,7 +130,7 @@ void function::on_consider_clicked()
 
 void function::on_first_count_valueChanged(int arg1)
 {
-    arg1=arg;
+    arg=arg1;
 }
 
 
@@ -197,4 +202,28 @@ QString dif_result;
     {
         dif_result = "-1/(sin^2 x)";
     }
+}
+
+void function::on_actionconversion_from_decimal_to_binary_triggered()
+{
+    func = 4;
+
+    ui->second_count->hide();
+    ui->second_count_2->hide();
+
+    ui->first_count->show();
+    ui->first_count_2->show();
+    ui->str->hide();
+    ui->str_2->hide();
+
+    ui->first_count_2->setText("Enter number");
+
+
+//    while(arg>2)
+//    {
+//      int ostatok = arg%2;
+//      qDebug() << ostatok << " ";
+
+//    }
+
 }

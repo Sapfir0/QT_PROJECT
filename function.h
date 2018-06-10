@@ -40,6 +40,8 @@ private slots:
 
     void on_str_blockCountChanged(int newBlockCount);
 
+    void on_actionconversion_from_decimal_to_binary_triggered();
+
 private:
     Ui::function *ui;
 

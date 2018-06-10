@@ -5,10 +5,13 @@
 #include <QMessageBox>
 #include <QLibraryInfo>
 #include <QDebug>
-#include <QProgressBar>
+
 #include "sortings.h"
 #include "QRoundProgressBar.h"
  #include <QGraphicsWidget>
+
+#include <QProgressBar>
+#include <QThread>
 
 ////            такая система ветвления:   time_calculate.cpp->calculating_time_sort.h->sortings.h
 int arg1=0; //global variable
@@ -27,7 +30,7 @@ time_calculate::time_calculate(QWidget *parent) :
 
     resize(650,500); //w/h
 
-    this->setStyleSheet("QWidget{background-image: url(img/blue-bubbles-9789.jpg);}");  //////////////////////не робит
+    this->setStyleSheet("QWidget{background-image: url(img/blue-bubbles-9789.jpg);}");  //////////////////////не робит (это для полного покрытия окна бекграундом)
 
 
     connect(ui->consider, SIGNAL(clicked()),this, SLOT(on_consider_clicked(void)));
@@ -52,21 +55,29 @@ time_calculate::time_calculate(QWidget *parent) :
 
     keyEnter = new QShortcut(this);
     keyEnter->setKey(Qt::Key_Enter);
-    connect(keyEnter, SIGNAL(activated()), this, SLOT(slotShortcutEnter()) );
+    connect(keyEnter, SIGNAL(activated()), this, SLOT(slotShortcutEnter()) );//быстрая кнопка ентер - не робит
 
+////----------------
 
-
-
-            timer = new QTimer();
-
-    ui->progressBar_2->setBarStyle();
-
+    timer=new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(myslot())); //что делать каждую секунду
+           timer->start(1000);
+  //  ui->progressBar_2->setBarStyle();
+//ui->QRoundProgressBar->setBarStyle();
 }
 
 time_calculate::~time_calculate()
 {
     delete ui;
 }
+void time_calculate::myslot()//каждую секунду
+{
+
+ //   a++;
+    qDebug() << "timer executed" /*<< a*/;
+}
+
+
 void time_calculate::slotTimerAlarm()
 {
     /* Ежесекундно обновляем данные по текущему времени/*/
@@ -112,11 +123,12 @@ void time_calculate::on_consider_clicked()
     switch (program2)
     {
     case 0:
-    {     //   timer->start(1); // 1мс
+    {    // timer->start(1000);
         ui->lcdNumber->display(QString::number(bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE)));
+//        if(timer >= bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE))
+//            timer->stop();
         break;
     }
-        //////////////////////////////
     case 1:
     { //merge sort
         ui->lcdNumber->display(QString::number(merge_sort_time(arg1)));
@@ -130,6 +142,11 @@ void time_calculate::on_consider_clicked()
     case 3:
     {
         ui->lcdNumber->display(QString::number(tree_sort_time(arg1)));
+        break;
+    }
+    case 4:
+    {
+        ui->lcdNumber->display(QString::number(radix_sort_time(arg1)));
         break;
     }
     default:
@@ -177,12 +194,7 @@ QString green_style= "QProgressBar {border: 2px solid grey;background-color: #02
 QString green_light_style= "QProgressBar {border: 2px solid grey;background-color: #02315F;border-radius: 5px;text-align: center;} "
                      "QProgressBar::chunk {background: GreenYellow;}";
 
-//    1. C – константа
-//    2. log(log(N))
-//    3. log(N)
-//    5. N
-//    6. N*log(N)
-//    9. N!
+
     if (ui->progressBar->value()<=10)
     {
         ui->progressBar->setStyleSheet(green_style);
@@ -240,13 +252,19 @@ void time_calculate::on_comboBox_currentIndexChanged(int index)
     {
         ui->statusbar->showMessage(tr("Quick sort"));
         program2 = index;
-        ui->progressBar->setValue(50);
+        ui->progressBar->setValue(45);
     }
     else if(index==3) //tree
     {
         ui->statusbar->showMessage(tr("Tree sort"));
         program2 = index;
-        ui->progressBar->setValue(40);
+        ui->progressBar->setValue(35);
+    }
+    else if(index==4) //radix
+    {
+        ui->statusbar->showMessage(tr("Radix sort"));
+        program2 = index;
+        ui->progressBar->setValue(20);
     }
 
 

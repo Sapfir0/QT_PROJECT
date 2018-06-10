@@ -12,6 +12,9 @@
 #include "about_method.h"
 
 #include "appcore.h"
+//#include <QtConcurrentRun>
+#include <QThread>
+//#include "mythread.h"
 ///
 /// \brief main         така€ система ветвлени€:   time_calculate.cpp->sortings.h->calculating_time_sort.h
 /// \param argc
@@ -50,10 +53,14 @@ int main(int argc, char *argv[])
 
  //   qApp->setStyleSheet(file.readAll());
 
+//    mythread threadA;
+//    mythread  threadB;
+//    mythread  threadC;
 
-
-
-
+//    threadA.start();    // «апускаем потоки
+//    threadB.start();
+//    threadC.start();
+time_calculate mTimer;
 
 
   secondwindow w;

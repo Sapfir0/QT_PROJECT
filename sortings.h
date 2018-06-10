@@ -188,4 +188,50 @@ inline void treeSort(int a[], int size_array)
 ///-------------------------tree sort----------------
 
 
+inline void radix_sort(int *a, int size_array)
+{
+  int i;
+
+  // find the max number in the given list.
+  // to be used in loop termination part.
+  int maxNumber = a[0];
+  for (i = 1; i < size_array; i++)
+  {
+    if (a[i] > maxNumber)
+      maxNumber = a[i];
+  }
+
+  // run the loop for each of the decimal places
+  int exp = 1;
+  int *tmpBuffer = new int[size_array];
+  while (maxNumber / exp > 0)
+  {
+    int decimalBucket[10] = {  0 };
+    // count the occurences in this decimal digit.
+    for (i = 0; i < size_array; i++)
+      decimalBucket[a[i] / exp % 10]++;
+
+    // Prepare the position counters to be used for re-ordering the numbers
+    // for this decimal place.
+    for (i = 1; i < 10; i++)
+      decimalBucket[i] += decimalBucket[i - 1];
+
+    // Re order the numbers in the tmpbuffer and later copy back to original buffer.
+    for (i = size_array - 1; i >= 0; i--)
+      tmpBuffer[--decimalBucket[a[i] / exp % 10]] = a[i];
+    for (i = 0; i < size_array; i++)
+      a[i] = tmpBuffer[i];
+
+    // Move to next decimal place.
+    exp *= 10;
+
+//      cout << "\nPASS   : ";
+//      print(a, n);
+  }
+}
+
+
+
+
+
 #endif // SORTINGS_H

@@ -52,6 +52,7 @@ unsigned int search_time = end_time - start_time; // искомое время
 
 delete[] sorted_array;
 //unsigned int result = (search_time/1000.0);
+qDebug() << search_time/1000.0 << " ";
 
 return (search_time/1000.0);
 }
@@ -71,11 +72,13 @@ for (int counter = 0; counter < size_array; counter++)
 merge(a, 8); // вызов функции сортировки
 unsigned int end_time_m = clock(); // конечное время
 unsigned int search_time_m = end_time_m - start_time_m; // искомое время
+qDebug() << search_time_m/1000.0 << " ";
+
 return (search_time_m/1000.0);
 }
 
 
-inline unsigned int quick_sort_time(int arg1)
+inline double quick_sort_time(int arg1)
 {
 unsigned int start_time_q =  clock(); // начальное время
 int size_array = arg1; //первый инпут это колво элементов массива
@@ -94,7 +97,7 @@ return (search_time_q/1000.0);
 }
 
 
-inline unsigned int tree_sort_time(int arg1)
+inline double tree_sort_time(int arg1)
 {
 unsigned int start_time_t =  clock(); // начальное время
 int size_array = arg1; //первый инпут это колво элементов массива
@@ -113,6 +116,27 @@ qDebug() << search_time_t/1000.0 << " ";
 
 return (search_time_t/1000.0);
 }
+
+inline double radix_sort_time(int arg1)
+{
+unsigned int start_time_r =  clock(); // начальное время
+int size_array = arg1; //первый инпут это колво элементов массива
+int *a = new int [size_array]; // одномерный динамический массив
+
+for (int counter = 0; counter < size_array; counter++)
+{
+        a[counter] = rand() % 100; // заполняем массив случайными числами
+}
+
+  radix_sort(a,size_array);
+
+unsigned int end_time_r = clock(); // конечное время
+unsigned int search_time_r = end_time_r - start_time_r; // искомое время
+qDebug() << search_time_r/1000.0 << " ";
+
+return (search_time_r/1000.0);
+}
+
 
 
 
