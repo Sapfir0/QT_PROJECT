@@ -59,9 +59,9 @@ return (search_time/1000.0);
 
 
 
-inline  double merge_sort_time(int arg1)
+inline  void merge_sort_time(int arg1)
 {
-unsigned int start_time_m =  clock(); // начальное время
+
 int size_array = arg1; //первый инпут это колво элементов массива
 int *a = new int [size_array]; // одномерный динамический массив
 
@@ -70,11 +70,9 @@ for (int counter = 0; counter < size_array; counter++)
     a[counter] = rand() % 100; // заполняем массив случайными числами
 }
 merge(a, 8); // вызов функции сортировки
-unsigned int end_time_m = clock(); // конечное время
-unsigned int search_time_m = end_time_m - start_time_m; // искомое время
-qDebug() << search_time_m/1000.0 << " ";
 
-return (search_time_m/1000.0);
+
+
 }
 
 

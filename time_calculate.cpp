@@ -61,7 +61,7 @@ time_calculate::time_calculate(QWidget *parent) :
 
     timer=new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(myslot())); //что делать каждую секунду
-           timer->start(1000);
+   //        timer->start(10);
   //  ui->progressBar_2->setBarStyle();
 //ui->QRoundProgressBar->setBarStyle();
 }
@@ -70,20 +70,10 @@ time_calculate::~time_calculate()
 {
     delete ui;
 }
-void time_calculate::myslot()//каждую секунду
-{
-
- //   a++;
-    qDebug() << "timer executed" /*<< a*/;
-}
-
 
 void time_calculate::slotTimerAlarm()
 {
     /* ≈жесекундно обновл€ем данные по текущему времени/*/
-
-//    for (int i=0; i< 5; i+=1)
-
       //  ui->lcdNumber->display(QString::number);
 }
 
@@ -104,16 +94,22 @@ void time_calculate::changeEvent(QEvent *event)
     }
 }
 
-void time_calculate::on_elements_count_valueChanged(int arg12)
+
+
+void time_calculate::myslot()//каждую секунду
 {
-     arg1 = arg12;
-}
-void time_calculate::slotShortcutEnter()
-{
-    QMessageBox::information(this,
-                             "√ор€ча€ клавиша",
-                             "ћои поздравлени€!!! √ор€ча€ клавиша работает",
-                             QMessageBox::Ok);
+
+    static double p = 0.001;
+    ui->lcdNumber->display(QString::number(p+=0.01));
+    qDebug() << "timer executed"<< p;
+
+    if (p>= bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE) && program2==0) //костыль дл€ баббла
+    {
+        timer->stop();
+        p=(bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE));
+        ui->lcdNumber->display(QString::number(p));
+
+    }
 }
 
 
@@ -123,15 +119,21 @@ void time_calculate::on_consider_clicked()
     switch (program2)
     {
     case 0:
-    {    // timer->start(1000);
-        ui->lcdNumber->display(QString::number(bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE)));
-//        if(timer >= bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE))
+    {
+        timer->start(10);
+
+//        if (p>=bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE))
 //            timer->stop();
         break;
     }
     case 1:
-    { //merge sort
-        ui->lcdNumber->display(QString::number(merge_sort_time(arg1)));
+    { //merge sort /////////////////////////---новый метод времени работает технологичнее, но более громоздко в этом файле(это € не смог вынести в calculating_time_sort)
+        QTime time;
+        time.start();
+        (merge_sort_time(arg1));
+        ui->lcdNumber->display(QString::number(time.elapsed()/1000.0));
+        qDebug() << time.elapsed()/1000.0 << " ";
+
         break;
     }
     case 2:
@@ -270,4 +272,16 @@ void time_calculate::on_comboBox_currentIndexChanged(int index)
 
 }
 
+void time_calculate::slotShortcutEnter()
+{
+    QMessageBox::information(this,
+                             "√ор€ча€ клавиша",
+                             "ћои поздравлени€!!! √ор€ча€ клавиша работает",
+                             QMessageBox::Ok);
+}
 
+
+void time_calculate::on_elements_count_valueChanged(int arg12)
+{
+     arg1 = arg12;
+}

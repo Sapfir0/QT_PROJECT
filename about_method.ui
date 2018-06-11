@@ -29,25 +29,12 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QLCDNumber" name="lcdNumber">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>140</y>
-     <width>141</width>
-     <height>81</height>
-    </rect>
-   </property>
-   <property name="intValue" stdset="0">
-    <number>10</number>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>260</x>
      <y>20</y>
-     <width>341</width>
+     <width>121</width>
      <height>71</height>
     </rect>
    </property>
@@ -58,9 +45,9 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>90</y>
-     <width>141</width>
+     <x>30</x>
+     <y>210</y>
+     <width>131</width>
      <height>21</height>
     </rect>
    </property>
@@ -68,17 +55,14 @@
     <string>Кнопочка пососи мой болт</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>110</y>
-     <width>71</width>
-     <height>51</height>
+     <x>20</x>
+     <y>10</y>
+     <width>161</width>
+     <height>171</height>
     </rect>
-   </property>
-   <property name="whatsThis">
-    <string/>
    </property>
    <property name="text">
     <string>TextLabel</string>
