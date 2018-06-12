@@ -1,7 +1,7 @@
 #include "settings.h"
 #include "ui_settings.h"
 #include <QPixmap>
-
+#include <QMenu>
 
 
 settings::settings(QWidget *parent) :
@@ -78,13 +78,14 @@ settings::~settings()
 
 /* Метод, который обрабатывает событие закрытия окна приложения
  * */
-void MainWindow::closeEvent(QCloseEvent * event)
+void settings::closeEvent(QCloseEvent * event)
 {
     /* Если окно видимо и чекбокс отмечен, то завершение приложения
      * игнорируется, а окно просто скрывается, что сопровождается
      * соответствующим всплывающим сообщением
      */
-    if(this->isVisible() && ui->trayCheckBox->isChecked()){
+    if(this->isVisible() && ui->trayCheckBox->isChecked())
+    {
         event->ignore();
         this->hide();
         QSystemTrayIcon::MessageIcon icon = QSystemTrayIcon::MessageIcon(QSystemTrayIcon::Information);
@@ -99,7 +100,7 @@ void MainWindow::closeEvent(QCloseEvent * event)
 
 /* Метод, который обрабатывает нажатие на иконку приложения в трее
  * */
-void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
+void settings::iconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     switch (reason)
     {
@@ -143,7 +144,8 @@ void settings::on_saveButton_clicked()
     if(ui->trayCheckBox->isChecked())
     {
         settings.setValue(SETTINGS_TRAY, true);
-    } else
+    }
+    else
     {
         settings.setValue(SETTINGS_TRAY, false);
     }
