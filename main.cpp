@@ -10,8 +10,6 @@
 #include <QTranslator>
 #include <QLibraryInfo>
 #include "about_method.h"
-
-#include "appcore.h"
 //#include <QtConcurrentRun>
 #include <QThread>
 //#include "mythread.h"
@@ -37,18 +35,6 @@ int main(int argc, char *argv[])
 //    bool ok = a.exec();
 //    return ok;
 
-    QQmlApplicationEngine engine; // Создаём движок qml
-
-    AppCore appCore;    // Создаём ядро приложения
-    QQmlContext *context = engine.rootContext();    // Создаём корневой контекст
-    /* Загружаем объект в контекст для установки соединения,
-     * а также определяем имя, по которому будет происходить соединение
-     * */
-    context->setContextProperty("appCore", &appCore);
-
-    // И загружаем в него исходники qml
-  //  engine.load(QUrl(QStringLiteral("qrc:/qss/Secondwindow.qml")));
-
 
 
  //   qApp->setStyleSheet(file.readAll());
@@ -60,6 +46,28 @@ int main(int argc, char *argv[])
 //    threadA.start();    // Запускаем потоки
 //    threadB.start();
 //    threadC.start();
+
+
+
+
+
+
+//это все для сохранения настроек
+    /* Для адекватной регистрации приложения в операционной
+     * необходимо установить название организации, домен организации,
+     * а также название приложения.
+     * Все настройки  будут храниться в операционной системе под этими
+     * учетными данными приложения
+     * */
+    QCoreApplication::setOrganizationName(ORGANIZATION_NAME);
+    QCoreApplication::setOrganizationDomain(ORGANIZATION_DOMAIN);
+    QCoreApplication::setApplicationName(APPLICATION_NAME);
+
+
+
+
+
+
 time_calculate mTimer;
 
 

@@ -33,14 +33,26 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>50</y>
+     <y>60</y>
      <width>258</width>
-     <height>111</height>
+     <height>131</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QCheckBox" name="trayCheckBox">
+      <property name="styleSheet">
+       <string notr="true">QCheckBox {
+    spacing: 5px;
+}
+
+QCheckBox::indicator {
+    width: 13px;
+    height: 13px;
+}
+
+</string>
+      </property>
       <property name="text">
        <string>minimize the program to tray</string>
       </property>
@@ -48,6 +60,48 @@
     </item>
     <item>
      <widget class="QCheckBox" name="dev_mode">
+      <property name="styleSheet">
+       <string notr="true">QCheckBox {
+    spacing: 5px;
+}
+
+QCheckBox::indicator {
+    width: 13px;
+    height: 13px;
+}
+
+QCheckBox::indicator:unchecked {
+    image: url(:/img/checkbox_drow_unchecked.png);
+}
+
+QCheckBox::indicator:unchecked:hover {
+    image: url(:/img/checkbox_unchecked_hover.png);
+}
+
+QCheckBox::indicator:unchecked:pressed {
+    image: url(:/img/checkbox_unchecked_pressed.png);
+}
+
+QCheckBox::indicator:checked {
+    image: url(:/img/check.jpg);
+}
+
+QCheckBox::indicator:checked:hover {
+    image: url(:/img/checkbox_checked_hover.png);
+}
+
+QCheckBox::indicator:checked:pressed {
+    image: url(:/img/checkbox_checked_pressed.png);
+}
+
+QCheckBox::indicator:indeterminate:hover {
+    image: url(:/img/checkbox_indeterminate_hover.png);
+}
+
+QCheckBox::indicator:indeterminate:pressed {
+    image: url(:/img/checkbox_indeterminate_pressed.png);
+}</string>
+      </property>
       <property name="text">
        <string>Developer mode</string>
       </property>
@@ -55,12 +109,96 @@
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_2">
+      <property name="styleSheet">
+       <string notr="true">QCheckBox {
+    spacing: 5px;
+}
+
+QCheckBox::indicator {
+    width: 13px;
+    height: 13px;
+}
+
+QCheckBox::indicator:unchecked {
+    image: url(:/img/checkbox_drow_unchecked.png);
+}
+
+QCheckBox::indicator:unchecked:hover {
+    image: url(:/img/checkbox_unchecked_hover.png);
+}
+
+QCheckBox::indicator:unchecked:pressed {
+    image: url(:/img/checkbox_unchecked_pressed.png);
+}
+
+QCheckBox::indicator:checked {
+    image: url(:/img/check.jpg);
+}
+
+QCheckBox::indicator:checked:hover {
+    image: url(:/img/checkbox_checked_hover.png);
+}
+
+QCheckBox::indicator:checked:pressed {
+    image: url(:/img/checkbox_checked_pressed.png);
+}
+
+QCheckBox::indicator:indeterminate:hover {
+    image: url(:/img/checkbox_indeterminate_hover.png);
+}
+
+QCheckBox::indicator:indeterminate:pressed {
+    image: url(:/img/checkbox_indeterminate_pressed.png);
+}</string>
+      </property>
       <property name="text">
        <string>extended mode(u can add new sort,or function)</string>
       </property>
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>20</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 15px;</string>
+   </property>
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="image">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="saveButton">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>200</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
   </widget>
  </widget>
  <resources/>

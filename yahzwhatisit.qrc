@@ -32,6 +32,10 @@
         <file>img/Manager_Icon_thumb.png</file>
         <file>img/Hammer_and_sickle_red_on_transparent.svg_-1024x1024.png</file>
         <file>img/i.jpg</file>
+        <file>img/check.jpg</file>
+        <file>img/checkbox_drow_checked.png</file>
+        <file>img/checkbox_drow_unchecked.png</file>
+        <file>img/replay-10-second-3b91bb72247954c0-256x256.png</file>
     </qresource>
     <qresource prefix="/">
         <file>qss/Consider.qml</file>

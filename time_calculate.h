@@ -45,10 +45,10 @@ private slots:
 
         void slotShortcutEnter();
 
-        void slotTimerAlarm();
-      //  void updateCaption();
          void myslot();
 
+
+         void on_actionSettings_triggered();
 
 private:
     Ui::time_calculate *ui;

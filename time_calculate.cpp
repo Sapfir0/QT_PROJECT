@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QLibraryInfo>
 #include <QDebug>
+#include "settings.h"
 
 #include "sortings.h"
 #include "QRoundProgressBar.h"
@@ -61,20 +62,13 @@ time_calculate::time_calculate(QWidget *parent) :
 
     timer=new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(myslot())); //что делать каждую секунду
-   //        timer->start(10);
-  //  ui->progressBar_2->setBarStyle();
-//ui->QRoundProgressBar->setBarStyle();
+
+  // ui->progressBar_2->;
 }
 
 time_calculate::~time_calculate()
 {
     delete ui;
-}
-
-void time_calculate::slotTimerAlarm()
-{
-    /* Ежесекундно обновляем данные по текущему времени/*/
-      //  ui->lcdNumber->display(QString::number);
 }
 
 void time_calculate::on_actionBack_triggered()
@@ -284,4 +278,10 @@ void time_calculate::slotShortcutEnter()
 void time_calculate::on_elements_count_valueChanged(int arg12)
 {
      arg1 = arg12;
+}
+
+void time_calculate::on_actionSettings_triggered()
+{
+    settings *back2 = new settings;
+    back2->exec();
 }

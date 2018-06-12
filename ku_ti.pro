@@ -32,7 +32,6 @@ SOURCES += \
     secondwindow.cpp \
     time_calculate.cpp \
     function.cpp \
-    appcore.cpp \
     about_method.cpp \
     settings.cpp \
     QRoundProgressBar.cpp \
@@ -44,7 +43,6 @@ HEADERS += \
     requests.h \
     time_calculate.h \
     function.h \
-    appcore.h \
     calculating_time_sort.h \
     about_method.h \
     settings.h \
