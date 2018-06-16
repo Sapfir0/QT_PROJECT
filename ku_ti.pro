@@ -7,6 +7,7 @@
 QT       += core gui
 QT += qml
 QT += qml quick widgets
+ QT += gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -35,7 +36,8 @@ SOURCES += \
     about_method.cpp \
     settings.cpp \
     QRoundProgressBar.cpp \
-    mythread.cpp
+    mythread.cpp \
+    constructor.cpp
 
 HEADERS += \
     secondwindow.h \
@@ -47,7 +49,8 @@ HEADERS += \
     about_method.h \
     settings.h \
     QRoundProgressBar.h \
-    mythread.h
+    mythread.h \
+    constructor.h
 
 FORMS += \
         mainwindow.ui \
@@ -55,7 +58,8 @@ FORMS += \
     time_calculate.ui \
     function.ui \
     about_method.ui \
-    settings.ui
+    settings.ui \
+    constructor.ui
 
 RESOURCES += \
     yahzwhatisit.qrc

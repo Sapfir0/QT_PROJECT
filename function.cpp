@@ -37,8 +37,6 @@ function::function(QWidget *parent) :
 
 
 //    ui->verticalLayout_2->setContentsMargin(10,10,0,0);
-
-
 }
 
 function::~function()
@@ -48,12 +46,10 @@ function::~function()
 
 void function::on_actionBack_triggered()
 {
-
     secondwindow *back = new secondwindow;
     hide();
    // back->setParent(this);
     back->exec();
-
 }
 
 void function::on_actionFactorial_triggered()

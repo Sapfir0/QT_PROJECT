@@ -8,7 +8,6 @@
 #include <QSystemTrayIcon>
 #include <QAction>
 
-
 /* Defining */
 #define ORGANIZATION_NAME "EVILEG"
 #define ORGANIZATION_DOMAIN "www.evileg.ru"
@@ -46,6 +45,10 @@ private slots:
 
     void on_saveButton_clicked();
 
+    void on_checkBox_stateChanged(int arg1);
+
+
+//void set_image_on_desktop(char directoriya_and_filename[]);
 private:
     Ui::settings *ui;
     /* ќбъ€вл€ем объект будущей иконки приложени€ дл€ тре€ */

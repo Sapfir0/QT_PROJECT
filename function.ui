@@ -6,44 +6,258 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>665</width>
-    <height>480</height>
+    <width>978</width>
+    <height>547</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>10</y>
-      <width>47</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>Functions</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="consider">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>220</y>
-      <width>158</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="splitter_3">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Functions</string>
+       </property>
+      </widget>
+      <widget class="QSplitter" name="splitter">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <widget class="QWidget" name="verticalLayoutWidget">
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="image">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="line">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="descripton">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="line_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="desc_refinement">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>desc_refinement</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="styleSheet">
+              <string notr="true">color: MidnightBlue;
+background-color: none;</string>
+             </property>
+             <property name="text">
+              <string>Примерная сложность</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton">
+             <property name="text">
+              <string>о методе</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QSplitter" name="splitter_2">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <widget class="QLabel" name="INFO">
+              <property name="styleSheet">
+               <string notr="true">color: MidnightBlue;</string>
+              </property>
+              <property name="text">
+               <string>Result =</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="printf_result">
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: MidnightBlue;</string>
+              </property>
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_2">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="first_count_2">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Enter first count</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="first_count">
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QSpinBox {
+color: MidnightBlue;
+background-color:#FFEFD5;
+}
+
+</string>
+           </property>
+           <property name="maximum">
+            <number>999999999</number>
+           </property>
+           <property name="singleStep">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="second_count_2">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Enter second count</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="second_count">
+           <property name="styleSheet">
+            <string notr="true">QSpinBox {
+color: MidnightBlue;
+background-color:#FFEFD5;
+}
+
+</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="str_2">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Enter str</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPlainTextEdit" name="str">
+           <property name="minimumSize">
+            <size>
+             <width>161</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPlainTextEdit{
+
+    border-width: 3;
+ selection-background-color: orange;
+background-color:#FFEFD5;
+
+}
+</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>17</width>
+             <height>33</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="consider">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
   background-color: #3B6582;
   color: white; 
  width:  100px;
@@ -58,265 +272,28 @@ color: black;
 }
 QPushButton:pressed {  background-color rgb(220, 116, 45) 
 }</string>
-    </property>
-    <property name="text">
-     <string>Сalculate</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>150</y>
-      <width>202</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLabel" name="image">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="Line" name="line">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="descripton">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="Line" name="line_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="desc_refinement">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string>desc_refinement</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="label_6">
-         <property name="styleSheet">
-          <string notr="true">color: MidnightBlue;
-background-color: none;</string>
-         </property>
-         <property name="text">
-          <string>Примерная сложность</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton">
-         <property name="text">
-          <string>о методе</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>70</y>
-      <width>163</width>
-      <height>146</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QLabel" name="first_count_2">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string>Enter first count</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSpinBox" name="first_count">
-       <property name="mouseTracking">
-        <bool>true</bool>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QSpinBox {
-color: MidnightBlue;
-background-color:#FFEFD5;
-}
-
-</string>
-       </property>
-       <property name="maximum">
-        <number>999999999</number>
-       </property>
-       <property name="singleStep">
-        <number>10</number>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="second_count_2">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string>Enter second count</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSpinBox" name="second_count">
-       <property name="styleSheet">
-        <string notr="true">QSpinBox {
-color: MidnightBlue;
-background-color:#FFEFD5;
-}
-
-</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="str_2">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string>Enter str</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPlainTextEdit" name="str">
-       <property name="minimumSize">
-        <size>
-         <width>161</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>161</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPlainTextEdit{
-
-    border-width: 3;
- selection-background-color: orange;
-background-color:#FFEFD5;
-
-}
-</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QColumnView" name="columnView">
-    <property name="geometry">
-     <rect>
-      <x>-20</x>
-      <y>0</y>
-      <width>591</width>
-      <height>491</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-image: url(:/new/prefix1/img/Elegant_Background-3.jpg);
-background-repeat: no-repeat;
-</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>320</y>
-      <width>191</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QSplitter" name="splitter_2">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="INFO">
-        <property name="styleSheet">
-         <string notr="true">color: MidnightBlue;</string>
-        </property>
-        <property name="text">
-         <string>Result =</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="printf_result">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: MidnightBlue;</string>
-        </property>
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
+           </property>
+           <property name="text">
+            <string>Сalculate</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3"/>
+         </item>
+        </layout>
        </widget>
       </widget>
-     </item>
-    </layout>
-   </widget>
-   <zorder>columnView</zorder>
-   <zorder>label</zorder>
-   <zorder>consider</zorder>
-   <zorder>verticalLayoutWidget</zorder>
-   <zorder>verticalLayoutWidget_2</zorder>
-   <zorder>horizontalLayoutWidget</zorder>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>665</width>
+     <width>978</width>
      <height>17</height>
     </rect>
    </property>

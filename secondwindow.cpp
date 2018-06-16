@@ -5,7 +5,10 @@
 #include "ui_secondwindow.h"
 #include "time_calculate.h"
 #include "function.h"
-
+#include "constructor.h"
+#include <QIcon>
+#include <Windows.h>
+#include <QDebug>
 
 secondwindow::secondwindow(QWidget *parent) :
     QDialog(parent),
@@ -13,6 +16,8 @@ secondwindow::secondwindow(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle(tr("MFC program"));
+  setWindowIcon(QIcon(":/img/kypluk.ico"));
+
 
 }
 
@@ -36,4 +41,11 @@ void secondwindow::on_function_button_clicked()
  hide();  //  ad->setParent(this);
     ad->show();
 
+}
+
+void secondwindow::on_constructor_clicked()
+{
+    constructor *ad2 = new constructor;
+   hide();// ad->setParent(this);
+    ad2->show();
 }

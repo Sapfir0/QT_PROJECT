@@ -2,7 +2,12 @@
 #include "ui_settings.h"
 #include <QPixmap>
 #include <QMenu>
-
+#include <QDebug>
+#include <QFile>
+#include <QTextStream>
+#include <QTime>
+//#include <Windows.h>
+//#include "kypluk_api/kyplukOSfunction.h"
 
 settings::settings(QWidget *parent) :
     QDialog(parent),
@@ -17,6 +22,36 @@ settings::settings(QWidget *parent) :
     int w = ui->image->width();
     int h = ui->image->height();
 
+////------------
+    QFile file("settings.txt");
+    file.open(QIODevice::WriteOnly);
+
+    if(file.open(QIODevice::WriteOnly))
+    {
+        qDebug() << "File is open";
+        QTextStream writeStream(&file); // —оздаем объект класса QTextStream
+// и передаем ему адрес объекта file
+        writeStream << "setting saved = true;"; // ѕосылаем строку в поток дл€ записи
+        file.write("Test string\n");
+        file.write("Test string2");
+        file.close(); // «акрываем файл
+    }
+    else if(!file.isOpen())
+    {
+        qDebug() << "File is NOT open";
+    }
+
+    if(file.exists())
+    {
+        qDebug() << "File is exist";
+    }
+
+   // file.close();/////////////----------------------------
+
+///+-----------------------
+
+
+
     ui->image->setPixmap(pix.scaled(w,h, Qt::KeepAspectRatio));
 
     /* ѕри создании главного окна производим установку начальных параметров
@@ -30,22 +65,17 @@ settings::settings(QWidget *parent) :
         ui->trayCheckBox->setChecked(settings.value(SETTINGS_TRAY, false).toBool());
 
 
-
-
-
-
-
     /* »нициализируем иконку тре€, устанавливаем иконку из набора системных иконок,
      * а также задаем всплывающую подсказку
      * */
     trayIcon = new QSystemTrayIcon(this);
     trayIcon->setIcon(this->style()->standardIcon(QStyle::SP_ComputerIcon));
     trayIcon->setToolTip("Tray Program" "\n"
-                         "–абота со сворачиванием программы трей");
+                         "Hide app");
     /* ѕосле чего создаем контекстное меню из двух пунктов*/
     QMenu * menu = new QMenu(this);
-    QAction * viewWindow = new QAction(trUtf8("–азвернуть окно"), this);
-    QAction * quitAction = new QAction(trUtf8("¬ыход"), this);
+    QAction * viewWindow = new QAction(trUtf8("Deploy window"), this);
+    QAction * quitAction = new QAction(trUtf8("Exit"), this);
 
     /* подключаем сигналы нажатий на пункты меню к соответсвующим слотам.
      * ѕервый пункт меню разворачивает приложение из тре€,
@@ -91,8 +121,8 @@ void settings::closeEvent(QCloseEvent * event)
         QSystemTrayIcon::MessageIcon icon = QSystemTrayIcon::MessageIcon(QSystemTrayIcon::Information);
 
         trayIcon->showMessage("Tray Program",
-                              trUtf8("ѕриложение свернуто в трей. ƒл€ того чтобы, "
-                                     "развернуть окно приложени€, щелкните по иконке приложени€ в трее"),
+                              trUtf8("App folded into tray, if u wonna "
+                                     "to deploy app, click on app in tray"),
                               icon,
                               2000);
     }
@@ -131,6 +161,8 @@ void settings::iconActivated(QSystemTrayIcon::ActivationReason reason)
  * */
 void settings::on_dev_mode_stateChanged(int arg1)
 {
+//    if(arg1=true)
+
 
 }
 
@@ -144,6 +176,8 @@ void settings::on_saveButton_clicked()
     if(ui->trayCheckBox->isChecked())
     {
         settings.setValue(SETTINGS_TRAY, true);
+        ////----------------------------------------------
+
     }
     else
     {
@@ -155,6 +189,27 @@ void settings::on_saveButton_clicked()
      * сохранени€ настроек
      * */
     QMessageBox::information(this,
-                             trUtf8("—охранение настроек"),
-                             trUtf8("—охранение настроек выполнено успешно"));
+                             trUtf8("Save settings"),
+                             trUtf8("Success save settings"));
+}
+
+void settings::on_checkBox_stateChanged(int arg1)
+{
+    //если стоит галка
+    //мен€ть картинку рабочего стола
+    //если врем€ больше 20:00
+    //и до 8:00
+    if(ui->desctop_background->isChecked())
+    {
+        //        QTime time = QTime::currentTime().toString("hh:mm:ss");
+        //        if ( ) //если ща 20часов, мен€ть на ночное
+        //        {
+
+        //        }
+        //        else if(  )//если ща 8 часов мен€ть изображение на дневное
+        //        {
+
+        //        }
+
+    }
 }

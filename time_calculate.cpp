@@ -16,7 +16,7 @@
 
 ////            такая система ветвления:   time_calculate.cpp->calculating_time_sort.h->sortings.h
 int arg1=0; //global variable
-int program2 = 9;
+int program2 = 0;
 bool DEV_MODE=true;
 int MAX_ACCEPTABLY=9999;
 
@@ -60,10 +60,8 @@ time_calculate::time_calculate(QWidget *parent) :
 
 ////----------------
 
-    timer=new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(myslot())); //что делать каждую секунду
-
-  // ui->progressBar_2->;
+    timer=new QTimer(this); //тут запускаем таймер
+    connect(timer, SIGNAL(timeout()), this, SLOT(myslot())); //что делать каждый тик
 }
 
 time_calculate::~time_calculate()
@@ -93,8 +91,8 @@ void time_calculate::changeEvent(QEvent *event)
 void time_calculate::myslot()//каждую секунду
 {
 
-    static double p = 0.001;
-    ui->lcdNumber->display(QString::number(p+=0.01));
+    static double p = 0.001; //изнчальное время 1 мс
+    ui->lcdNumber->display(QString::number(p+=0.01)); //+10мс каждый тик
     qDebug() << "timer executed"<< p;
 
     if (p>= bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE) && program2==0) //костыль для баббла
@@ -194,37 +192,27 @@ QString green_light_style= "QProgressBar {border: 2px solid grey;background-colo
     if (ui->progressBar->value()<=10)
     {
         ui->progressBar->setStyleSheet(green_style);
-        //цвет green
-        //длина полосы = 10%
-        //надпись (c)
+        //цвет green        //длина полосы = 10%        //надпись (c)
     }
     else if (ui->progressBar->value()>10 && ui->progressBar->value()<30)
     {
         ui->progressBar->setStyleSheet(green_light_style);
-        //цвет green
-        //длина полосы = 30%
-        //надпись log(n)
+        //цвет green        //длина полосы = 30%        //надпись log(n)
     }
     else if (ui->progressBar->value()>=30 &&ui->progressBar->value()<50)
     {
         ui->progressBar->setStyleSheet(yellow_style);
-    //цвет yellow
-    //длина полосы = 50%
-    //надпись n
+    //цвет yellow    //длина полосы = 50%    //надпись n
     }
     else if (ui->progressBar->value()>=50 && ui->progressBar->value() < 70)
     {
         ui->progressBar->setStyleSheet(orange_style);
-    //цвет orange
-    //длина полосы = 70%
-    //надпись nlog(n)
+    //цвет orange    //длина полосы = 70%    //надпись nlog(n)
     }
     else if (ui->progressBar->value()>=70 && ui->progressBar->value() <= 100)
     {
         ui->progressBar->setStyleSheet(red_style);
-    //цвет red
-    //длина полосы = 90%
-    //надпись n^2
+    //цвет red    //длина полосы = 90%    //надпись n^2
     }
 
 }

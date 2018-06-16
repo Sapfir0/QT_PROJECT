@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1160</width>
-    <height>718</height>
+    <width>1096</width>
+    <height>786</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -559,29 +559,14 @@ font-size: 18px;
    <widget class="QProgressBar" name="progressBar_2">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>280</y>
+      <x>100</x>
+      <y>300</y>
       <width>118</width>
       <height>23</height>
      </rect>
     </property>
-    <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
-    </property>
-    <property name="contextMenuPolicy">
-     <enum>Qt::CustomContextMenu</enum>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
     <property name="value">
      <number>24</number>
-    </property>
-    <property name="textDirection">
-     <enum>QProgressBar::BottomToTop</enum>
     </property>
    </widget>
   </widget>
@@ -590,7 +575,7 @@ font-size: 18px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1160</width>
+     <width>1096</width>
      <height>17</height>
     </rect>
    </property>

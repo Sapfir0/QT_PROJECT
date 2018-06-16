@@ -5,6 +5,7 @@
 #include <QMainWindow>
 #include "time_calculate.h"
 #include "function.h"
+#include "constructor.h"
 
 
 namespace Ui {
@@ -24,6 +25,8 @@ private slots:
     void on_function_button_clicked();
 
     void on_time_calculate_clicked();
+
+    void on_constructor_clicked();
 
 private:
     Ui::secondwindow *ui;
