@@ -24,6 +24,8 @@ public:
 
 
     ~time_calculate();
+public slots:
+
 
 protected:
     // ћетод получени€ событий в главном окне приложени€
@@ -56,7 +58,9 @@ private:
     QTimer *timer;
     QShortcut       *keyEnter;
 
-
+   // QString threads_name;
 };
+
+
 
 #endif // TIME_CALCULATE_H

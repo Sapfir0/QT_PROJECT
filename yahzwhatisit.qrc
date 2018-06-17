@@ -39,10 +39,7 @@
         <file>img/kypluk.ico</file>
         <file>img/6B9SfGkwnN0.jpg</file>
         <file>img/341507.jpg</file>
-        <file>img/508064656.jpg</file>
         <file>img/Green-Bubbles-Background.jpg</file>
-        <file>img/Mojave_Day.jpg</file>
-        <file>img/Mojave_Night.jpg</file>
     </qresource>
     <qresource prefix="/">
         <file>qss/Consider.qml</file>

@@ -95,13 +95,13 @@ void time_calculate::myslot()//каждую секунду
     ui->lcdNumber->display(QString::number(p+=0.01)); //+10мс каждый тик
     qDebug() << "timer executed"<< p;
 
-    if (p>= bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE) && program2==0) //костыль для баббла
-    {
-        timer->stop();
-        p=(bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE));
-        ui->lcdNumber->display(QString::number(p));
+//    if (p>= bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE) && program2==0) //костыль для баббла
+//    {
+//        timer->stop();
+//        p=(bubble_sort_time(arg1,MAX_ACCEPTABLY, DEV_MODE));
+//        ui->lcdNumber->display(QString::number(p));
 
-    }
+//    }
 }
 
 

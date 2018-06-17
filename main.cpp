@@ -41,18 +41,6 @@ int main(int argc, char *argv[])
 
  //   qApp->setStyleSheet(file.readAll());
 
-//    mythread threadA;
-//    mythread  threadB;
-//    mythread  threadC;
-
-//    threadA.start();    // «апускаем потоки
-//    threadB.start();
-//    threadC.start();
-
-
-
-
-
 
 //это все дл€ сохранени€ настроек
     /* ƒл€ адекватной регистрации приложени€ в операционной
