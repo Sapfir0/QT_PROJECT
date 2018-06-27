@@ -23,28 +23,6 @@ settings::settings(QWidget *parent) :
     int h = ui->image->height();
 
 ////------------
-    QFile file("settings.txt");
-    file.open(QIODevice::WriteOnly);
-
-    if(file.open(QIODevice::WriteOnly))
-    {
-        qDebug() << "File is open";
-        QTextStream writeStream(&file); // Создаем объект класса QTextStream
-// и передаем ему адрес объекта file
-        writeStream << "setting saved = true;"; // Посылаем строку в поток для записи
-        file.write("Test string\n");
-        file.write("Test string2");
-        file.close(); // Закрываем файл
-    }
-    else if(!file.isOpen())
-    {
-        qDebug() << "File is NOT open";
-    }
-
-    if(file.exists())
-    {
-        qDebug() << "File is exist";
-    }
 
    // file.close();/////////////----------------------------
 
@@ -63,7 +41,6 @@ settings::settings(QWidget *parent) :
          * то есть false
          * */
         ui->trayCheckBox->setChecked(settings.value(SETTINGS_TRAY, false).toBool());
-
 
     /* Инициализируем иконку трея, устанавливаем иконку из набора системных иконок,
      * а также задаем всплывающую подсказку
@@ -176,12 +153,61 @@ void settings::on_saveButton_clicked()
     if(ui->trayCheckBox->isChecked())
     {
         settings.setValue(SETTINGS_TRAY, true);
-        ////----------------------------------------------
+
+        QFile file("settings.txt");
+        QString str = "setting saved = true";
+
+        if(file.open(QIODevice::WriteOnly))
+        {
+            qDebug() << "File is open";
+            QTextStream writeStream(&file); // Создаем объект класса QTextStream
+    // и передаем ему адрес объекта file
+            writeStream << str; // Посылаем строку в поток для записи
+            file.close(); // Закрываем файл
+
+            if (writeStream.status() != QTextStream::Ok)
+                qDebug() << "Ошибка записи файла";
+        }
+
+        else if(!file.isOpen())
+            qDebug() << "File is NOT open";
+
+        if(file.exists())
+            qDebug() << "File is exist";
+               ////----------------------------------------------
 
     }
     else
-    {
+    { //иф при открытии приложения настройка уже фолс - то снять галку
         settings.setValue(SETTINGS_TRAY, false);
+
+
+        QFile file("settings.txt");
+        QString str = "setting saved = false";
+
+        if(file.open(QIODevice::ReadWrite))
+        {
+            qDebug() << "File is open";
+
+            QTextStream writeStream(&file); // Создаем объект класса QTextStream
+    // и передаем ему адрес объекта file
+            while (!writeStream.atEnd())
+            {
+                str = writeStream.readLine();
+                qDebug() << str;
+            }
+
+            writeStream << str; // Посылаем строку в поток для записи
+
+            file.close(); // Закрываем файл
+        }
+        else if(!file.isOpen())
+            qDebug() << "File is NOT open";
+
+
+        if(file.exists())
+            qDebug() << "File is exist";
+
     }
     settings.sync();
 
@@ -201,15 +227,7 @@ void settings::on_checkBox_stateChanged(int arg1)
     //и до 8:00
     if(ui->desctop_background->isChecked())
     {
-        //        QTime time = QTime::currentTime().toString("hh:mm:ss");
-        //        if ( ) //если ща 20часов, менять на ночное
-        //        {
 
-        //        }
-        //        else if(  )//если ща 8 часов менять изображение на дневное
-        //        {
-
-        //        }
 
     }
 }

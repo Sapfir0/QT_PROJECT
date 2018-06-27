@@ -2,6 +2,7 @@
 #define CONSTRUCTOR_H
 
 #include <QMainWindow>
+#include <QListWidget>
 
 namespace Ui {
 class constructor;
@@ -25,6 +26,16 @@ public:
 
 private slots:
     void on_actionBack_triggered();
+
+    void on_transfer_clicked();
+
+    void on_input_box_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
+
+    void on_down_clicked();
+
+    void on_up_clicked();
+
+    void on_compile_clicked();
 
 private:
     Ui::constructor *ui;

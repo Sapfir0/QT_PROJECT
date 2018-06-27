@@ -45,10 +45,14 @@
      </property>
      <widget class="QListWidget" name="input_box">
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">QListWidget {
+background-color: grey;
+font-size: 20px;
+}
+</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="consider">
+     <widget class="QPushButton" name="compile">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -79,6 +83,45 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
       <string notr="true">background-image: url(:/new/prefix1/img/Hammer_and_sickle_red_on_transparent.svg_-1024x1024.png);</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="transfer">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>40</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Transfer</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="up">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>10</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>UP</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="down">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>10</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DOWN</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

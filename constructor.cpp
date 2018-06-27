@@ -4,36 +4,36 @@
  #include <QDrag>
 #include <QFile>
 #include <fstream>
+#include <QListWidget>
+
+QString include = "#include \"stdafx\"";
+QString main = "int main {";
+QString close = "}";
+
+static const QStringList List_items_left =
+        QStringList() << include << main << close;
+
+static const QStringList List_items_right =
+        QStringList() << include << main << close;
+
 
 constructor::constructor(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::constructor)
 {
     ui->setupUi(this);
-
-      QDrag *drag = new QDrag(this);
-
-    ui->input_box->addItem("for");
-    ui->input_box->addItem("if");
+    QDrag *drag = new QDrag(this);
 
 
-//            QLabel *boatIcon = new QLabel(this);
-//               boatIcon->setPixmap(QPixmap(":/images/boat.png"));
-//               boatIcon->move(10, 10);
-//               boatIcon->show();
-//               boatIcon->setAttribute(Qt::WA_DeleteOnClose);
+    ui->input_box->addItems(List_items_left);
+    ui->input_box->setAcceptDrops(true);
+    ui->input_box->setDragEnabled(true);
+    ui->input_box->setDragDropMode(QAbstractItemView::InternalMove);
 
-//               QLabel *carIcon = new QLabel(this);
-//               carIcon->setPixmap(QPixmap(":/images/car.png"));
-//               carIcon->move(100, 10);
-//               carIcon->show();
-//               carIcon->setAttribute(Qt::WA_DeleteOnClose);
+//    ui->output_box->setAcceptDrops(true);
+//    ui->output_box->setDragEnabled(true);
+//    ui->output_box->setDragDropMode(QAbstractItemView::InternalMove);
 
-//               QLabel *houseIcon = new QLabel(this);
-//               houseIcon->setPixmap(QPixmap(":/images/house.png"));
-//               houseIcon->move(10, 80);
-//               houseIcon->show();
-//               houseIcon->setAttribute(Qt::WA_DeleteOnClose);
 }
 
 constructor::~constructor()
@@ -51,93 +51,38 @@ void constructor::on_actionBack_triggered()
 }
 
 
-//void constructor::dragEnterEvent(QDragEnterEvent *event)
-//{
-//    if (event->mimeData()->hasFormat("application/x-dnditemdata")) {
-//        if (event->source() == this) {
-//            event->setDropAction(Qt::MoveAction);
-//            event->accept();
-//        } else {
-//            event->acceptProposedAction();
-//        }
-//    } else {
-//        event->ignore();
-//    }
-//}
+void constructor::on_transfer_clicked()
+{
 
-//void constructor::dragMoveEvent(QDragMoveEvent *event)
-//{
-//    if (event->mimeData()->hasFormat("application/x-dnditemdata")) {
-//        if (event->source() == this) {
-//            event->setDropAction(Qt::MoveAction);
-//            event->accept();
-//        } else {
-//            event->acceptProposedAction();
-//        }
-//    } else {
-//        event->ignore();
-//    }
-//}
+    qDebug() << ui->input_box->currentRow();
 
-//void constructor::dropEvent(QDropEvent *event)
-//{
-//    if (event->mimeData()->hasFormat("application/x-dnditemdata")) {
-//        QByteArray itemData = event->mimeData()->data("application/x-dnditemdata");
-//        QDataStream dataStream(&itemData, QIODevice::ReadOnly);
+    ui->statusbar->showMessage(ui->input_box->currentItem()->text());
+    ui->input_box->takeItem(ui->input_box->currentRow()); //это тоже удаление
 
-//        QPixmap pixmap;
-//        QPoint offset;
-//        dataStream >> pixmap >> offset;
+}
 
-//        QLabel *newIcon = new QLabel(this);
-//        newIcon->setPixmap(pixmap);
-//        newIcon->move(event->pos() - offset);
-//        newIcon->show();
-//        newIcon->setAttribute(Qt::WA_DeleteOnClose);
+void constructor::on_input_box_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)
+{
 
-//        if (event->source() == this) {
-//            event->setDropAction(Qt::MoveAction);
-//            event->accept();
-//        } else {
-//            event->acceptProposedAction();
-//        }
-//    } else {
-//        event->ignore();
-//    }
-//}
+}
 
-//void constructor::mousePressEvent(QMouseEvent *event)
-//{
-//    QLabel *child = static_cast<QLabel*>(childAt(event->pos()));
-//    if (!child)
-//        return;
 
-//    QPixmap pixmap = *child->pixmap();
+void constructor::on_down_clicked()
+{
 
-//    QByteArray itemData;
-//    QDataStream dataStream(&itemData, QIODevice::WriteOnly);
-//    dataStream << pixmap << QPoint(event->pos() - child->pos());
+}
 
-//    QMimeData *mimeData = new QMimeData;
-//    mimeData->setData("application/x-dnditemdata", itemData);
+void constructor::on_up_clicked()
+{
 
-//    QDrag *drag = new QDrag(this);
-//    drag->setMimeData(mimeData);
-//    drag->setPixmap(pixmap);
-//    drag->setHotSpot(event->pos() - child->pos());
 
-//    QPixmap tempPixmap = pixmap;
-//    QPainter painter;
-//    painter.begin(&tempPixmap);
-//    painter.fillRect(pixmap.rect(), QColor(127, 127, 127, 127));
-//    painter.end();
+    ui->input_box->selectedItems();
+}
 
-//    child->setPixmap(tempPixmap);
 
-//    if (drag->exec(Qt::CopyAction | Qt::MoveAction, Qt::CopyAction) == Qt::MoveAction) {
-//        child->close();
-//    } else {
-//        child->show();
-//        child->setPixmap(pixmap);
-//    }
-//}
+
+
+void constructor::on_compile_clicked()
+{
+
+}
