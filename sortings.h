@@ -59,6 +59,7 @@ template <class type, class type2>
 inline void Qsort(type mas, int left, int right, type2 puk)
 {
     //”казатели в начало и в конец массива
+	puk = puk;
     int i = left;
     int j = right;
     //÷ентральный элемент массива

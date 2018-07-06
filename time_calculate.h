@@ -30,7 +30,7 @@ public slots:
 protected:
     // ћетод получени€ событий в главном окне приложени€
     // ¬ нЄм будет производитьс€ проверка событи€ смены перевода приложени€
-    void changeEvent(QEvent * event) override;
+		void changeEvent(QEvent * event);// override;
 
 private slots:
     void on_actionBack_triggered();

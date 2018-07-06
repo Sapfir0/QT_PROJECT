@@ -23,17 +23,11 @@
       <widget class="QWidget" name="horizontalLayoutWidget_2">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+         <widget class="QLabel" name="task">
+          <property name="text">
+           <string>TextLabel</string>
           </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="error">
@@ -60,8 +54,30 @@
              <string notr="true">QListWidget {
 background-color: grey;
 font-size: 20px;
+    show-decoration-selected: 1; /* make the selection span the entire width of the view */
 }
-</string>
+QListWidget::item:alternate {
+    background: #EEEEEE;
+}
+
+QListWidget::item:selected {
+    border: 1px solid #6a6ea9;
+}
+
+QListWidget::item:selected:!active {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ABAFE5, stop: 1 #8588B2);
+}
+
+QListWidget::item:selected:active {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #6a6ea9, stop: 1 #888dd9);
+}
+
+QListWidget::item:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #FAFBFE, stop: 1 #DCDEF1);
+}</string>
             </property>
            </widget>
           </item>
@@ -72,7 +88,8 @@ font-size: 20px;
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton {
-  background-color: #3B6582;
+  background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #6a6ea9, stop: 1 #888dd9);
   color: white; 
  width:  100px;
  height: 25px;
@@ -98,22 +115,59 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
            <widget class="QPushButton" name="up_button">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>31</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton { 
+background-image: url(:/new/prefix1/img/icons8-toDown-32.png);
+	background-position:absolute;
+	background-color: white;
+   background-repeat: n-repeat;
+  background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #6a6ea9, stop: 1 #888dd9);
+border-radius:12px;
+color: white;
+}
+QPushButton:hover {
+    background-color: #E1E8EE;
+color: black;
+}</string>
+            </property>
             <property name="text">
-             <string>UP</string>
+             <string/>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="down">
-            <property name="text">
-             <string>DOWN</string>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>31</height>
+             </size>
             </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="up">
+            <property name="styleSheet">
+             <string notr="true">QPushButton { 
+background-image: url(:/new/prefix1/img/icons8-toDown-32 (2));
+	background-position:absolute;
+	background-color: white;
+   background-repeat: n-repeat;
+  background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #6a6ea9, stop: 1 #888dd9);
+border-radius:12px;
+}
+QPushButton:hover {
+
+    background-color: #E1E8EE;
+color: black;
+}</string>
+            </property>
             <property name="text">
-             <string>CHANGE 1 to 0</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -129,12 +183,26 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
        <widget class="QPushButton" name="pushButton">
         <property name="maximumSize">
          <size>
-          <width>150</width>
+          <width>20</width>
           <height>16777215</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton { 
+  background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #6a6ea9, stop: 1 #888dd9);
+border-radius: 2px;
+}
+QPushButton:hover { 
+    background-color: #E1E8EE;
+}</string>
+        </property>
         <property name="text">
-         <string>PushButton</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="yahzwhatisit.qrc">
+          <normaloff>:/new/prefix1/img/icons8-menu-50.png</normaloff>:/new/prefix1/img/icons8-menu-50.png</iconset>
         </property>
        </widget>
       </item>
@@ -146,7 +214,48 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
           <height>16777215</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QListWidget {
+    show-decoration-selected: 1; /* make the selection span the entire width of the view */
+}
+
+QListWidget::item:alternate {
+    background: #EEEEEE;
+}
+
+QListWidget::item:selected {
+    border: 1px solid #6a6ea9;
+}
+
+QListWidget::item:selected:!active {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ABAFE5, stop: 1 #8588B2);
+}
+
+QListWidget::item:selected:active {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #6a6ea9, stop: 1 #888dd9);
+}
+
+QListWidget::item:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #FAFBFE, stop: 1 #DCDEF1);
+}</string>
+        </property>
        </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </item>

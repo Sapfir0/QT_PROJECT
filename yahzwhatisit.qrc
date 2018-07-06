@@ -41,6 +41,14 @@
         <file>img/341507.jpg</file>
         <file>img/Green-Bubbles-Background.jpg</file>
         <file>img/no-translate-detected_318-42569.jpg</file>
+        <file>img/no-translate-detected_318-42578.jpg</file>
+        <file>img/yannis-papanastasopoulos-340526-unsplash.jpg</file>
+        <file>img/icons8-menu-50.png</file>
+        <file>img/icons8-toDown-32 (2).png</file>
+        <file>img/icons8-toDown-32.png</file>
+        <file>img/icons8-toLeft-32.png</file>
+        <file>img/icons8-toRight-50.png</file>
+        <file>img/bady-qb-42758-unsplash.jpg</file>
     </qresource>
     <qresource prefix="/">
         <file>qss/Consider.qml</file>

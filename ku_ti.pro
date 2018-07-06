@@ -37,7 +37,8 @@ SOURCES += \
     settings.cpp \
     QRoundProgressBar.cpp \
     mythread.cpp \
-    constructor.cpp
+    constructor.cpp \
+    popup.cpp
 
 HEADERS += \
     secondwindow.h \
@@ -50,7 +51,9 @@ HEADERS += \
     settings.h \
     QRoundProgressBar.h \
     mythread.h \
-    constructor.h
+    constructor.h \
+    create_file_with_levels.h \
+    popup.h
 
 FORMS += \
         mainwindow.ui \

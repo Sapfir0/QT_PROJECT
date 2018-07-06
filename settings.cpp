@@ -3,9 +3,9 @@
 #include <QPixmap>
 #include <QMenu>
 #include <QDebug>
-#include <QFile>
-#include <QTextStream>
-#include <QTime>
+//#include <QFile>
+//#include <QTextStream>
+//#include <QTime>
 //#include <Windows.h>
 //#include "kypluk_api/kyplukOSfunction.h"
 
@@ -51,8 +51,8 @@ settings::settings(QWidget *parent) :
                          "Hide app");
     /* После чего создаем контекстное меню из двух пунктов*/
     QMenu * menu = new QMenu(this);
-    QAction * viewWindow = new QAction(trUtf8("Deploy window"), this);
-    QAction * quitAction = new QAction(trUtf8("Exit"), this);
+	QAction * viewWindow = new QAction("Deploy window", this);
+	QAction * quitAction = new QAction("Exit", this);
 
     /* подключаем сигналы нажатий на пункты меню к соответсвующим слотам.
      * Первый пункт меню разворачивает приложение из трея,
@@ -95,13 +95,13 @@ void settings::closeEvent(QCloseEvent * event)
     {
         event->ignore();
         this->hide();
-        QSystemTrayIcon::MessageIcon icon = QSystemTrayIcon::MessageIcon(QSystemTrayIcon::Information);
+		QSystemTrayIcon::MessageIcon icon = QSystemTrayIcon::MessageIcon(QSystemTrayIcon::Information);
 
-        trayIcon->showMessage("Tray Program",
-                              trUtf8("App folded into tray, if u wonna "
-                                     "to deploy app, click on app in tray"),
+		trayIcon->showMessage("Tray Program",
+		"App folded into tray, if u wonna "
+		"to deploy app, click on app in tray",
                               icon,
-                              2000);
+		2000);
     }
 }
 
@@ -138,7 +138,7 @@ void settings::iconActivated(QSystemTrayIcon::ActivationReason reason)
  * */
 void settings::on_dev_mode_stateChanged(int arg1)
 {
-//    if(arg1=true)
+arg1++;
 
 
 }
@@ -214,20 +214,21 @@ void settings::on_saveButton_clicked()
     /* Диалоговое сообщение, которое сигнализирует об успешности
      * сохранения настроек
      * */
-    QMessageBox::information(this,
+	/*QMessageBox::information(this,
                              trUtf8("Save settings"),
-                             trUtf8("Success save settings"));
+							 trUtf8("Success save settings"));*/
 }
 
 void settings::on_checkBox_stateChanged(int arg1)
 {
-    //если стоит галка
+	arg1++;
+	//если стоит галка
     //менять картинку рабочего стола
     //если время больше 20:00
     //и до 8:00
     if(ui->desctop_background->isChecked())
     {
 
-
+;
     }
 }

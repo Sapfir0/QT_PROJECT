@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QListWidget>
-
+#include "popup.h"
 namespace Ui {
 class constructor;
 //class QDragEnterEvent;
@@ -16,6 +16,7 @@ class constructor : public QMainWindow
 
 public:
     explicit constructor(QWidget *parent = 0);
+    QStringList List_items_left;
     ~constructor();
 
 //protected:
@@ -24,26 +25,31 @@ public:
 //       void dropEvent(QDropEvent *event) override;
 //       void mousePressEvent(QMouseEvent *event) override;
 protected:
-  bool eventFilter(QObject *obj, QEvent *event);
+    bool eventFilter(QObject *obj, QEvent *event);
 
 private slots:
     void on_actionBack_triggered();
 
     void on_compile_clicked();
 
-    void on_up_clicked();
-
     void on_up_button_clicked();
 
     void on_down_clicked();
-    void errors();
 
+    bool errors();
 
+    void levels();
+    void newLevel();
 
-    void on_pushButton_clicked(bool checked);
+    void on_pushButton_clicked();
+
+    void on_listWidget_itemClicked(QListWidgetItem *item);
 
 private:
+    int current_level = 0;
+    const int maxlevel = 3;
     Ui::constructor *ui;
+    PopUp *popUp;       // ќбъ€вл€ем объект всплывающего сообщени€
 };
 
-#endif // CONSTRUCTOR_H
+#endif // CONSTRUCTOR_H#ifndef CONSTRUCTOR_H

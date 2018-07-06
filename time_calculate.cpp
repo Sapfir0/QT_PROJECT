@@ -31,27 +31,27 @@ time_calculate::time_calculate(QWidget *parent) :
 
     resize(650,500); //w/h
 
-    this->setStyleSheet("QWidget{background-image: url(img/blue-bubbles-9789.jpg);}");  //////////////////////не робит (это для полного покрытия окна бекграундом)
+	//this->setStyleSheet("QWidget{background-image: url(img/blue-bubbles-9789.jpg);}");  //////////////////////не робит (это для полного покрытия окна бекграундом)
 
 
     connect(ui->consider, SIGNAL(clicked()),this, SLOT(on_consider_clicked(void)));
 
 
-    ui->comboBox_2->addItems(QStringList() << "ru_RU" << "en_US");
+	ui->comboBox_2->addItems(QStringList() << "ru_RU" << "en_US");
         // подключаем к сигналу изменения пункта комбобокса лямбда функцию,
             // в которой будет изменяться перевод приложения
             // Здесь имеется интересный момент. Поскольку QComboBox имеет перегрузку сигнатуры сигнала,
             // то нам необходимо скастовать сигнал к нужной сигнатуре.
             // В данном случае будем использовать название пункта при его изменении
-            connect(ui->comboBox, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+	/*connect(ui->comboBox, static_cast<void (QComboBox::*)(const QString&)>(&QComboBox::currentIndexChanged),
                     [=](const QString &str){
-                qtLanguageTranslator.load("QtLanguage_" + str, ".");   // Загружаем перевод
-                qApp->installTranslator(&qtLanguageTranslator);        // Устанавливаем перевод в приложение
-            });
+		qtLanguageTranslator.load("QtLanguage_" + str, ".");   // Загружаем перевод
+				qApp->installTranslator(&qtLanguageTranslator);       // Устанавливаем перевод в приложение
+	});
 
             // Сделаем первоначальную инициализацию перевода для окна прилоежния
             qtLanguageTranslator.load(QString("QtLanguage_") + QString("ru_RU"));
-            qApp->installTranslator(&qtLanguageTranslator);
+			qApp->installTranslator(&qtLanguageTranslator);*/
 
 
     keyEnter = new QShortcut(this);
@@ -214,6 +214,7 @@ QString green_light_style= "QProgressBar {border: 2px solid grey;background-colo
         ui->progressBar->setStyleSheet(red_style);
     //цвет red    //длина полосы = 90%    //надпись n^2
     }
+	value++;
 
 }
 

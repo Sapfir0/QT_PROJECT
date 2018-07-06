@@ -12,10 +12,10 @@
 #include "about_method.h"
 //#include <QtConcurrentRun>
 #include <QThread>
-#include "constructor.h"
+//#include "constructor.h"
 //#include "mythread.h"
 #include <QHBoxLayout>
-///
+#include "popup.h"
 /// \brief main         такая система ветвления:   time_calculate.cpp->sortings.h->calculating_time_sort.h
 /// \param argc
 /// \param argv
@@ -61,14 +61,14 @@ int main(int argc, char *argv[])
 time_calculate mTimer;
 
 
-  //constructor w;
+ // constructor w;
 secondwindow w;
 
 //   w.setMinimumHeight(480);
 //   w.setMaximumHeight(480);
 //   w.setMinimumWidth(650);
 //   w.setMaximumWidth(650);
-   // QTimer::singleShot(5000, &w, SLOT(close())); эта фунцкия закроет окно через 5секунд
+// QTimer::singleShot(5000, &w, SLOT(close()));// эта фунцкия закроет окно через 5секунд
 
     w.show();
 

@@ -181,7 +181,7 @@ QTabBar::tab:only-one {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -581,7 +581,7 @@ font-size: 18px;
      <enum>Qt::RightToLeft</enum>
     </property>
     <property name="autoFillBackground">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="maximum">
      <number>100</number>

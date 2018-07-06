@@ -6,7 +6,7 @@
 #include "sortings.h"
 #include <QMessageBox>
 #include <QDebug>
-
+#include <ctime>
 
 extern int MAX_ACCEPTABLY;
 extern bool DEV_MODE;

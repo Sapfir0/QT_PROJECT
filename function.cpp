@@ -171,18 +171,18 @@ void function::on_str_blockCountChanged(int newBlockCount)
 {
     //для поиска производной
     //разделим строку на слова
-    QString diff_sin = "sinx";
+   /*QString diff_sin = "sinx";
     QString diff_arcsin = "arcsinx";
     QString diff_cos = "cosx";
     QString diff_arccos = "arccosx";
     QString diff_tg = "tgx";
     QString diff_arctg = "arctgx";
     QString diff_ctg = "ctgx";
-    QString diff_arcctg = "arcctgx";
+	QString diff_arcctg = "arcctgx";*/
 
-
-QString dif_result;
-    if(newBlockCount==diff_sin)
+newBlockCount++;
+//QString dif_result;
+/*if(newBlockCount==diff_sin)
     {
         dif_result = "cosx";
     }
@@ -197,7 +197,7 @@ QString dif_result;
     if(newBlockCount==diff_ctg)
     {
         dif_result = "-1/(sin^2 x)";
-    }
+	}*/
 }
 
 void function::on_actionconversion_from_decimal_to_binary_triggered()
