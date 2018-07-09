@@ -45,6 +45,10 @@ private slots:
 
     void on_listWidget_itemClicked(QListWidgetItem *item);
 
+    void paintEvent(QPaintEvent *event);
+
+    void on_hint_clicked();
+
 private:
     int current_level = 0;
     const int maxlevel = 3;

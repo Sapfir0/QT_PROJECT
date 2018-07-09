@@ -24,6 +24,11 @@
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
          <widget class="QLabel" name="task">
+          <property name="styleSheet">
+           <string notr="true">    border-style: solid; /* Стиль рамки вокруг параграфа */
+    border-width: 1px; /* Толщина границы */
+	border-color: #ABABAB;</string>
+          </property>
           <property name="text">
            <string>TextLabel</string>
           </property>
@@ -117,7 +122,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
            <widget class="QPushButton" name="up_button">
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>41</width>
               <height>31</height>
              </size>
             </property>
@@ -126,19 +131,60 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
 background-image: url(:/new/prefix1/img/icons8-toDown-32.png);
 	background-position:absolute;
 	background-color: white;
-   background-repeat: n-repeat;
+   background-repeat: no-repeat;
+  background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #6a6ea9, stop: 1 #888dd9);
+border-radius:12px;
+color: white;
+
+}
+QPushButton:hover {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ABAFE5, stop: 1 #8588B2);
+color: black;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ABAFE5, stop: 1 #8588B2);
+margin-top:2px;
+margin-left:1px;
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="hint">
+            <property name="styleSheet">
+             <string notr="true">QPushButton { 
+	background-position:absolute;
+	background-color: white;
+   background-repeat: no-repeat;
   background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                 stop: 0 #6a6ea9, stop: 1 #888dd9);
 border-radius:12px;
 color: white;
 }
 QPushButton:hover {
-    background-color: #E1E8EE;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ABAFE5, stop: 1 #8588B2);
 color: black;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ABAFE5, stop: 1 #8588B2);
+margin-top:2px;
+margin-left:1px;
 }</string>
             </property>
             <property name="text">
              <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="yahzwhatisit.qrc">
+              <normaloff>:/new/prefix1/img/icons8-round-filled-50.png</normaloff>:/new/prefix1/img/icons8-round-filled-50.png</iconset>
             </property>
            </widget>
           </item>
@@ -161,9 +207,15 @@ background-image: url(:/new/prefix1/img/icons8-toDown-32 (2));
 border-radius:12px;
 }
 QPushButton:hover {
-
-    background-color: #E1E8EE;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ABAFE5, stop: 1 #8588B2);
 color: black;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ABAFE5, stop: 1 #8588B2);
+margin-top:2px;
+margin-left:1px;
 }</string>
             </property>
             <property name="text">
@@ -181,9 +233,15 @@ color: black;
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
        <widget class="QPushButton" name="pushButton">
+        <property name="minimumSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
         <property name="maximumSize">
          <size>
-          <width>20</width>
+          <width>21</width>
           <height>16777215</height>
          </size>
         </property>
@@ -194,7 +252,12 @@ color: black;
 border-radius: 2px;
 }
 QPushButton:hover { 
-    background-color: #E1E8EE;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ABAFE5, stop: 1 #8588B2);
+}
+QPushButton:pressed {
+margin-top:2px;
+margin-left:1px;
 }</string>
         </property>
         <property name="text">
@@ -217,6 +280,9 @@ QPushButton:hover {
         <property name="styleSheet">
          <string notr="true">QListWidget {
     show-decoration-selected: 1; /* make the selection span the entire width of the view */
+    border-style: solid; /* Стиль рамки вокруг параграфа */
+    border-width: 1px; /* Толщина границы */
+	border-color: #ABABAB;
 }
 
 QListWidget::item:alternate {
@@ -270,11 +336,30 @@ QListWidget::item:hover {
      <height>20</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QMenuBar { 
+background-color: lightgrey;
+color: black;
+}
+QMenu</string>
+   </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
     <string>toolBar</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> QToolBar {
+   background-color: #ABABAB;
+}
+QToolBar:::item {
+    background: red;
+}
+QToolBar::item:selected { /* when user selects item using mouse or keyboard */
+    background-color: #ABABAB;
+}
+</string>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -287,7 +372,8 @@ QListWidget::item:hover {
   <action name="actionBack">
    <property name="icon">
     <iconset resource="yahzwhatisit.qrc">
-     <normaloff>:/new/prefix1/img/Arrow_left.png</normaloff>:/new/prefix1/img/Arrow_left.png</iconset>
+     <normaloff>:/new/prefix1/img/icons8-toLeft-32.png</normaloff>
+     <disabledoff>:/new/prefix1/img/icons8-toLeft-32.png</disabledoff>:/new/prefix1/img/icons8-toLeft-32.png</iconset>
    </property>
    <property name="text">
     <string>Back</string>

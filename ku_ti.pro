@@ -53,7 +53,8 @@ HEADERS += \
     mythread.h \
     constructor.h \
     create_file_with_levels.h \
-    popup.h
+    popup.h \
+    constructor_functions.h
 
 FORMS += \
         mainwindow.ui \

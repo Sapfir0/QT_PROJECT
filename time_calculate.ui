@@ -14,39 +14,9 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #2E2F30;</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QColumnView" name="columnView">
-    <property name="geometry">
-     <rect>
-      <x>-30</x>
-      <y>-60</y>
-      <width>1241</width>
-      <height>731</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
-background-image: url(:/new/prefix1/img/blue-bubbles-9789.jpg);
-background-repeat: no-repeat </string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
-    <property name="lineWidth">
-     <number>0</number>
-    </property>
-    <property name="midLineWidth">
-     <number>0</number>
-    </property>
-    <property name="tabKeyNavigation">
-     <bool>false</bool>
-    </property>
-   </widget>
    <widget class="QComboBox" name="comboBox_2">
     <property name="geometry">
      <rect>
@@ -418,6 +388,7 @@ background-image: url(:/new/prefix1/img/blue-bubbles-9789.jpg);</string>
     padding-right: 15px; /* make room for the arrows */
 /*    border-image: url(:/images/frame.png); */
     border-width: 3;
+color: white;
  selection-background-color: orange;
   background-color: #3B6582;
 }
@@ -540,66 +511,22 @@ font-size: 18px;
      <string>Run Time</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
       <x>230</x>
       <y>20</y>
       <width>201</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">
 color:  skyblue;
-font-size: 18px;
-</string>
+font-size: 18px;</string>
     </property>
     <property name="text">
      <string>Time is a great treasure</string>
-    </property>
-   </widget>
-   <widget class="QProgressBar" name="progressBar_2">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>300</y>
-      <width>118</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="contextMenuPolicy">
-     <enum>Qt::DefaultContextMenu</enum>
-    </property>
-    <property name="acceptDrops">
-     <bool>false</bool>
-    </property>
-    <property name="toolTip">
-     <string extracomment="u a pidr"/>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::RightToLeft</enum>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="maximum">
-     <number>100</number>
-    </property>
-    <property name="value">
-     <number>68</number>
-    </property>
-    <property name="textVisible">
-     <bool>false</bool>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-    <property name="invertedAppearance">
-     <bool>false</bool>
-    </property>
-    <property name="textDirection">
-     <enum>QProgressBar::BottomToTop</enum>
     </property>
    </widget>
   </widget>

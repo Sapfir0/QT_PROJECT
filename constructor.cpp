@@ -12,7 +12,10 @@
 #include <QTimer>
 #include <ctime>
 #include <QTime>
+#include <QGraphicsOpacityEffect>
+ #include <QBrush>
 //#include "popup.h"
+#include "constructor_functions.h"
 
 QString task1 = "Write hello world";
 QString task2 = "Find most big element in array";
@@ -46,11 +49,45 @@ constructor::constructor(QWidget *parent) :
    // ui->task->setStyleSheet(invisible_style);
 //    ui->listWidget->setStyleSheet( "background-color: rgb(98, 95, 107);  selection-background-color: orange; color: white;");
 
+
+ui->input_box->setAttribute(Qt::WA_TranslucentBackground);
+
+//circle button
+//    ui->pushButton_2->setText("Test Text");
+//    ui->pushButton_2->setFixedHeight(200);
+//    ui->pushButton_2->setFixedWidth(200);
+//    QRect *rect = new QRect(0,0,35,35);
+//    qDebug() << rect->size();
+//    qDebug() << ui->pushButton_2->size();
+//    QRegion* region = new QRegion(*rect,QRegion::Ellipse);
+//    qDebug() << region->boundingRect().size();
+//    ui->pushButton_2->setMask(*region);
+
+//QPalette palette;
+//QColor oldbackcolor = palette.color(QPalette::Background);
+//palette.setColor(QPalette::Background,Qt::green);
+//this->setPalette(palette);
+//palette.setColor(QPalette::Background, oldbackcolor);
+//ui->input_box->setPalette(palette);
+//ui->input_box->setAutoFillBackground(true);
+
 }
 
 void constructor::levels()
 {
     qDebug() << "Voy voy using function \"levels\"";
+}
+
+void constructor::paintEvent(QPaintEvent *event)
+{
+    Q_UNUSED(event)
+    QLinearGradient alphaGradient(rect.topLeft());
+    alphaGradient.setColorAt(0.0, Qt::transparent);
+    alphaGradient.setColorAt(0.5, Qt::black);
+    alphaGradient.setColorAt(1.0, Qt::transparent);
+    QGraphicsOpacityEffect *effect = new QGraphicsOpacityEffect;
+    effect->setOpacityMask(alphaGradient);
+
 }
 
 constructor::~constructor()
@@ -92,35 +129,6 @@ bool constructor::eventFilter(QObject *obj, QEvent *event)
     return QWidget::eventFilter(obj,event);
 }
 
-void readFileInStringList(QString filename, QStringList &List)
-{
-    QFile file(filename);
-    if (file.open(QIODevice::ReadOnly | QIODevice::Text))
-    {
-        QTextStream writeStream(&file);
-        while (!writeStream.atEnd())
-            List.append(writeStream.readLine());
-        file.close();
-    }
-    else
-    {
-        throw 0;
-    }
-}
-
-void randomList(QStringList &List)
-{
-    for (int i = 0; i < List.size(); i++)
-    {
-        for (int j = 0; j < List.size(); j++)
-        {
-            if (rand()%2)
-            {
-                std::swap(List[i], List[j]);
-            }
-        }
-    }
-}
 
 bool constructor::errors()
 {
@@ -131,8 +139,6 @@ bool constructor::errors()
 
     return srv != List_items_left;
 }
-
-
 
 void constructor::newLevel()
 {
@@ -160,6 +166,9 @@ void constructor::on_compile_clicked()
     QString all_right = "QLabel {border: 2px solid grey; background-color: GreenYellow; border-radius: 5px;text-align: center;} "
     "QLabel::hover {background: #02315F; color: white;}";
 
+    QString success_compile = "ure cool. its working";
+    QString achiviement_level1_complete = "Level 1 competed! Congratulations!";
+
     if (errors())
     {
         ui->error->setStyleSheet(critical_error);
@@ -167,9 +176,9 @@ void constructor::on_compile_clicked()
     else
     {
         ui->error->setStyleSheet(all_right);
-        ui->error->setText("ure cool. its working");
+        ui->error->setText(success_compile);
 // new below | may be unite in class
-        QString achiviement_level1_complete = "Level 1 competed! Congratulations!";
+
         popUp = new PopUp();
         popUp->setPopupText(achiviement_level1_complete);
         popUp->show();
@@ -183,7 +192,6 @@ void constructor::on_compile_clicked()
 
     }
 }
-
 
 void constructor::on_up_button_clicked()
 {
@@ -218,10 +226,6 @@ void constructor::on_down_clicked()
 }
 
 
-
-
-
-
 void constructor::on_pushButton_clicked()
 {
     static bool checked1 = false;
@@ -239,5 +243,30 @@ void constructor::on_pushButton_clicked()
 
 void constructor::on_listWidget_itemClicked(QListWidgetItem *item)
 {
+    Q_UNUSED(*item);
     qDebug() << ui->listWidget->currentItem()->text();
+}
+
+void constructor::on_hint_clicked()//dont working
+{
+    QString current_item = ui->input_box->currentItem()->text();
+    qDebug() << current_item;
+    //найти строку в файле для выбранного элемента
+    QFile file("1");
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        QTextStream writeStream(&file);
+        while (!writeStream.atEnd())
+            List_items_left.append(writeStream.readLine());
+
+        if (current_item == writeStream.readLine())
+            qDebug() << "find";
+        else
+            qDebug() << "oops";
+        file.close();
+    }
+    else
+    {
+        throw 0;
+    }
 }

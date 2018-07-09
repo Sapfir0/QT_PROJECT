@@ -62,6 +62,9 @@ time_calculate::time_calculate(QWidget *parent) :
 
     timer=new QTimer(this); //тут запускаем таймер
     connect(timer, SIGNAL(timeout()), this, SLOT(myslot())); //что делать каждый тик
+
+
+    ui->centralwidget->setStyleSheet("background-image: url(:/new/prefix1/img/blue-bubbles-9789.jpg);");
 }
 
 time_calculate::~time_calculate()
