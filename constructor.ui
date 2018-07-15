@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>765</width>
-    <height>501</height>
+    <width>960</width>
+    <height>625</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -332,7 +332,7 @@ QListWidget::item:hover {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>765</width>
+     <width>960</width>
      <height>20</height>
     </rect>
    </property>

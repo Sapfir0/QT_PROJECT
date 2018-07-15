@@ -24,7 +24,7 @@ private slots:
         void on_pushButton_clicked();
 
         void do_timer();
-
+        void paintEvent(QPaintEvent *event);
 private:
     Ui::about_method *ui;
         QTimer *timer;

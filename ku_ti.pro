@@ -38,7 +38,8 @@ SOURCES += \
     QRoundProgressBar.cpp \
     mythread.cpp \
     constructor.cpp \
-    popup.cpp
+    popup.cpp \
+    testing_window.cpp
 
 HEADERS += \
     secondwindow.h \
@@ -54,16 +55,17 @@ HEADERS += \
     constructor.h \
     create_file_with_levels.h \
     popup.h \
-    constructor_functions.h
+    constructor_functions.h \
+    testing_window.h
 
 FORMS += \
-        mainwindow.ui \
     secondwindow.ui \
     time_calculate.ui \
     function.ui \
     about_method.ui \
     settings.ui \
-    constructor.ui
+    constructor.ui \
+    testing_window.ui
 
 RESOURCES += \
     yahzwhatisit.qrc

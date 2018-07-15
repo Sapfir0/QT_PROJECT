@@ -16,6 +16,7 @@
 //#include "mythread.h"
 #include <QHBoxLayout>
 #include "popup.h"
+#include "testing_window.h"
 /// \brief main         такая система ветвления:   time_calculate.cpp->sortings.h->calculating_time_sort.h
 /// \param argc
 /// \param argv
@@ -62,8 +63,8 @@ time_calculate mTimer;
 
 
  // constructor w;
-secondwindow w;
-
+//secondwindow w;
+    testing_window w;
 //   w.setMinimumHeight(480);
 //   w.setMaximumHeight(480);
 //   w.setMinimumWidth(650);

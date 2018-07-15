@@ -48,6 +48,9 @@ private slots:
     void paintEvent(QPaintEvent *event);
 
     void on_hint_clicked();
+    void setFormStyle();
+    void first_settings();
+
 
 private:
     int current_level = 0;

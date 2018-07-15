@@ -58,3 +58,19 @@ void about_method::on_pushButton_clicked()
     else
         timer->stop();
 }
+
+
+void about_method::paintEvent(QPaintEvent *event)
+{
+    Q_UNUSED(event)
+    QPainter painter(this); //новый объект "рисовальщика"
+    QRect roundedRect;
+    roundedRect.setX(rect().x());
+    roundedRect.setY(rect().y());
+    roundedRect.setWidth(rect().width());
+    roundedRect.setHeight(rect().height());
+    painter.setBrush(QBrush(QColor(0,0,0,180)));
+    painter.drawRoundedRect(roundedRect, 0, 0);
+
+
+}
