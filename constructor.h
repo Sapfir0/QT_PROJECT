@@ -32,8 +32,6 @@ private slots:
 
     void on_compile_clicked();
 
-    void on_up_button_clicked();
-
     void on_down_clicked();
 
     bool errors();
@@ -41,9 +39,9 @@ private slots:
     void levels();
     void newLevel();
 
-    void on_pushButton_clicked();
+    void on_changer_clicked();
 
-    void on_listWidget_itemClicked(QListWidgetItem *item);
+    void on_levels_itemClicked(QListWidgetItem *item);
 
     void paintEvent(QPaintEvent *event);
 
@@ -51,6 +49,12 @@ private slots:
     void setFormStyle();
     void first_settings();
 
+
+    void on_up_clicked();
+
+    void on_input_box_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
+
+    bool check_first_el(QObject *obj, QEvent *event);
 
 private:
     int current_level = 0;

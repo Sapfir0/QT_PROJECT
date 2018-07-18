@@ -63,8 +63,8 @@ time_calculate mTimer;
 
 
  // constructor w;
-//secondwindow w;
-    testing_window w;
+secondwindow w;
+ //   testing_window w;
 //   w.setMinimumHeight(480);
 //   w.setMaximumHeight(480);
 //   w.setMinimumWidth(650);

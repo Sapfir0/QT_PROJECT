@@ -27,7 +27,11 @@
           <property name="styleSheet">
            <string notr="true">    border-style: solid; /* Стиль рамки вокруг параграфа */
     border-width: 1px; /* Толщина границы */
-	border-color: #ABABAB;</string>
+	border-color: #ABABAB;
+margin-bottom: 10px;
+border-radius:10px;
+font-size: 20px;
+font-family: Geneva, Arial, Helvetica, sans-serif;</string>
           </property>
           <property name="text">
            <string>TextLabel</string>
@@ -119,7 +123,7 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
-           <widget class="QPushButton" name="up_button">
+           <widget class="QPushButton" name="up">
             <property name="minimumSize">
              <size>
               <width>41</width>
@@ -232,7 +236,7 @@ margin-left:1px;
     <item row="0" column="0">
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="changer">
         <property name="minimumSize">
          <size>
           <width>22</width>
@@ -270,7 +274,7 @@ margin-left:1px;
        </widget>
       </item>
       <item>
-       <widget class="QListWidget" name="listWidget">
+       <widget class="QListWidget" name="levels">
         <property name="maximumSize">
          <size>
           <width>150</width>
