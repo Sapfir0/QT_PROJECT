@@ -35,13 +35,6 @@ constructor::constructor(QWidget *parent) :
 }
 void constructor::setFormStyle()
 {
-   // ui->centralwidget->setStyleSheet("background-color: green;");
-     //Скрываем элементы управления и рамку окна...
-   // setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
-     //Включаем прозрачность главной формы...
-    //ui->task->setAttribute(Qt::WA_TranslucentBackground);
-   // ui->input_box->setAttribute(Qt::WA_TranslucentBackground);
-     //Задаём параметры прозрачности...
     QGraphicsDropShadowEffect* shadowEffect = new QGraphicsDropShadowEffect(this);
     shadowEffect -> setBlurRadius(9.0);
     shadowEffect -> setColor(QColor(0, 0, 0, 160));
@@ -52,10 +45,9 @@ void constructor::setFormStyle()
     ui -> task -> setGraphicsEffect(shadowEffect); //вроде как применили только для инпута
     ui -> input_box -> setGraphicsEffect(shadowEffect);
 
-   // ui->input_box->setStyleSheet("QListWidget {background-color: rgba(107, 142, 35, 50);}");
     ui->levels->setStyleSheet("QListWidget {background-color: rgba(255, 85, 10, 100);}");
-    ui->changer->setStyleSheet("QPushButton       {background-color: rgba(255, 85, 127, 10);}"
-                               "QPushButton:hover {background-color: rgba(255, 255, 0, 10);}");
+//    ui->changer->setStyleSheet("QPushButton       {background-color: rgba(255, 85, 127, 10);}"
+//                               "QPushButton:hover {background-color: rgba(255, 255, 0, 10);}");
 
     //ui->errors->setStyleSheet("QLabel  {background-color: rgba(255, 85, 127, 10);}");
     //ui->task->setStyleSheet("QLabel {background-color: rgba(255, 85, 127, 10);}");
@@ -99,6 +91,33 @@ void constructor::setFormStyle()
                             "margin-top:2px;"
                             "margin-left:1px;"
                             "}");
+    ui->uppest->setStyleSheet("QPushButton {background-image: url(:/new/prefix1/img/icons8-toUppest-32.gif); "
+                            "background-repeat: no-repeat;"
+                            "background-position:absolute;"
+                            "border-radius:12px;"
+                            "}"
+                            "QPushButton:hover {"
+                            "background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #ABAFE5, stop: 1 #8588B2); "
+                            "}"
+                            "QPushButton:pressed {"
+                            "background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #ABAFE5, stop: 1 #8588B2);"
+                            "margin-top:2px;"
+                            "margin-left:1px;"
+                            "}");
+    ui->downest->setStyleSheet("QPushButton {background-image: url(:/new/prefix1/img/icons8-toDownest.gif); "
+                            "background-repeat: no-repeat;"
+                            "background-position:absolute;"
+                            "border-radius:12px;"
+                            "}"
+                            "QPushButton:hover {"
+                            "background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #ABAFE5, stop: 1 #8588B2); "
+                            "}"
+                            "QPushButton:pressed {"
+                            "background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #ABAFE5, stop: 1 #8588B2);"
+                            "margin-top:2px;"
+                            "margin-left:1px;"
+                            "}");
+
     ui->input_box->setStyleSheet("QListWidget {background-color: rgba(107, 142, 35, 250); border-radius:15px;    font-size: 20px;show-decoration-selected: 1; }"
                                  "QListWidget::item:alternate {background: #EEEEEE;}"
                                  "QListWidget::item:selected {border: 1px solid #6a6ea9;}"
@@ -110,13 +129,31 @@ void constructor::setFormStyle()
 
     ui->centralwidget->setGraphicsEffect(shadowEffect);
 
-    ;
+
+//    * Области считаются слева направо.
+//    * в Методе setStretchFactor вначале устанавливается индекс
+//    * области, а потом её вес.
+//    * Таким образом первой области ставим максимальный вес,
+//    * а второй области минимальный.
+//    * */
+//   ui->splitter->setStretchFactor(0,1);
+//   ui->splitter->setStretchFactor(1,0);
+
+   /* Также сразу хочу показать, как выбрать цвет разделителя.
+    * Для это нам необходимо воспользоваться классом QPallete,
+    * Для которого выбираем цвет фона.
+    * */
+   QPalette split_color;
+   split_color.setColor(QPalette::Background, Qt::darkGray);
+   /* И устанавливаем палитру на QSplitter
+    * */
+   ui->splitter->setPalette(split_color);
 }
 void constructor::first_settings()
 {
     ui->error->setText(" ");
     ui->input_box->addItems(List_items_left);
-    ui->up->setToolTip("Mat svoyu podnimi");
+ //   ui->up->setToolTip("Mat svoyu podnimi");
     ui->levels->hide();
     newLevel();
     ui->changer->installEventFilter(this);
@@ -159,48 +196,80 @@ bool constructor::eventFilter(QObject *obj, QEvent *event)
     if ( obj == ui->changer)
     {
         QEvent::Type type = event->type();
-
+        bool changer = 0;
         if ( type == QEvent::HoverLeave)
         {
-            ui->levels->hide();
+            //ui->levels->hide();
+            changer=1;
             qDebug()<<"No curcor";
-            if(checked1==true)
-            {
-                if (obj==ui->levels)
-                {
-                    if(type== QEvent::HoverLeave)
-                    {
-                        ui->levels->hide();//не робит
-                    }
-                }
-            }
-            checked1=false;
         }
         else if (type == QEvent::HoverEnter)
         {
             ui->levels->show();
+            changer=0;
             qDebug()<<"YES curcor";
-            checked1=true;
         }
         else if (type == QEvent::MouseButtonPress)
         {
             qDebug()<<"Voy voy enter";
         }
     }
+
+
     return QWidget::eventFilter(obj,event);
 }
 
 
+bool constructor::eventFilter23(QObject *obj, QEvent *event)
+{
+    if(obj == ui->levels)
+    {
+         QEvent::Type type = event->type();
+        if ( type == QEvent::HoverLeave)
+        {
+            ui->levels->hide();
+            qDebug()<<"gfgsgbgdgdgdsfgvds";
 
+        }
+    }
+    return QWidget::eventFilter(obj,event);
+
+}
 
 void constructor::on_compile_clicked()
 {
-    QString critical_error = "QLabel {border: 2px solid grey;background-color: red; border-radius: 5px;text-align: center;} "
-    "QLabel::hover {background: #02315F; color: white;}";
-    QString no_emergency_error = "QLabel {border: 2px solid grey; background-color: yellow; border-radius: 5px;text-align: center;} "
-    "QLabel::hover {background: #02315F; color: white;}";
-    QString all_right = "QLabel {border: 2px solid grey; background-color: GreenYellow; border-radius: 5px;text-align: center;} "
-    "QLabel::hover {background: #02315F; color: white;}";
+    QString critical_error = "QLabel {border: 2px solid grey;"
+                             "margin-bottom: 10px;"
+                             "background-color: red;"
+                             "font-family: Geneva, Arial, Helvetica, sans-serif;"
+                             "border-radius: 5px;"
+                             "text-align: center;"
+                             "border-radius:10px;"
+                             "font-size: 20px; } "
+                            "QLabel::hover {"
+                             "background: #FF7140;"
+                             "color: white; }";
+
+    QString no_emergency_error = "QLabel {"
+                                 "border: 2px solid grey;"
+                                 " background-color: yellow;"
+                                 " border-radius: 5px;"
+                                 "text-align: center; "
+                                 "font-family: Geneva, Arial, Helvetica, sans-serif;"
+                                 "border-radius: 5px;"
+                                 "text-align: center;"
+                                 "border-radius:10px;"
+                                 "font-size: 20px; } "
+                                 "QLabel::hover {"
+                                 "background: #FF7140;"
+                                 "color: white; }";
+
+    QString all_right = "QLabel {"
+                        "border: 2px solid grey; "
+                        "background-color: GreenYellow; "
+                        "border-radius: 5px;"
+                        "text-align: center;} "
+                        "QLabel::hover {background: #02315F; color: white;}";
 
     QString success_compile = "ure cool. its working";
     QString achiviement_level1_complete = "Level 1 competed! Congratulations!";
@@ -373,7 +442,7 @@ bool constructor::check_first_el(QObject *obj, QEvent *event)
     //надо как-то отследить первый элемент списка и менять стайлшиты
 
 
-//    if ( obj == ui->input_box->item(0))
+//    if ( obj ==  )
 //    {
 //        QEvent::Type type = event->type();
 
@@ -398,4 +467,36 @@ bool constructor::check_first_el(QObject *obj, QEvent *event)
 
 //    }
     return QWidget::eventFilter(obj,event);
+}
+
+void constructor::on_uppest_clicked()
+{
+    QString tmp;
+    int for_opredelniya_chto_vverh = ui->input_box->currentRow();
+    if(for_opredelniya_chto_vverh > 0 and for_opredelniya_chto_vverh < List_items_left.size())
+    {
+        int for_opredelniya_chto_vniz = for_opredelniya_chto_vverh- List_items_left.size() + 1 ;
+        tmp = List_items_left[for_opredelniya_chto_vniz];
+        List_items_left[for_opredelniya_chto_vniz] = List_items_left[for_opredelniya_chto_vverh];
+        List_items_left[for_opredelniya_chto_vverh]=tmp;
+        ui->input_box->clear();
+        ui->input_box->addItems(List_items_left);
+      //  qDebug() << List_items_left << " - this ""on_up_button_clicked""";
+    }
+}
+
+void constructor::on_downest_clicked()
+{
+    QString tmp;
+    int for_opredelniya_chto_vniz = ui->input_box->currentRow();
+    if(for_opredelniya_chto_vniz < List_items_left.size()-1 and for_opredelniya_chto_vniz >= 0)
+    {
+        int for_opredelniya_chto_vverh = for_opredelniya_chto_vniz + List_items_left.size() - 1 ;
+        tmp = List_items_left[for_opredelniya_chto_vverh];
+        List_items_left[for_opredelniya_chto_vverh] = List_items_left[for_opredelniya_chto_vniz];
+        List_items_left[for_opredelniya_chto_vniz]=tmp;
+        ui->input_box->clear();
+        ui->input_box->addItems(List_items_left);
+     //   qDebug() << List_items_left  << " - this ""on_down_clicked""";
+    }
 }

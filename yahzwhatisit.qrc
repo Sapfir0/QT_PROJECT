@@ -51,6 +51,8 @@
         <file>img/bady-qb-42758-unsplash.jpg</file>
         <file>img/icons8-round-filled-50.png</file>
         <file>img/icons8-razer-32.png</file>
+        <file>img/icons8-toDownest.gif</file>
+        <file>img/icons8-toUppest-32.gif</file>
     </qresource>
     <qresource prefix="/">
         <file>qss/Consider.qml</file>

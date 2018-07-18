@@ -55,6 +55,11 @@ private slots:
     void on_input_box_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
 
     bool check_first_el(QObject *obj, QEvent *event);
+    bool eventFilter23(QObject *obj, QEvent *event);
+
+    void on_uppest_clicked();
+
+    void on_downest_clicked();
 
 private:
     int current_level = 0;

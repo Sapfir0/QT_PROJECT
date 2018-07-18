@@ -17,6 +17,9 @@
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="1">
      <widget class="QSplitter" name="splitter">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -45,6 +48,13 @@ font-family: Geneva, Arial, Helvetica, sans-serif;</string>
             <width>350</width>
             <height>70</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:10px;
+font-size: 20px;
+font-family: Geneva, Arial, Helvetica, sans-serif;
+margin-bottom: 10px;
+</string>
           </property>
           <property name="text">
            <string>TextLabel</string>
@@ -122,6 +132,43 @@ QPushButton:pressed {  background-color rgb(220, 116, 45)
         </item>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QPushButton" name="uppest">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton { 
+
+	background-position:absolute;
+	background-color: white;
+   background-repeat: no-repeat;
+  background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #6a6ea9, stop: 1 #888dd9);
+border-radius:12px;
+color: white;
+
+}
+QPushButton:hover {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ABAFE5, stop: 1 #8588B2);
+color: black;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ABAFE5, stop: 1 #8588B2);
+margin-top:2px;
+margin-left:1px;
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
           <item>
            <widget class="QPushButton" name="up">
             <property name="minimumSize">
@@ -202,13 +249,50 @@ margin-left:1px;
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton { 
-background-image: url(:/new/prefix1/img/icons8-toDown-32 (2));
+
 	background-position:absolute;
 	background-color: white;
    background-repeat: n-repeat;
   background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                 stop: 0 #6a6ea9, stop: 1 #888dd9);
 border-radius:12px;
+}
+QPushButton:hover {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ABAFE5, stop: 1 #8588B2);
+color: black;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #ABAFE5, stop: 1 #8588B2);
+margin-top:2px;
+margin-left:1px;
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="downest">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton { 
+background-image: url(:/new/prefix1/img/icons8-toDown-32.png);
+	background-position:absolute;
+	background-color: white;
+   background-repeat: no-repeat;
+  background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #6a6ea9, stop: 1 #888dd9);
+border-radius:12px;
+color: white;
+
 }
 QPushButton:hover {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
