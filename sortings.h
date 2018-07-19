@@ -55,6 +55,52 @@ inline void merge(int *a, int n)
 }
 
 
+
+
+template <class type, class type_element>
+inline void Qsort(type& mas, int left, int right, int ( * comparator) (const type_element&, const type_element&)) {
+    //Указатели в начало и в конец массива
+    int i = left;
+    int j = right;
+
+    //Центральный элемент массива
+    type_element mid = mas[(i+j)/2];
+
+    //Делим массив
+    while (i <= j) {
+        //Пробегаем элементы, ищем те, которые нужно перекинуть в другую часть
+        //В левой части массива пропускаем(оставляем на месте) элементы, которые меньше центрального
+        while (comparator(mas[i], mid) < 0) /*mas[i] < mid*/
+        {
+            i++;
+        }
+        //В правой части пропускаем элементы, которые больше центрального
+        while (comparator(mas[j], mid) > 0) /*mas[j] > mid*/
+        {
+            j--;
+        }
+
+        //Меняем элементы местами
+        if (i <= j) {
+            swap(mas[i], mas[j]);
+            i++;
+            j--;
+        }
+    }
+
+    //Рекурсивные вызовы, если осталось, что сортировать
+    if(j > left) {
+        //"Левый кусок"
+        Qsort(mas, left, j, comparator);
+    }
+    if (i < right) {
+        //"Прaвый кусок"
+        Qsort(mas, i, right, comparator);
+    }
+}
+
+
+
 template <class type, class type2>
 inline void Qsort(type mas, int left, int right, type2 puk)
 {

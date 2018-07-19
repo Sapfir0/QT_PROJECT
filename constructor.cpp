@@ -491,7 +491,7 @@ void constructor::on_downest_clicked()
     int for_opredelniya_chto_vniz = ui->input_box->currentRow();
     if(for_opredelniya_chto_vniz < List_items_left.size()-1 and for_opredelniya_chto_vniz >= 0)
     {
-        int for_opredelniya_chto_vverh = for_opredelniya_chto_vniz + List_items_left.size() - 1 ;
+        int for_opredelniya_chto_vverh = List_items_left.size() - 1 ;
         tmp = List_items_left[for_opredelniya_chto_vverh];
         List_items_left[for_opredelniya_chto_vverh] = List_items_left[for_opredelniya_chto_vniz];
         List_items_left[for_opredelniya_chto_vniz]=tmp;
